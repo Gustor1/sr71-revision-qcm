@@ -1,0 +1,21 @@
+SR71 - Révision CCNA 1
+
+Double-clique sur index.html pour ouvrir l’application dans ton navigateur.
+Garde le dossier assets à côté du fichier index.html.
+Internet n’est pas nécessaire. Aucun compte à créer.
+
+La progression est enregistrée automatiquement dans ce navigateur après chaque réponse.
+Garde le même navigateur et le même emplacement du dossier pour la retrouver.
+Le stockage des fichiers locaux dépend du navigateur. Exporte régulièrement ta sauvegarde JSON.
+Le mode privé, l’effacement des données du navigateur ou un changement d’appareil peuvent faire perdre la sauvegarde locale.
+
+Exporter ma sauvegarde : télécharge la progression et les favoris.
+Importer une sauvegarde : restaure ce fichier après confirmation (remplace la progression actuelle).
+
+« À revoir » correspond aux cartes dont la dernière réponse était incorrecte.
+Une carte réussie reste consultable après correction, puis disparaît de ce filtre à la navigation suivante.
+Les statistiques portent sur les 122 cartes : 113 numéros de questions et leurs variantes.
+Les notes du corrigé signalent les formulations ambiguës de la banque.
+
+Les sources et les pages de cours sont visibles dans chaque carte.
+Application locale : la progression n’est pas synchronisée automatiquement entre appareils.
