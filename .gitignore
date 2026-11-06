@@ -4,3 +4,4 @@ apercu-mobile.png
 __pycache__/
 *.json
 !bank2.json
+!complement.json

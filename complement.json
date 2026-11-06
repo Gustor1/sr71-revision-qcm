@@ -1,0 +1,3794 @@
+{
+  "chapters": {
+    "1": [
+      "Protocoles et modèles",
+      "SR71_module1.pdf"
+    ],
+    "2": [
+      "Configuration IOS",
+      "SR71_module2.pdf"
+    ],
+    "3": [
+      "Physique, liaison et Ethernet",
+      "SR71_module3.pdf"
+    ],
+    "4": [
+      "Couche réseau et adressage",
+      "SR71_module4_couche_reseau.pdf"
+    ],
+    "5": [
+      "Transport et applications",
+      "SR71_module5_Transport.pdf"
+    ],
+    "6": [
+      "VLAN et routage inter-VLAN",
+      "SR71_module6-VLAN.pdf"
+    ],
+    "7": [
+      "DHCP et autoconfiguration",
+      "SR71_module7-DHCP.pdf"
+    ],
+    "8S": [
+      "Spanning Tree",
+      "SR71_module8_STP.pdf"
+    ],
+    "8R": [
+      "Routage statique",
+      "SR71_module8-routage_static.pdf"
+    ],
+    "10": [
+      "Routage dynamique",
+      "SR71_module10-routage_dynamique.pdf"
+    ]
+  },
+  "themes": [
+    {
+      "id": "T01",
+      "ch": "1",
+      "title": "Rôles des équipements et des supports",
+      "file": "SR71_module1.pdf",
+      "pages": "3-5",
+      "know": "Reconnaître un terminal, un équipement intermédiaire et un support ; identifier régénération, retransmission et signalement des pannes.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "SR71_module3.pdf : 3-7",
+      "questions": [
+        "Q001",
+        "Q002"
+      ]
+    },
+    {
+      "id": "T02",
+      "ch": "1",
+      "title": "Échelles des réseaux et Internet",
+      "file": "SR71_module1.pdf",
+      "pages": "7-10",
+      "know": "Distinguer réseau domestique, SOHO, réseau d’entreprise, LAN, WAN et interconnexion mondiale ; comparer étendue et administration.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q003",
+        "Q004"
+      ]
+    },
+    {
+      "id": "T03",
+      "ch": "1",
+      "title": "Source, destination et canal",
+      "file": "SR71_module1.pdf",
+      "pages": "12",
+      "know": "Identifier les trois éléments d’une communication dans une situation concrète.",
+      "coverage": "CCNA 1 Q38/Q145 couvrent les exigences et le codage ; seule la distinction source/destination/canal reste ici.",
+      "extra": "SR71_module3.pdf : 5-6",
+      "questions": [
+        "Q005"
+      ]
+    },
+    {
+      "id": "T04",
+      "ch": "1",
+      "title": "Temporisation et accès au canal",
+      "file": "SR71_module1.pdf",
+      "pages": "17",
+      "know": "Distinguer délai d’attente d’une réponse, contrôle du flux et moment autorisé pour émettre.",
+      "coverage": "CCNA 1 Q38 et Q84 abordent protocole et contrôle de flux ; le délai de réponse et l’accès restent à distinguer.",
+      "extra": "",
+      "questions": [
+        "Q006"
+      ]
+    },
+    {
+      "id": "T05",
+      "ch": "1",
+      "title": "Modes de remise et destinataires",
+      "file": "SR71_module1.pdf",
+      "pages": "18",
+      "know": "Comparer communication un-à-un, vers un groupe et vers tous les destinataires du domaine.",
+      "coverage": "CCNA 1 Q78 et CCNA 2 Q38/Q66 évaluent des cas précis ; la comparaison générale n’est pas directement demandée.",
+      "extra": "SR71_module4_couche_reseau.pdf : 24-26, 72",
+      "questions": [
+        "Q007"
+      ]
+    },
+    {
+      "id": "T06",
+      "ch": "1",
+      "title": "Intérêt du découpage en couches",
+      "file": "SR71_module1.pdf",
+      "pages": "25-28",
+      "know": "Expliquer interfaces entre couches, indépendance des évolutions et vocabulaire commun.",
+      "coverage": "CCNA 1 Q3/Q13/Q46/Q147 couvrent couches et normes ouvertes, pas l’ensemble des avantages du modèle.",
+      "extra": "",
+      "questions": [
+        "Q008"
+      ]
+    },
+    {
+      "id": "T07",
+      "ch": "1",
+      "title": "Noms des PDU et sens de traitement",
+      "file": "SR71_module1.pdf",
+      "pages": "32-34",
+      "know": "Reconnaître données, segment, paquet, trame et bits ; décrire l’ordre inverse à la réception.",
+      "coverage": "CCNA 1 Q145 couvre segmentation/encapsulation, sans demander toute la succession des PDU.",
+      "extra": "SR71_module3.pdf : 3, 9-11 ; SR71_module5_Transport.pdf : 3-8",
+      "questions": [
+        "Q009"
+      ]
+    },
+    {
+      "id": "T08",
+      "ch": "1",
+      "title": "Segmentation, retransmission partielle et multiplexage",
+      "file": "SR71_module1.pdf",
+      "pages": "30-31",
+      "know": "Expliquer l’entrelacement des flux et l’intérêt de retransmettre seulement la partie perdue.",
+      "coverage": "CCNA 1 Q145 définit le découpage ; elle ne demande pas ses bénéfices ni le multiplexage.",
+      "extra": "SR71_module5_Transport.pdf : 3-8",
+      "questions": [
+        "Q010",
+        "Q011"
+      ]
+    },
+    {
+      "id": "T09",
+      "ch": "2",
+      "title": "Système d’exploitation, console et terminal",
+      "file": "SR71_module2.pdf",
+      "pages": "3-5",
+      "know": "Distinguer shell, noyau et matériel ; reconnaître l’accès console et le rôle d’un émulateur.",
+      "coverage": "SSH est couvert par CCNA 1 Q66 et CCNA 2 Q18/Q94 ; ces rôles ne le sont pas.",
+      "extra": "",
+      "questions": [
+        "Q012",
+        "Q013"
+      ]
+    },
+    {
+      "id": "T10",
+      "ch": "2",
+      "title": "Navigation entre modes IOS",
+      "file": "SR71_module2.pdf",
+      "pages": "7-12",
+      "know": "Identifier les invites et les sous-modes ; distinguer enable, configure terminal, exit et end.",
+      "coverage": "CCNA 1 Q35 repère un mauvais mode ; les transitions complètes restent non testées.",
+      "extra": "",
+      "questions": [
+        "Q014",
+        "Q015"
+      ]
+    },
+    {
+      "id": "T11",
+      "ch": "2",
+      "title": "Aide, abréviations et clavier IOS",
+      "file": "SR71_module2.pdf",
+      "pages": "13-16",
+      "know": "Utiliser ?, compléter une commande, rappeler l’historique, gérer la pagination et interrompre une opération.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q016",
+        "Q017"
+      ]
+    },
+    {
+      "id": "T12",
+      "ch": "2",
+      "title": "Nommage, mots de passe et bannière",
+      "file": "SR71_module2.pdf",
+      "pages": "18-20, 22",
+      "know": "Choisir un hostname valide ; distinguer protection console/VTY et enable secret ; comprendre login et le délimiteur MOTD.",
+      "coverage": "CCNA 1 Q81/Q103 et CCNA 2 Q55 couvrent des aspects voisins, sans vérifier ces commandes précises.",
+      "extra": "",
+      "questions": [
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021"
+      ]
+    },
+    {
+      "id": "T13",
+      "ch": "2",
+      "title": "Enregistrement, retour arrière et journal",
+      "file": "SR71_module2.pdf",
+      "pages": "24-27",
+      "know": "Distinguer effet immédiat en RAM, sauvegarde persistante, rechargement sans sauvegarde et archivage du terminal.",
+      "coverage": "CCNA 1 Q139 lit startup-config ; CCNA 2 Q15 porte sur vlan.dat. Ces questions ne vérifient pas les procédures ci-dessous.",
+      "extra": "",
+      "questions": [
+        "Q022",
+        "Q023",
+        "Q024"
+      ]
+    },
+    {
+      "id": "T14",
+      "ch": "2",
+      "title": "Aide contextuelle et pagination IOS",
+      "file": "SR71_module2.pdf",
+      "pages": "13, 16",
+      "know": "Demander les mots-clés disponibles et contrôler la sortie paginée, sans confusion avec sauvegarde ou historique.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q025",
+        "Q026"
+      ]
+    },
+    {
+      "id": "T15",
+      "ch": "3",
+      "title": "Normalisation physique et codage de ligne",
+      "file": "SR71_module3.pdf",
+      "pages": "4-6",
+      "know": "Identifier composants, codage et signalisation ; reconnaître Manchester, 4B/5B et 8B/10B, et les organismes cités.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "SR71_module1.pdf : 5, 14",
+      "questions": [
+        "Q027",
+        "Q028"
+      ]
+    },
+    {
+      "id": "T16",
+      "ch": "3",
+      "title": "Formes de topologie et duplex",
+      "file": "SR71_module3.pdf",
+      "pages": "13-14",
+      "know": "Reconnaître étoile, étoile étendue, bus et anneau ; distinguer émission simultanée et alternée.",
+      "coverage": "CCNA 1 Q152 distingue les plans physiques/logiques. CCNA 2 Q123, non retenue, porte sur les réglages spécifiques 2960.",
+      "extra": "",
+      "questions": [
+        "Q029",
+        "Q030"
+      ]
+    },
+    {
+      "id": "T17",
+      "ch": "3",
+      "title": "Accès contrôlé et prévention de collisions",
+      "file": "SR71_module3.pdf",
+      "pages": "15, 17",
+      "know": "Opposer accès déterministe et contention ; comprendre l’annonce d’une durée d’occupation en CSMA/CA.",
+      "coverage": "CCNA 1 Q82 nomme CSMA/CA et Q138 décrit CSMA/CD ; les mécanismes ci-dessous ne sont pas demandés.",
+      "extra": "",
+      "questions": [
+        "Q031",
+        "Q032"
+      ]
+    },
+    {
+      "id": "T18",
+      "ch": "3",
+      "title": "Formats de trame et limites Ethernet",
+      "file": "SR71_module3.pdf",
+      "pages": "19, 22, 26",
+      "know": "Comparer formats LAN/WAN ; reconnaître préambule/SFD, bourrage et limites de la trame classique, sans calculer de taille.",
+      "coverage": "CCNA 1 Q69/Q99 couvrent les champs généraux et le FCS ; ces détails restent non évalués.",
+      "extra": "SR71_module6-VLAN.pdf : 11-12",
+      "questions": [
+        "Q033",
+        "Q034",
+        "Q035"
+      ]
+    },
+    {
+      "id": "T19",
+      "ch": "3",
+      "title": "Organismes de normalisation physique",
+      "file": "SR71_module3.pdf",
+      "pages": "4",
+      "know": "Reconnaître les organismes cités sur le schéma de normalisation et distinguer normes matérielles et suite TCP/IP.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q036"
+      ]
+    },
+    {
+      "id": "T20",
+      "ch": "4",
+      "title": "MTU et fragmentation",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "7-8",
+      "know": "Comprendre la limite de taille d’un paquet sur une liaison et distinguer fragmentation par un routeur IPv4 et IPv6.",
+      "coverage": "CCNA 1 Q39 couvre les caractéristiques générales d’IP, pas cette différence.",
+      "extra": "SR71_module5_Transport.pdf : 36",
+      "questions": [
+        "Q037"
+      ]
+    },
+    {
+      "id": "T21",
+      "ch": "4",
+      "title": "Fonctions fines des champs IP",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "11-12, 15-16",
+      "know": "Identifier DiffServ, Protocol, classe de trafic, étiquette de flux, longueur des données utiles et Next Header.",
+      "coverage": "CCNA 1 Q104/Q155 couvrent notamment la comparaison générale et TTL, pas tous ces champs.",
+      "extra": "",
+      "questions": [
+        "Q038",
+        "Q039",
+        "Q040"
+      ]
+    },
+    {
+      "id": "T22",
+      "ch": "4",
+      "title": "Adresses privées et classes historiques",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "28, 31",
+      "know": "Connaître les blocs RFC 1918 et la fonction des classes historiques ; comprendre le gaspillage de l’adressage par classe.",
+      "coverage": "CCNA 1 Q157 reconnaît des exemples d’adresses spéciales, sans demander l’ensemble des plages.",
+      "extra": "",
+      "questions": [
+        "Q041",
+        "Q042"
+      ]
+    },
+    {
+      "id": "T23",
+      "ch": "4",
+      "title": "Redirection IPv6 et affichage ARP",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "36-38",
+      "know": "Distinguer affichage de la table ARP et résolution ; reconnaître la redirection IPv6 comme indication d’un meilleur premier saut.",
+      "coverage": "CCNA 1 Q18/Q49/Q129 évaluent ARP et NS/NA, pas la redirection ni la commande de consultation sur routeur.",
+      "extra": "",
+      "questions": [
+        "Q043",
+        "Q044"
+      ]
+    },
+    {
+      "id": "T24",
+      "ch": "4",
+      "title": "Description et configuration d’interface",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "51-52, 60, 80-82",
+      "know": "Reconnaître les commandes d’adressage IPv4/IPv6, leur mode et description ; lire GUA/LLA dans une sortie détaillée.",
+      "coverage": "CCNA 1 Q98/Q153 et CCNA 2 Q68/Q109/Q132 vérifient surtout état et statistiques.",
+      "extra": "SR71_module2.pdf : 33 ; SR71_module7-DHCP.pdf : 32-33",
+      "questions": [
+        "Q045",
+        "Q046"
+      ]
+    },
+    {
+      "id": "T25",
+      "ch": "4",
+      "title": "Coexistence IPv4 et IPv6",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "65-66",
+      "know": "Distinguer double pile, tunnel et traduction NAT64.",
+      "coverage": "CCNA 1 Q90 traite NAT IPv4, pas les trois techniques de transition.",
+      "extra": "",
+      "questions": [
+        "Q047",
+        "Q048"
+      ]
+    },
+    {
+      "id": "T26",
+      "ch": "4",
+      "title": "Anycast, ULA et multicast IPv6",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "72, 75, 97-99",
+      "know": "Distinguer remise au plus proche, portée locale de site et groupes multicast ; connaître FF02::1 et le rôle du groupe de nœud sollicité, sans construire d’adresses.",
+      "coverage": "CCNA 1 Q78/Q87 et CCNA 2 Q34/Q153 couvrent tous-routeurs et link-local, pas ces distinctions.",
+      "extra": "",
+      "questions": [
+        "Q049",
+        "Q050",
+        "Q051",
+        "Q052"
+      ]
+    },
+    {
+      "id": "T27",
+      "ch": "4",
+      "title": "Plusieurs adresses et ID aléatoire",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "88-94",
+      "know": "Comprendre qu’une interface peut posséder GUA et LLA ; distinguer ID aléatoire et ID issu de la MAC.",
+      "coverage": "CCNA 1 Q91 teste EUI-64 ; la coexistence et l’alternative aléatoire ne sont pas directement demandées.",
+      "extra": "SR71_module7-DHCP.pdf : 26-28, 34-36",
+      "questions": [
+        "Q053"
+      ]
+    },
+    {
+      "id": "T28",
+      "ch": "4",
+      "title": "Organisation logique du plan réseau",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "104, 108",
+      "know": "Choisir une segmentation par site, service ou type d’équipement et distinguer espace public attribué et plan privé.",
+      "coverage": "CCNA 2 Q166 couvre la diminution de la diffusion ; les critères d’organisation restent à travailler.",
+      "extra": "SR71_module6-VLAN.pdf : 3-4",
+      "questions": [
+        "Q054"
+      ]
+    },
+    {
+      "id": "T29",
+      "ch": "4",
+      "title": "Vieillissement du cache ARP",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "35-36",
+      "know": "Distinguer apprentissage, expiration et suppression manuelle d’une entrée dynamique.",
+      "coverage": "CCNA 1 Q18/Q49 couvrent table et résolution ARP, sans demander le vieillissement.",
+      "extra": "",
+      "questions": [
+        "Q055"
+      ]
+    },
+    {
+      "id": "T30",
+      "ch": "4",
+      "title": "Alternative aléatoire à EUI-64",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "pages": "88-89, 92-93",
+      "know": "Comprendre qu’un ID d’interface peut être généré sans dériver de la MAC, sans effectuer le calcul EUI-64.",
+      "coverage": "CCNA 1 Q91 est un calcul EUI-64 ; cette question porte seulement sur l’alternative.",
+      "extra": "SR71_module7-DHCP.pdf : 36",
+      "questions": [
+        "Q056"
+      ]
+    },
+    {
+      "id": "T31",
+      "ch": "5",
+      "title": "Champs détaillés du transport",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "11-12, 16-17",
+      "know": "Identifier longueur d’en-tête TCP, bits de contrôle et pointeur urgent ; distinguer en-tête UDP fixe et TCP variable.",
+      "coverage": "CCNA 1 Q112/Q126 couvrent ports et champs communs, pas l’ensemble de ces fonctions.",
+      "extra": "",
+      "questions": [
+        "Q057",
+        "Q058"
+      ]
+    },
+    {
+      "id": "T32",
+      "ch": "5",
+      "title": "Sockets, plages de ports et netstat",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "20-24, 26, 41-42",
+      "know": "Définir une socket, lire les extrémités d’une connexion et reconnaître les catégories de ports.",
+      "coverage": "CCNA 1 Q26/Q32 et les questions de ports de service ne testent pas ces lectures.",
+      "extra": "",
+      "questions": [
+        "Q059",
+        "Q060",
+        "Q061"
+      ]
+    },
+    {
+      "id": "T33",
+      "ch": "5",
+      "title": "Ouverture, fermeture et indicateurs TCP",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "27-30",
+      "know": "Reconstituer SYN/SYN-ACK/ACK puis FIN/ACK dans les deux sens ; distinguer SYN, FIN et RST.",
+      "coverage": "Les cartes CCNA 1 retenues sur TCP n’évaluent pas cet enchaînement complet.",
+      "extra": "",
+      "questions": [
+        "Q062",
+        "Q063",
+        "Q064"
+      ]
+    },
+    {
+      "id": "T34",
+      "ch": "5",
+      "title": "SACK et nature de la congestion",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "34-37",
+      "know": "Comprendre l’acquittement sélectif et distinguer limite du récepteur et congestion du réseau, sans calcul de SEQ/ACK, MSS ni fenêtre.",
+      "coverage": "CCNA 1 Q84/Q149 couvrent la fenêtre et des mécanismes TCP généraux.",
+      "extra": "",
+      "questions": [
+        "Q065",
+        "Q066"
+      ]
+    },
+    {
+      "id": "T35",
+      "ch": "5",
+      "title": "Datagrammes UDP reçus hors ordre",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "39-42",
+      "know": "Comprendre la remise dans l’ordre d’arrivée et la responsabilité éventuelle de l’application.",
+      "coverage": "CCNA 1 Q148 décrit des comportements TCP/UDP, sans demander le traitement de datagrammes hors ordre.",
+      "extra": "",
+      "questions": [
+        "Q067"
+      ]
+    },
+    {
+      "id": "T36",
+      "ch": "5",
+      "title": "Présentation et session OSI",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "45-47",
+      "know": "Associer compression, formatage et chiffrement à la présentation ; dialogue et reprise de session à la session.",
+      "coverage": "CCNA 1 Q46 nomme les trois couches supérieures mais ne demande pas leurs fonctions détaillées.",
+      "extra": "SR71_module1.pdf : 27-28",
+      "questions": [
+        "Q068",
+        "Q069"
+      ]
+    },
+    {
+      "id": "T37",
+      "ch": "5",
+      "title": "URL, HTML et méthodes HTTP",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "49-52",
+      "know": "Repérer protocole, serveur et ressource ; suivre DNS puis requête/réponse ; distinguer GET, POST et PUT.",
+      "coverage": "CCNA 1 Q25/Q52/Q60 portent sur le service web, pas sur ces opérations.",
+      "extra": "",
+      "questions": [
+        "Q070",
+        "Q071",
+        "Q072"
+      ]
+    },
+    {
+      "id": "T38",
+      "ch": "5",
+      "title": "Acheminement et attente du courrier",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "53-56",
+      "know": "Comprendre remise locale, relais entre serveurs et mise en attente si le serveur destinataire est indisponible.",
+      "coverage": "CCNA 1 Q31/Q53/Q71 couvrent les rôles SMTP/POP/IMAP et le stockage IMAP ; on ne les redemande pas.",
+      "extra": "",
+      "questions": [
+        "Q073"
+      ]
+    },
+    {
+      "id": "T39",
+      "ch": "5",
+      "title": "Enregistrements, hiérarchie et messages DNS",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "59-61",
+      "know": "Distinguer A/AAAA/NS/MX ; expliquer cache, distribution hiérarchique et sections du message.",
+      "coverage": "CCNA 1 Q4 reconnaît DNS à des noms d’enregistrements ; Q6/Q54 portent sur résolution et diagnostic.",
+      "extra": "",
+      "questions": [
+        "Q074",
+        "Q075",
+        "Q076",
+        "Q077"
+      ]
+    },
+    {
+      "id": "T40",
+      "ch": "5",
+      "title": "Connexions distinctes de FTP",
+      "file": "SR71_module5_Transport.pdf",
+      "pages": "66",
+      "know": "Distinguer canal de contrôle et canal de données, transferts vers et depuis le serveur.",
+      "coverage": "CCNA 1 Q88/Q114 évaluent le service et le port de contrôle, pas la séparation des connexions.",
+      "extra": "",
+      "questions": [
+        "Q078"
+      ]
+    },
+    {
+      "id": "T41",
+      "ch": "6",
+      "title": "Organisation des VLAN et VLAN 1",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "3-6",
+      "know": "Comprendre regroupement logique et contraintes du VLAN 1 ; distinguer organisation et sécurité absolue.",
+      "coverage": "CCNA 2 Q12/Q16/Q136/Q166 couvrent diffusion et types de VLAN, pas toutes les propriétés.",
+      "extra": "",
+      "questions": [
+        "Q079"
+      ]
+    },
+    {
+      "id": "T42",
+      "ch": "6",
+      "title": "Étiquette 802.1Q et VLAN natif",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "11-12",
+      "know": "Reconnaître TPID, priorité, CFI et VID ; expliquer recalcul du FCS et cohérence du VLAN natif aux deux bouts.",
+      "coverage": "CCNA 2 Q16/Q66/Q95/Q96 couvrent le type natif et l’identification de VLAN, pas les champs ni le recalcul du FCS.",
+      "extra": "",
+      "questions": [
+        "Q080",
+        "Q081",
+        "Q082"
+      ]
+    },
+    {
+      "id": "T43",
+      "ch": "6",
+      "title": "Création, nommage et appartenance des ports",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "15-20",
+      "know": "Créer et nommer un VLAN, affecter un port, revenir à VLAN 1 et vérifier l’appartenance.",
+      "coverage": "CCNA 2 Q122 évoque les étapes globales, sans tester toutes ces commandes.",
+      "extra": "",
+      "questions": [
+        "Q083",
+        "Q084"
+      ]
+    },
+    {
+      "id": "T44",
+      "ch": "6",
+      "title": "Suppression d’un VLAN et vérification des ports",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "19-21, 58-60",
+      "know": "Distinguer suppression d’un VLAN et base complète ; comprendre le devenir des ports et corriger une mauvaise affectation.",
+      "coverage": "CCNA 2 Q15 traite vlan.dat et Q25 un VLAN manquant, pas le devenir des ports membres.",
+      "extra": "",
+      "questions": [
+        "Q085",
+        "Q086"
+      ]
+    },
+    {
+      "id": "T45",
+      "ch": "6",
+      "title": "Retour aux valeurs par défaut et arrêt de DTP",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "26-27, 30-32",
+      "know": "Réinitialiser les paramètres du trunk ; distinguer mode access et arrêt des messages DTP.",
+      "coverage": "CCNA 2 Q82/Q150/Q157 couvrent DTP ; Q143 a été écartée car son corrigé confond mode access et arrêt de DTP. Notion présente, mais question source inexploitable.",
+      "extra": "",
+      "questions": [
+        "Q087",
+        "Q088"
+      ]
+    },
+    {
+      "id": "T46",
+      "ch": "6",
+      "title": "Comparaison des architectures inter-VLAN",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "35-39",
+      "know": "Comparer une interface physique par VLAN, router-on-a-stick et routage matériel par SVI.",
+      "coverage": "CCNA 2 Q57/Q81/Q106/Q122 vérifient des configurations, pas les compromis architecturaux.",
+      "extra": "",
+      "questions": [
+        "Q089",
+        "Q090"
+      ]
+    },
+    {
+      "id": "T47",
+      "ch": "6",
+      "title": "Plages de VLAN et identifiants réservés",
+      "file": "SR71_module6-VLAN.pdf",
+      "pages": "14",
+      "know": "Distinguer plages normale et étendue, identifiants hérités réservés et limites configurables, sans calculer le nombre de VLAN.",
+      "coverage": "CCNA 2 Q15 porte sur vlan.dat, pas sur les plages d’identifiants.",
+      "extra": "",
+      "questions": [
+        "Q091",
+        "Q092"
+      ]
+    },
+    {
+      "id": "T48",
+      "ch": "7",
+      "title": "Renouvellement et durée du bail DHCPv4",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "4, 7",
+      "know": "Comprendre renouvellement auprès du serveur puis diffusion en absence de réponse ; savoir qu’un bail n’est pas permanent.",
+      "coverage": "CCNA 2 Q90/Q97/Q108/Q111 couvrent surtout l’attribution initiale.",
+      "extra": "SR71_module5_Transport.pdf : 63-64",
+      "questions": [
+        "Q093"
+      ]
+    },
+    {
+      "id": "T49",
+      "ch": "7",
+      "title": "Construction et options du pool DHCPv4",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "9-12",
+      "know": "Identifier création du pool et commandes network, default-router, dns-server, domain-name et lease, sans dimensionner les plages.",
+      "coverage": "CCNA 2 Q99 contrôle une exclusion oubliée, pas la construction du pool.",
+      "extra": "",
+      "questions": [
+        "Q094",
+        "Q095"
+      ]
+    },
+    {
+      "id": "T50",
+      "ch": "7",
+      "title": "Vérification et activation du service DHCPv4",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "13-18",
+      "know": "Distinguer liaisons, compteurs, configuration filtrée et activation globale du service.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q096",
+        "Q097"
+      ]
+    },
+    {
+      "id": "T51",
+      "ch": "7",
+      "title": "Routeur client DHCPv4",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "22-23",
+      "know": "Faire obtenir une adresse par une interface du routeur auprès d’un serveur et vérifier l’origine de cette adresse.",
+      "coverage": "Les questions de relais CCNA 2 Q42/Q44/Q100 ne testent pas le rôle client.",
+      "extra": "",
+      "questions": [
+        "Q098"
+      ]
+    },
+    {
+      "id": "T52",
+      "ch": "7",
+      "title": "Indicateur A et origine de la passerelle IPv6",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "29, 34, 40-43",
+      "know": "Distinguer autonomie de configuration et informations DHCPv6 ; comprendre que la route par défaut provient du RA.",
+      "coverage": "CCNA 2 Q56/Q127/Q144 couvrent surtout O et M ; Q171 demande le préfixe et sa longueur.",
+      "extra": "SR71_module4_couche_reseau.pdf : 81, 84-87",
+      "questions": [
+        "Q099",
+        "Q100"
+      ]
+    },
+    {
+      "id": "T53",
+      "ch": "7",
+      "title": "Messages et ports DHCPv6",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "39",
+      "know": "Connaître l’échange avec état et les ports client/serveur ; ne pas confondre DORA IPv4 et DHCPv6.",
+      "coverage": "Aucune carte retenue ne demande la séquence DHCPv6 complète.",
+      "extra": "",
+      "questions": [
+        "Q101",
+        "Q102"
+      ]
+    },
+    {
+      "id": "T54",
+      "ch": "7",
+      "title": "Configuration des clients et liaisons DHCPv6",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "48-53",
+      "know": "Distinguer ipv6 enable, ipv6 address autoconfig et ipv6 address dhcp ; lire les liaisons avec état.",
+      "coverage": "CCNA 2 Q8 couvre le compteur nul en mode sans état, pas ces commandes.",
+      "extra": "",
+      "questions": [
+        "Q103",
+        "Q104",
+        "Q105"
+      ]
+    },
+    {
+      "id": "T55",
+      "ch": "7",
+      "title": "Relais DHCPv6",
+      "file": "SR71_module7-DHCP.pdf",
+      "pages": "54-55",
+      "know": "Configurer le relais côté clients et préciser l’interface de sortie si la destination est link-local ; vérifier le relais.",
+      "coverage": "CCNA 2 Q42/Q44/Q100 testent le relais IPv4, pas sa syntaxe IPv6.",
+      "extra": "",
+      "questions": [
+        "Q106"
+      ]
+    },
+    {
+      "id": "T56",
+      "ch": "8S",
+      "title": "Symptômes de boucle et recalcul",
+      "file": "SR71_module8_STP.pdf",
+      "pages": "4-7",
+      "know": "Comprendre répétition des trames, instabilité MAC et réouverture d’un chemin après une panne.",
+      "coverage": "CCNA 2 Q24 identifie STP ; les symptômes et le recalcul ne sont pas directement évalués.",
+      "extra": "",
+      "questions": [
+        "Q107",
+        "Q108"
+      ]
+    },
+    {
+      "id": "T57",
+      "ch": "8S",
+      "title": "États, BPDU et temporisateurs",
+      "file": "SR71_module8_STP.pdf",
+      "pages": "16-17",
+      "know": "Distinguer blocage, écoute, apprentissage, transmission et désactivation ; connaître le rôle des délais sans additionner de durées.",
+      "coverage": "CCNA 2 Q29/Q74/Q86 traitent les rôles et chemins, pas les actions de chaque état.",
+      "extra": "",
+      "questions": [
+        "Q109",
+        "Q110",
+        "Q111"
+      ]
+    },
+    {
+      "id": "T58",
+      "ch": "8S",
+      "title": "Instance STP par VLAN",
+      "file": "SR71_module8_STP.pdf",
+      "pages": "18",
+      "know": "Comprendre qu’un arbre et un pont racine peuvent différer selon le VLAN.",
+      "coverage": "CCNA 2 Q162 non retenue interroge l’avantage PVST+ ; elle ne vérifie pas directement la correspondance instance/VLAN.",
+      "extra": "",
+      "questions": [
+        "Q112"
+      ]
+    },
+    {
+      "id": "T59",
+      "ch": "8R",
+      "title": "Autonomie des tables et chemin de retour",
+      "file": "SR71_module8-routage_static.pdf",
+      "pages": "21, 29",
+      "know": "Distinguer connaissance locale, trajet aller/retour et hiérarchie d’affichage parent/enfant.",
+      "coverage": "CCNA 1 Q142 et CCNA 2 Q32/Q54 évaluent certains champs, pas ces principes.",
+      "extra": "",
+      "questions": [
+        "Q113",
+        "Q114"
+      ]
+    },
+    {
+      "id": "T60",
+      "ch": "8R",
+      "title": "Process switching et fast switching",
+      "file": "SR71_module8-routage_static.pdf",
+      "pages": "15-18",
+      "know": "Distinguer traitement CPU de chaque paquet et cache alimenté lors d’un premier passage.",
+      "coverage": "CCNA 2 Q159 porte sur CEF ; les autres mécanismes ne sont pas directement demandés.",
+      "extra": "",
+      "questions": [
+        "Q115",
+        "Q116"
+      ]
+    },
+    {
+      "id": "T61",
+      "ch": "8R",
+      "title": "Routes résumées et formes de route statique",
+      "file": "SR71_module8-routage_static.pdf",
+      "pages": "44-52",
+      "know": "Comprendre le rôle d’un résumé sans le calculer ; distinguer prochain saut, interface et route entièrement spécifiée.",
+      "coverage": "CCNA 2 Q5/Q32/Q168 couvrent des cas de configuration ; Q30 non retenue ajoute une condition sur CEF non enseignée.",
+      "extra": "",
+      "questions": [
+        "Q117",
+        "Q118"
+      ]
+    },
+    {
+      "id": "T62",
+      "ch": "8R",
+      "title": "Vérifier un basculement sans calcul",
+      "file": "SR71_module8-routage_static.pdf",
+      "pages": "55, 63-65",
+      "know": "Observer la disparition de la route principale et l’installation de la route de secours ; tester réellement la connectivité.",
+      "coverage": "CCNA 2 Q2/Q53/Q62/Q87 font surtout choisir une distance administrative.",
+      "extra": "SR71_module10-routage_dynamique.pdf : 53",
+      "questions": [
+        "Q119"
+      ]
+    },
+    {
+      "id": "T63",
+      "ch": "8R",
+      "title": "Partage de charge à coût égal",
+      "file": "SR71_module8-routage_static.pdf",
+      "pages": "42",
+      "know": "Comprendre l’emploi de plusieurs prochains sauts pour une même destination, sans calculer les métriques.",
+      "coverage": "Les QCM de routes flottantes sélectionnent un secours ; ils ne testent pas le partage simultané entre chemins équivalents.",
+      "extra": "",
+      "questions": [
+        "Q120"
+      ]
+    },
+    {
+      "id": "T64",
+      "ch": "8R",
+      "title": "Route d’hôte IPv6",
+      "file": "SR71_module8-routage_static.pdf",
+      "pages": "67-71",
+      "know": "Reconnaître le préfixe d’une destination unique et sa différence avec une route de réseau, sans calculer les adresses.",
+      "coverage": "CCNA 2 Q167 valide /32 en IPv4 ; Q168 porte sur le prochain saut link-local, pas le préfixe d’hôte IPv6.",
+      "extra": "",
+      "questions": [
+        "Q121"
+      ]
+    },
+    {
+      "id": "T65",
+      "ch": "10",
+      "title": "Familles, composants et convergence",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "3-8, 17-20",
+      "know": "Distinguer vecteur de distance, état de liens et BGP ; relier tables, messages et algorithmes à l’adaptation du routage.",
+      "coverage": "CCNA 2 Q31/Q83 traitent les avantages du statique ; Q53/Q87 utilisent des noms de protocoles sans évaluer leur fonctionnement.",
+      "extra": "SR71_module8-routage_static.pdf : 37-42",
+      "questions": [
+        "Q122",
+        "Q123",
+        "Q124"
+      ]
+    },
+    {
+      "id": "T66",
+      "ch": "10",
+      "title": "RIPv2 : activation, annonces et contrôle",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "10-13",
+      "know": "Reconnaître router rip, network, version 2, show ip protocols et routes R.",
+      "coverage": "CCNA 2 Q87 utilise la distance de RIP sans tester sa configuration.",
+      "extra": "SR71_module8-routage_static.pdf : 38, 41",
+      "questions": [
+        "Q125",
+        "Q126",
+        "Q127"
+      ]
+    },
+    {
+      "id": "T67",
+      "ch": "10",
+      "title": "RIP : résumé automatique et interface passive",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "14-15",
+      "know": "Comprendre no auto-summary et suppression des mises à jour sur une interface sans retirer l’annonce du réseau.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q128",
+        "Q129"
+      ]
+    },
+    {
+      "id": "T68",
+      "ch": "10",
+      "title": "Messages et déroulement OSPF",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "17-20",
+      "know": "Relier découverte des voisins, échanges de LSA, LSDB, SPF et meilleures routes ; reconnaître les cinq types de paquets.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q130",
+        "Q131",
+        "Q132"
+      ]
+    },
+    {
+      "id": "T69",
+      "ch": "10",
+      "title": "Process ID et Router ID",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "24-29",
+      "know": "Distinguer identifiant local du processus et identifiant du routeur ; connaître l’ordre de sélection et l’effet d’un changement.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q133",
+        "Q134",
+        "Q135"
+      ]
+    },
+    {
+      "id": "T70",
+      "ch": "10",
+      "title": "Activation OSPF par interface et zone",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "31-34",
+      "know": "Comprendre sélection d’interfaces par network et activation directe avec ip ospf ; distinguer area-id et process-id, sans calculer de wildcard.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q136",
+        "Q137"
+      ]
+    },
+    {
+      "id": "T71",
+      "ch": "10",
+      "title": "Interfaces OSPF passives",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "35-36",
+      "know": "Éviter les échanges de voisinage sur un LAN d’hôtes tout en annonçant son réseau.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q138"
+      ]
+    },
+    {
+      "id": "T72",
+      "ch": "10",
+      "title": "Type de réseau OSPF et loopback",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "37-39",
+      "know": "Reconnaître broadcast/point-to-point, l’absence d’élection DR/BDR en point-à-point et l’annonce de loopback en route d’hôte.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q139",
+        "Q140"
+      ]
+    },
+    {
+      "id": "T73",
+      "ch": "10",
+      "title": "DR, BDR et multicast OSPF",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "41-43",
+      "know": "Comprendre distribution des LSA, secours BDR et groupes 224.0.0.5/6 ; appliquer l’élection illustrée à priorité égale.",
+      "coverage": "Aucune question correspondante retrouvée dans la sélection.",
+      "extra": "",
+      "questions": [
+        "Q141",
+        "Q142",
+        "Q143"
+      ]
+    },
+    {
+      "id": "T74",
+      "ch": "10",
+      "title": "Réglages OSPF sans calcul de coût",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "47-48, 52",
+      "know": "Distinguer changement de métrique et débit physique ; reconnaître les commandes de référence et de coût manuel.",
+      "coverage": "CCNA 2 Q54 lit une métrique déjà affichée ; aucun calcul de coût n’est proposé ici.",
+      "extra": "",
+      "questions": [
+        "Q144",
+        "Q145"
+      ]
+    },
+    {
+      "id": "T75",
+      "ch": "10",
+      "title": "Propagation d’une route par défaut OSPF",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "55-56",
+      "know": "Associer route par défaut existante et default-information originate ; reconnaître O*E2 sans approfondir E1/E2.",
+      "coverage": "CCNA 2 Q4/Q118/Q158 couvrent les routes statiques par défaut, pas leur annonce dans OSPF.",
+      "extra": "SR71_module8-routage_static.pdf : 28, 57-61",
+      "questions": [
+        "Q146",
+        "Q147"
+      ]
+    },
+    {
+      "id": "T76",
+      "ch": "10",
+      "title": "Nature des métriques de routage",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "pages": "3-4",
+      "know": "Associer RIP aux sauts, OSPF au coût et EIGRP notamment à la bande passante et au délai ; aucun coût n’est à calculer.",
+      "coverage": "CCNA 2 Q54 lit une métrique affichée et Q87 utilise la distance administrative RIP, sans demander ces définitions.",
+      "extra": "SR71_module8-routage_static.pdf : 41",
+      "questions": [
+        "Q148",
+        "Q149"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q001",
+      "theme": "T01",
+      "question": "Dans un échange entre un ordinateur et un serveur, quel rôle caractérise un équipement intermédiaire ?",
+      "options": [
+        "Être nécessairement le destinataire final du message.",
+        "Relayer les données et contribuer à leur acheminement.",
+        "Créer obligatoirement le document demandé par l’utilisateur.",
+        "Conserver uniquement les fichiers de l’utilisateur."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Un équipement intermédiaire interconnecte les terminaux et gère le passage des données.",
+      "pages": "3-4",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q002",
+      "theme": "T01",
+      "question": "Quelle association entre support et signal est correcte ?",
+      "options": [
+        "Fibre optique : ondes sonores.",
+        "Cuivre : impulsions lumineuses.",
+        "Fibre optique : impulsions lumineuses.",
+        "Sans-fil : impulsions électriques guidées dans un câble."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le cours associe cuivre à l’électricité, fibre à la lumière et sans-fil aux ondes électromagnétiques.",
+      "pages": "5",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q003",
+      "theme": "T02",
+      "question": "Une entreprise relie ses LAN de plusieurs villes par le réseau d’un opérateur. Comment qualifier cette interconnexion ?",
+      "options": [
+        "WAN.",
+        "Réseau de bouclage.",
+        "VLAN natif.",
+        "LAN unique limité à un bâtiment."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Un WAN relie des réseaux locaux sur une grande zone géographique.",
+      "pages": "8-9",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q004",
+      "theme": "T02",
+      "question": "Quelle description d’Internet correspond au cours ?",
+      "options": [
+        "Un ensemble mondial de réseaux interconnectés.",
+        "Un LAN mondial administré par une seule entreprise.",
+        "Un réseau utilisant exclusivement la fibre optique.",
+        "Un unique commutateur central auquel tous les hôtes sont raccordés."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Internet est une interconnexion de LAN et de WAN ; aucun support unique n’est imposé.",
+      "pages": "10",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q005",
+      "theme": "T03",
+      "question": "Un capteur envoie une mesure à un serveur par une liaison radio. Quel élément constitue le canal ?",
+      "options": [
+        "Le capteur.",
+        "La liaison radio.",
+        "Le serveur.",
+        "La mesure elle-même."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le canal est le support qui permet le passage du message.",
+      "pages": "12",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q006",
+      "theme": "T04",
+      "question": "Un équipement abandonne l’attente après une durée sans réponse. Quelle règle applique-t-il ?",
+      "options": [
+        "Une méthode d’adressage MAC.",
+        "Un délai de réponse.",
+        "Une méthode de segmentation.",
+        "Une règle de choix du VLAN natif."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le délai de réponse limite le temps pendant lequel un équipement attend son correspondant.",
+      "pages": "17",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q007",
+      "theme": "T05",
+      "question": "Un message doit être remis aux seuls membres d’un groupe, sans viser tous les hôtes du réseau. Quel mode correspond ?",
+      "options": [
+        "Multidiffusion.",
+        "Diffusion générale.",
+        "Bouclage local.",
+        "Monodiffusion vers chaque hôte sans notion de groupe."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le multicast vise un groupe de destinataires.",
+      "pages": "18",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q008",
+      "theme": "T06",
+      "question": "Quel avantage du modèle en couches permet de faire évoluer une technologie sans réécrire toute la pile ?",
+      "options": [
+        "Chaque couche connaît le détail matériel de toutes les autres.",
+        "Le modèle supprime les échanges entre couches.",
+        "Toutes les couches utilisent le même en-tête.",
+        "Des interfaces définies limitent les effets du changement aux autres couches."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les interfaces entre couches permettent de séparer les fonctions.",
+      "pages": "26",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q009",
+      "theme": "T07",
+      "question": "Pour l’émission TCP/IP illustrée dans le cours, quel ordre est correct ?",
+      "options": [
+        "Données → segment → paquet → trame → bits.",
+        "Données → paquet → bits → segment → trame.",
+        "Données → trame → paquet → segment → bits.",
+        "Bits → segment → trame → paquet → données."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Chaque couche ajoute les informations nécessaires avant la transmission physique.",
+      "pages": "32-34",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q010",
+      "theme": "T08",
+      "question": "Pourquoi la segmentation peut-elle éviter de retransmettre tout un long message après une perte ?",
+      "options": [
+        "Elle interdit toutes les pertes physiques.",
+        "Elle supprime toute information de séquence.",
+        "Elle transforme tous les messages en broadcast.",
+        "Seule la partie non reçue peut être retransmise."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le cours présente l’économie de retransmission comme un avantage de la segmentation.",
+      "pages": "30",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q011",
+      "theme": "T08",
+      "question": "Que désigne le multiplexage dans l’explication du cours ?",
+      "options": [
+        "La conversion systématique d’IPv6 en IPv4.",
+        "L’entrelacement de segments appartenant à plusieurs flux.",
+        "La suppression des en-têtes Ethernet.",
+        "La copie d’un paquet sur tous les VLAN."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Plusieurs conversations peuvent partager une liaison sans qu’un message entier la monopolise.",
+      "pages": "30",
+      "file": "SR71_module1.pdf",
+      "ch": "1"
+    },
+    {
+      "id": "Q012",
+      "theme": "T09",
+      "question": "Quel composant assure l’interface entre logiciels et ressources matérielles ?",
+      "options": [
+        "La bannière MOTD.",
+        "Le noyau.",
+        "Le shell uniquement.",
+        "Le câble console."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le noyau gère les ressources et assure la communication entre matériel et logiciels.",
+      "pages": "3",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q013",
+      "theme": "T09",
+      "question": "Un commutateur neuf n’a aucune adresse IP de gestion. Quel accès permet sa configuration initiale locale ?",
+      "options": [
+        "Une session SSH vers une adresse non configurée.",
+        "Le port console avec un émulateur de terminal.",
+        "Une connexion Telnet sans interface réseau active.",
+        "Une requête DNS vers le nom d’usine."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "L’accès console est physique et permet les opérations initiales.",
+      "pages": "4-5",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q014",
+      "theme": "T10",
+      "question": "À l’invite R1(config-if)#, quelle commande revient directement au mode EXEC privilégié ?",
+      "options": [
+        "end.",
+        "enable.",
+        "configure terminal.",
+        "exit."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "end revient au mode EXEC privilégié ; exit remonte d’un niveau.",
+      "pages": "7-12",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q015",
+      "theme": "T10",
+      "question": "Quelle séquence permet de passer de Switch> à la configuration globale ?",
+      "options": [
+        "exit puis enable secret.",
+        "enable puis configure terminal.",
+        "interface vlan 1 puis login.",
+        "configure terminal puis disable."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le mode EXEC privilégié précède l’accès à la configuration globale.",
+      "pages": "7-12",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q016",
+      "theme": "T11",
+      "question": "Pourquoi une abréviation IOS peut-elle provoquer « Ambiguous command » ?",
+      "options": [
+        "Elle dépasse la taille maximale d’un paquet.",
+        "Elle contient nécessairement un numéro d’interface erroné.",
+        "Elle correspond encore à plusieurs commandes possibles.",
+        "Elle est systématiquement interdite en configuration globale."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "L’abréviation doit identifier une seule commande.",
+      "pages": "14",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q017",
+      "theme": "T11",
+      "question": "Quelles associations sont correctes ? (Deux réponses.)",
+      "options": [
+        "Tabulation : compléter une commande.",
+        "Espace à --More-- : effacer la configuration.",
+        "Ctrl+Maj+6 : enregistrer la configuration.",
+        "Flèche Haut : rappeler une commande précédente."
+      ],
+      "correct": [
+        1,
+        4
+      ],
+      "explanation": "La tabulation complète ; la flèche Haut parcourt l’historique. Ctrl+Maj+6 interrompt notamment ping ou une recherche DNS.",
+      "pages": "15-16",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q018",
+      "theme": "T12",
+      "question": "Quel nom respecte les règles de nommage présentées dans le cours ?",
+      "options": [
+        "2-SW.",
+        "SW Etage2.",
+        "SW-Etage2-.",
+        "SW-Etage2."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le nom commence par une lettre, ne contient pas d’espace et se termine par une lettre ou un chiffre.",
+      "pages": "18",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q019",
+      "theme": "T12",
+      "question": "Dans la configuration de line console 0, un mot de passe a été défini par password. Quelle commande active sa vérification ?",
+      "options": [
+        "enable secret.",
+        "no hostname.",
+        "login.",
+        "service dhcp."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "login active l’authentification par le mot de passe configuré sur la ligne.",
+      "pages": "19",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q020",
+      "theme": "T12",
+      "question": "Quelle commande protège l’accès au mode EXEC privilégié ?",
+      "options": [
+        "enable secret suivi du secret.",
+        "password dans le seul mode interface.",
+        "hostname suivi du secret.",
+        "banner motd suivi du secret."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "enable secret protège l’accès privilégié ; les mots de passe de ligne protègent les accès console ou VTY.",
+      "pages": "19-20",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q021",
+      "theme": "T12",
+      "question": "Dans banner motd #Accès réservé#, quel rôle joue # ?",
+      "options": [
+        "Chiffrer la bannière.",
+        "Indiquer le port TCP à utiliser.",
+        "Délimiter le début et la fin du message.",
+        "Identifier le VLAN de gestion."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le caractère choisi sert de délimiteur du texte.",
+      "pages": "22",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q022",
+      "theme": "T13",
+      "question": "Une modification correcte doit survivre à un redémarrage. Quelle commande employer ?",
+      "options": [
+        "show startup-config.",
+        "erase startup-config.",
+        "copy running-config startup-config.",
+        "copy startup-config running-config."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La configuration en cours est copiée dans la configuration de démarrage.",
+      "pages": "24",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q023",
+      "theme": "T13",
+      "question": "Un technicien veut abandonner des changements non sauvegardés et retrouver la configuration de démarrage. Quelle action convient ?",
+      "options": [
+        "Copier running-config vers startup-config avant le redémarrage.",
+        "Effacer startup-config puis sauvegarder running-config.",
+        "Recharger l’équipement sans enregistrer ces changements.",
+        "Afficher show running-config uniquement."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le rechargement sans sauvegarde abandonne les modifications volatiles ; il interrompt le service.",
+      "pages": "25",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q024",
+      "theme": "T13",
+      "question": "Quelle procédure archive la configuration affichée dans un fichier texte ?",
+      "options": [
+        "Créer un VLAN portant le nom du fichier.",
+        "Activer le journal du terminal, exécuter show running-config, puis arrêter le journal.",
+        "Exécuter seulement ping puis fermer le terminal.",
+        "Exécuter erase startup-config avant de lancer le journal."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le journal capture la sortie du terminal ; il ne remplace pas automatiquement la sauvegarde de démarrage.",
+      "pages": "26-27",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q025",
+      "theme": "T14",
+      "question": "Quel caractère appelle l’aide contextuelle IOS pour connaître les commandes ou arguments disponibles ?",
+      "options": [
+        "#.",
+        "?.",
+        "@.",
+        "/."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le point d’interrogation donne une aide adaptée au contexte de saisie.",
+      "pages": "13",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q026",
+      "theme": "T14",
+      "question": "À l’invite --More--, quelle touche affiche l’écran suivant ?",
+      "options": [
+        "Tabulation.",
+        "La barre d’espace.",
+        "La flèche Haut.",
+        "Entrée, qui affiche nécessairement tout le reste."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le cours distingue Entrée pour une ligne et Espace pour l’écran suivant.",
+      "pages": "16",
+      "file": "SR71_module2.pdf",
+      "ch": "2"
+    },
+    {
+      "id": "Q027",
+      "theme": "T15",
+      "question": "Quelles sont les trois catégories couvertes par les normes de couche physique dans le cours ?",
+      "options": [
+        "VLAN, DHCP et OSPF.",
+        "Routage, adressage IP et DNS.",
+        "Composants physiques, codage et signalisation.",
+        "Session, présentation et application."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Les normes définissent à la fois le matériel et la représentation/transmission des bits.",
+      "pages": "5",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q028",
+      "theme": "T15",
+      "question": "Manchester et 4B/5B sont des exemples de quoi ?",
+      "options": [
+        "Méthodes d’attribution DHCP.",
+        "Types de VLAN.",
+        "Méthodes de codage du flux de bits.",
+        "Protocoles de routage dynamique."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le codage rend le flux de bits reconnaissable par l’équipement suivant.",
+      "pages": "6",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q029",
+      "theme": "T16",
+      "question": "Des postes reliés chacun à un commutateur central forment quelle topologie physique ?",
+      "options": [
+        "Une chaîne de routeurs.",
+        "Un bus partagé avec terminaisons.",
+        "Un anneau où chaque poste est relié à deux voisins.",
+        "Une étoile."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le commutateur est le point central de l’étoile.",
+      "pages": "13",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q030",
+      "theme": "T16",
+      "question": "Que permet une liaison en duplex intégral ?",
+      "options": [
+        "Émettre seulement après réception d’un jeton.",
+        "Partager nécessairement un domaine de collision.",
+        "Transmettre dans un seul sens pendant toute la session.",
+        "Émettre et recevoir simultanément aux deux extrémités."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le full-duplex autorise les deux sens simultanément.",
+      "pages": "14",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q031",
+      "theme": "T17",
+      "question": "Qu’est-ce qui caractérise l’accès contrôlé au support décrit dans le cours ?",
+      "options": [
+        "Aucun ordre d’accès n’est prévu.",
+        "Les collisions sont nécessaires à chaque transmission.",
+        "Tous les nœuds émettent systématiquement ensemble.",
+        "Chaque nœud dispose d’un moment déterminé pour accéder au support."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le cours oppose accès déterministe et concurrence sur un support partagé.",
+      "pages": "15",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q032",
+      "theme": "T17",
+      "question": "Pourquoi une transmission CSMA/CA annonce-t-elle sa durée d’occupation ?",
+      "options": [
+        "Pour garantir qu’aucun équipement ne recevra le signal.",
+        "Pour modifier le masque IPv4 des récepteurs.",
+        "Pour choisir le serveur DHCP.",
+        "Pour que les autres équipements sachent pendant combien de temps le support sera indisponible."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "L’annonce de durée participe à la prévention des collisions.",
+      "pages": "17",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q033",
+      "theme": "T18",
+      "question": "Pourquoi une trame PPP et une trame Ethernet n’ont-elles pas nécessairement le même en-tête ?",
+      "options": [
+        "Le format dépend du protocole de liaison et du support utilisé.",
+        "La couche application définit seule chaque en-tête de liaison.",
+        "Le FCS remplace toujours toutes les adresses.",
+        "Le protocole IP impose exactement le même en-tête de liaison partout."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Les champs de liaison varient selon le protocole et les exigences d’accès au support.",
+      "pages": "19, 22",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q034",
+      "theme": "T18",
+      "question": "Dans le format Ethernet classique non étiqueté du cours, quelle affirmation est correcte ?",
+      "options": [
+        "Le préambule/SFD n’est pas inclus dans les 64 à 1518 octets de la trame.",
+        "Les trames jumbo sont obligatoirement refusées par tous les matériels.",
+        "Le préambule est la charge utile IP.",
+        "Une trame trop courte est toujours acceptée."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Les bornes classiques excluent le préambule/SFD ; la prise en charge des jumbo dépend du matériel.",
+      "pages": "26",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q035",
+      "theme": "T18",
+      "question": "À quoi sert le bourrage d’une trame Ethernet lorsque les données sont trop courtes ?",
+      "options": [
+        "Changer l’adresse MAC de destination.",
+        "Remplacer le FCS.",
+        "Indiquer le prochain saut IP.",
+        "Atteindre la longueur minimale du champ de données."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le bourrage assure la longueur minimale de la trame classique.",
+      "pages": "26",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q036",
+      "theme": "T19",
+      "question": "Quel ensemble ne contient que des organismes cités pour les normes de couche physique ?",
+      "options": [
+        "HTTP, FTP, SMTP, POP, IMAP.",
+        "SYN, ACK, FIN, RST, PSH.",
+        "ISO, EIA/TIA, ITU-T, ANSI, IEEE.",
+        "RIP, OSPF, EIGRP, BGP, DTP."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Ces organismes figurent dans le schéma de la page 4.",
+      "pages": "4",
+      "file": "SR71_module3.pdf",
+      "ch": "3"
+    },
+    {
+      "id": "Q037",
+      "theme": "T20",
+      "question": "Un paquet dépasse la MTU de sortie. Quelle différence entre routeurs IPv4 et IPv6 est correcte ?",
+      "options": [
+        "La MTU ne concerne que TCP.",
+        "Les deux fragmentent toujours.",
+        "Seul le routeur IPv6 fragmente les paquets en transit.",
+        "Un routeur IPv4 peut fragmenter si cela est autorisé ; un routeur IPv6 ne fragmente pas le paquet en transit."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le cours doit se lire ainsi : pas de fragmentation par les routeurs IPv6. Une source IPv6 peut utiliser un en-tête de fragmentation.",
+      "pages": "7-8",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q038",
+      "theme": "T21",
+      "question": "Quel champ de l’en-tête IPv4 indique que la charge utile doit être remise à TCP, UDP ou ICMP ?",
+      "options": [
+        "TTL.",
+        "Somme de contrôle uniquement.",
+        "Protocol.",
+        "Adresse source."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Protocol désigne le protocole de niveau supérieur.",
+      "pages": "12",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q039",
+      "theme": "T21",
+      "question": "Quel champ IPv6 permet d’identifier des paquets appartenant à un même flux pour un traitement cohérent ?",
+      "options": [
+        "Hop Limit.",
+        "Adresse MAC source.",
+        "Identifiant VLAN.",
+        "Flow Label, ou étiquette de flux."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "L’étiquette de flux est un champ de l’en-tête IPv6.",
+      "pages": "16",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q040",
+      "theme": "T21",
+      "question": "Quelle association est correcte ?",
+      "options": [
+        "Traffic Class IPv6 et DiffServ IPv4 : indication utile à la qualité de service.",
+        "Protocol IPv4 : identifiant du VLAN natif.",
+        "Payload Length IPv6 : durée maximale d’attente.",
+        "Next Header IPv6 : MAC du prochain routeur."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "La classe de trafic et les services différenciés portent des informations de traitement/QoS.",
+      "pages": "12, 16",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q041",
+      "theme": "T22",
+      "question": "Quelle liste contient uniquement les trois blocs privés RFC 1918 ?",
+      "options": [
+        "127.0.0.0/8 ; 169.254.0.0/16 ; 224.0.0.0/4.",
+        "10.0.0.0/8 ; 172.0.0.0/8 ; 192.0.0.0/8.",
+        "10.0.0.0/8 ; 172.16.0.0/12 ; 192.168.0.0/16.",
+        "192.168.0.0/16 ; 2001:db8::/32 ; 127.0.0.0/8."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Il s’agit de plages à connaître, sans calcul de sous-réseau.",
+      "pages": "28",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q042",
+      "theme": "T22",
+      "question": "Pourquoi l’adressage IPv4 sans classe a-t-il remplacé l’ancien découpage A/B/C ?",
+      "options": [
+        "Il fallait interdire les réseaux privés.",
+        "Les tailles imposées par les classes gaspillaient des adresses.",
+        "Il fallait supprimer tous les masques de réseau.",
+        "Les classes permettaient déjà n’importe quelle longueur de préfixe."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "L’adressage sans classe permet un choix de préfixe plus adapté aux besoins.",
+      "pages": "31",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q043",
+      "theme": "T23",
+      "question": "Quelle commande IOS affiche la table ARP d’un routeur ?",
+      "options": [
+        "show vlan brief.",
+        "show ip arp.",
+        "show ipv6 dhcp pool.",
+        "show ip route."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La table ARP associe adresses IPv4 et adresses MAC.",
+      "pages": "36",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q044",
+      "theme": "T23",
+      "question": "Quel est le rôle d’un message de redirection ICMPv6 dans la découverte de voisins ?",
+      "options": [
+        "Informer un hôte d’un meilleur prochain saut vers une destination.",
+        "Attribuer un bail DHCPv6.",
+        "Créer une adresse IPv4 publique.",
+        "Élire le pont racine STP."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "La redirection est distincte des messages NS/NA de résolution d’adresse.",
+      "pages": "37",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q045",
+      "theme": "T24",
+      "question": "Quel est le rôle de description Link-to-LAN sur une interface ?",
+      "options": [
+        "Activer automatiquement OSPF.",
+        "Choisir le VLAN natif.",
+        "Remplacer no shutdown.",
+        "Documenter l’interface sans lui attribuer d’adresse IP."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "description ajoute un repère administratif à la configuration.",
+      "pages": "51-52",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q046",
+      "theme": "T24",
+      "question": "Quelle commande affecte explicitement une adresse link-local à une interface IOS ?",
+      "options": [
+        "ipv6 address fe80::1 link-local.",
+        "ipv6 route fe80::1/64.",
+        "ip address fe80::1 255.255.255.0.",
+        "ipv6 unicast-routing fe80::1."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le mot-clé link-local indique le type d’adresse à configurer.",
+      "pages": "82",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q047",
+      "theme": "T25",
+      "question": "Quelle technique exécute IPv4 et IPv6 simultanément sur un équipement ?",
+      "options": [
+        "Un tunnel exclusivement IPv4.",
+        "La double pile.",
+        "La fragmentation.",
+        "NAT64 seul."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La double pile conserve les deux piles de protocoles.",
+      "pages": "65-66",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q048",
+      "theme": "T25",
+      "question": "Un paquet IPv6 est transporté à l’intérieur d’un paquet IPv4. De quelle technique s’agit-il ?",
+      "options": [
+        "D’une traduction NAT64.",
+        "D’une résolution ARP.",
+        "D’un tunnel.",
+        "D’une double pile sans encapsulation."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Un tunnel encapsule ; la traduction transforme entre les protocoles.",
+      "pages": "65-66",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q049",
+      "theme": "T26",
+      "question": "Une même adresse IPv6 est attribuée à plusieurs équipements ; le routage remet le paquet à l’instance la plus proche. Quel type est utilisé ?",
+      "options": [
+        "Anycast.",
+        "Multicast vers toutes les instances.",
+        "Broadcast IPv6.",
+        "Link-local nécessairement."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Anycast utilise une adresse de type unicast partagée, avec remise à une instance.",
+      "pages": "72",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q050",
+      "theme": "T26",
+      "question": "Quelle affirmation sur une ULA est correcte ?",
+      "options": [
+        "Elle garantit à elle seule la sécurité du réseau.",
+        "Elle sert à l’adressage local d’un site ou d’un ensemble limité de sites et n’est pas routée globalement.",
+        "Elle est une adresse multicast tous-routeurs.",
+        "Elle est obligatoirement une adresse de lien local FE80."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La portée d’une ULA est différente de celle d’une LLA ; ce n’est pas un mécanisme de sécurité.",
+      "pages": "75",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q051",
+      "theme": "T26",
+      "question": "Quel groupe désigne tous les nœuds IPv6 sur la liaison ?",
+      "options": [
+        "FF02::2.",
+        "::1.",
+        "FE80::1.",
+        "FF02::1."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "FF02::1 est tous-nœuds ; FF02::2 est tous-routeurs.",
+      "pages": "98",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q052",
+      "theme": "T26",
+      "question": "Pourquoi la résolution de voisins utilise-t-elle un groupe multicast de nœud sollicité ?",
+      "options": [
+        "Pour attribuer un bail DHCPv4.",
+        "Pour calculer la route OSPF.",
+        "Pour cibler un groupe plus restreint que tous les nœuds et permettre le filtrage des trames.",
+        "Pour diffuser systématiquement à tous les réseaux IPv6."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La notion de ciblage est étudiée ici ; les calculs d’adresses multicast sont reportés.",
+      "pages": "99-100",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q053",
+      "theme": "T27",
+      "question": "Une interface possède une adresse FE80 et une adresse globale unicast. Que peut-on conclure ?",
+      "options": [
+        "L’interface est nécessairement mal configurée.",
+        "Cette coexistence est normale en IPv6.",
+        "Il faut supprimer une adresse pour utiliser SLAAC.",
+        "La GUA empêche l’utilisation de la LLA."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Une interface IPv6 peut porter simultanément plusieurs adresses, dont une LLA.",
+      "pages": "88-94",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q054",
+      "theme": "T28",
+      "question": "Une entreprise regroupe ses imprimantes dans un sous-réseau distinct afin de leur appliquer une politique commune. Quel critère de segmentation applique-t-elle ?",
+      "options": [
+        "Le type de périphérique.",
+        "L’ordre des messages DHCP.",
+        "La longueur de l’adresse MAC.",
+        "Le type d’en-tête TCP."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le cours cite emplacement, groupe/fonction et type de périphérique.",
+      "pages": "104",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q055",
+      "theme": "T29",
+      "question": "Pourquoi une entrée ARP dynamique peut-elle disparaître sans panne du réseau ?",
+      "options": [
+        "Le protocole IP interdit la mémorisation.",
+        "Toutes les entrées ARP sont supprimées après chaque paquet.",
+        "Son temporisateur de cache a expiré.",
+        "Un routeur a nécessairement changé de VLAN."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Les entrées dynamiques ne sont pas permanentes ; elles peuvent aussi être supprimées manuellement.",
+      "pages": "35",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q056",
+      "theme": "T30",
+      "question": "Quel procédé peut remplacer EUI-64 pour former l’ID d’interface dans SLAAC selon le cours ?",
+      "options": [
+        "La conversion du VLAN natif en adresse MAC.",
+        "La copie du port TCP du serveur.",
+        "Une génération aléatoire par le système de l’hôte.",
+        "L’élection du pont racine."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le cours cite la génération aléatoire, notamment pour ne pas dériver systématiquement l’ID de la MAC.",
+      "pages": "88-89, 92-93",
+      "file": "SR71_module4_couche_reseau.pdf",
+      "ch": "4"
+    },
+    {
+      "id": "Q057",
+      "theme": "T31",
+      "question": "Quel champ TCP indique où se termine l’en-tête et où commencent les données ?",
+      "options": [
+        "Le champ TTL.",
+        "Le numéro du VLAN.",
+        "Le port de destination.",
+        "La longueur d’en-tête, ou Data Offset."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Data Offset indique la longueur de l’en-tête TCP.",
+      "pages": "12",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q058",
+      "theme": "T31",
+      "question": "Quelle affirmation sur les en-têtes est correcte ?",
+      "options": [
+        "UDP possède les indicateurs SYN et FIN.",
+        "TCP ne possède pas de champ de longueur d’en-tête.",
+        "UDP possède un en-tête fixe de quatre champs ; TCP peut contenir des options.",
+        "UDP utilise obligatoirement un en-tête plus long que TCP."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "UDP est plus simple ; les options TCP peuvent allonger son en-tête.",
+      "pages": "11-12, 16-17",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q059",
+      "theme": "T32",
+      "question": "Que représente une socket dans la description du cours ?",
+      "options": [
+        "Une adresse IP sans port.",
+        "Le câble reliant le client au commutateur.",
+        "L’association d’une adresse MAC et d’un VLAN uniquement.",
+        "L’association d’une adresse IP et d’un numéro de port."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les deux sockets identifient les extrémités d’une conversation.",
+      "pages": "21",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q060",
+      "theme": "T32",
+      "question": "Quelle plage correspond aux ports privés ou dynamiques de la classification présentée ?",
+      "options": [
+        "0 à 1023.",
+        "1 à 1005.",
+        "49152 à 65535.",
+        "1024 à 49151."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Ce sont les plages de classification à connaître, sans opération numérique.",
+      "pages": "22",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q061",
+      "theme": "T32",
+      "question": "Dans netstat, que signifie ESTABLISHED pour une connexion TCP ?",
+      "options": [
+        "La résolution DNS a forcément échoué.",
+        "Le port Ethernet est administrativement désactivé.",
+        "Le fichier de configuration a été sauvegardé.",
+        "La connexion TCP est établie entre les extrémités affichées."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "netstat affiche les connexions et leur état.",
+      "pages": "24",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q062",
+      "theme": "T33",
+      "question": "Quel échange établit normalement une connexion TCP ?",
+      "options": [
+        "FIN → ACK → FIN.",
+        "ACK → RST → SYN.",
+        "SYN → SYN-ACK → ACK.",
+        "SYN → FIN → RST."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Il s’agit de la poignée de main TCP en trois étapes.",
+      "pages": "27-29",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q063",
+      "theme": "T33",
+      "question": "Quel indicateur signale qu’un émetteur n’a plus de données à envoyer et souhaite terminer son sens de transmission ?",
+      "options": [
+        "FIN.",
+        "URG.",
+        "PSH.",
+        "SYN."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "FIN est acquitté ; l’autre sens de la connexion se termine séparément.",
+      "pages": "28, 30",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q064",
+      "theme": "T33",
+      "question": "Quel indicateur permet de réinitialiser une connexion TCP ?",
+      "options": [
+        "RST.",
+        "Le champ DSCP.",
+        "SYN uniquement.",
+        "FIN uniquement."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "RST est distinct de la fermeture ordonnée par FIN.",
+      "pages": "30",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q065",
+      "theme": "T34",
+      "question": "Quel avantage fournit SACK lorsqu’une partie des données est reçue hors ordre ?",
+      "options": [
+        "Le récepteur peut signaler explicitement les blocs reçus, même discontinus.",
+        "Tous les segments sont systématiquement retransmis.",
+        "Le récepteur n’a plus besoin d’accusés de réception.",
+        "Le protocole TCP devient sans connexion."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "SACK est une fonction négociée permettant des acquittements sélectifs.",
+      "pages": "34",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q066",
+      "theme": "T34",
+      "question": "Quelle situation relève de la congestion du réseau plutôt que de la seule capacité de réception du destinataire ?",
+      "options": [
+        "Un routeur surchargé élimine des paquets.",
+        "Le client change de numéro de port source.",
+        "Le destinataire annonce une fenêtre plus petite parce que son tampon est occupé.",
+        "L’application ferme volontairement la session."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Contrôle de flux et contrôle de congestion répondent à des limites différentes.",
+      "pages": "35, 37",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q067",
+      "theme": "T35",
+      "question": "UDP reçoit des datagrammes dans un ordre différent de l’émission. Que fait UDP lui-même ?",
+      "options": [
+        "Il envoie un SYN-ACK pour chaque datagramme.",
+        "Il les remet à l’application sans restaurer l’ordre d’émission.",
+        "Il reconstruit automatiquement l’ordre à partir d’un numéro de séquence UDP.",
+        "Il ouvre une session TCP pour les classer."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "UDP ne comporte pas le mécanisme de séquençage de TCP.",
+      "pages": "40",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q068",
+      "theme": "T36",
+      "question": "Quelle fonction appartient à la couche présentation dans le modèle OSI étudié ?",
+      "options": [
+        "Élire un DR OSPF.",
+        "Choisir le meilleur prochain saut IP.",
+        "Apprendre une adresse MAC.",
+        "Convertir le format des données et permettre compression ou chiffrement."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "La présentation assure une représentation exploitable des données.",
+      "pages": "46",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q069",
+      "theme": "T36",
+      "question": "Quelle couche crée et gère le dialogue entre applications et permet de reprendre une session interrompue ?",
+      "options": [
+        "Session.",
+        "Liaison.",
+        "Physique.",
+        "Réseau."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Cette fonction est distincte du formatage assuré par la présentation.",
+      "pages": "46",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q070",
+      "theme": "T37",
+      "question": "Dans http://intranet.exemple/guide.html, que représente guide.html ?",
+      "options": [
+        "Le nom du serveur DNS.",
+        "La ressource demandée au serveur.",
+        "Le protocole de transport.",
+        "Le numéro du VLAN."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "L’URL identifie notamment le schéma, le serveur et la ressource.",
+      "pages": "49",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q071",
+      "theme": "T37",
+      "question": "Quelle méthode HTTP le cours associe à la demande d’une page au serveur ?",
+      "options": [
+        "SYN.",
+        "GET.",
+        "PUT.",
+        "POST."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "GET demande une représentation de ressource ; POST et PUT servent à transmettre du contenu.",
+      "pages": "50, 52",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q072",
+      "theme": "T37",
+      "question": "Après réception du code HTML, quel rôle assure le navigateur ?",
+      "options": [
+        "Attribuer une adresse DHCP au serveur.",
+        "Interpréter ce code pour présenter la page.",
+        "Convertir le HTML en route OSPF.",
+        "Remplacer le serveur DNS."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "HTML décrit le contenu à afficher ; le navigateur le met en forme.",
+      "pages": "50-51",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q073",
+      "theme": "T38",
+      "question": "Un serveur SMTP ne peut pas joindre immédiatement le serveur destinataire. Quel comportement est décrit dans le cours ?",
+      "options": [
+        "Il transforme nécessairement le message en paquet ARP.",
+        "Il remet obligatoirement le message par FTP.",
+        "Il met le message en attente pour un envoi ultérieur.",
+        "Il supprime immédiatement tout message sans nouvelle tentative."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "SMTP prévoit la mise en attente lorsque le serveur distant est occupé ou indisponible.",
+      "pages": "54",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q074",
+      "theme": "T39",
+      "question": "Quel type d’enregistrement DNS désigne un serveur de courrier pour un domaine ?",
+      "options": [
+        "A.",
+        "AAAA.",
+        "MX.",
+        "NS."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "A vise IPv4, AAAA IPv6, NS un serveur de noms et MX l’échange de courrier.",
+      "pages": "59",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q075",
+      "theme": "T39",
+      "question": "Pourquoi un résolveur conserve-t-il temporairement une réponse DNS obtenue ?",
+      "options": [
+        "Pour attribuer un bail DHCP.",
+        "Pour supprimer définitivement l’autorité du serveur d’origine.",
+        "Pour remplacer les adresses IP par des MAC.",
+        "Pour réutiliser le résultat lors d’une demande ultérieure."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "La conservation temporaire constitue le cache DNS.",
+      "pages": "59",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q076",
+      "theme": "T39",
+      "question": "Quelle description correspond à la hiérarchie DNS ?",
+      "options": [
+        "Chaque serveur fait autorité sur une partie de l’espace de noms ; le service est distribué.",
+        "Chaque serveur contient obligatoirement toutes les données DNS mondiales.",
+        "Un seul serveur racine stocke toutes les adresses de tous les hôtes.",
+        "Les domaines ne possèdent aucune organisation hiérarchique."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le cours décrit une base distribuée et hiérarchique.",
+      "pages": "61",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q077",
+      "theme": "T39",
+      "question": "Dans un message DNS, quelle section contient les enregistrements qui répondent directement à la question ?",
+      "options": [
+        "Additional uniquement.",
+        "Question uniquement.",
+        "Authority uniquement.",
+        "Answer, ou réponse."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les autres sections portent respectivement la question, l’autorité et des informations complémentaires.",
+      "pages": "60",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q078",
+      "theme": "T40",
+      "question": "Pourquoi FTP utilise-t-il des connexions distinctes dans le modèle présenté ?",
+      "options": [
+        "Pour supprimer l’authentification.",
+        "Pour transporter les commandes dans des trames STP.",
+        "Pour séparer commandes/réponses et transfert des données.",
+        "Pour utiliser exclusivement UDP."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le canal de contrôle est distinct de celui qui transporte les fichiers ; la question n’impose pas les détails du mode actif/passif.",
+      "pages": "66",
+      "file": "SR71_module5_Transport.pdf",
+      "ch": "5"
+    },
+    {
+      "id": "Q079",
+      "theme": "T41",
+      "question": "Quelle propriété de VLAN 1 est indiquée dans le cours ?",
+      "options": [
+        "Il doit obligatoirement porter toutes les données et la gestion.",
+        "Il interdit toute création d’un autre VLAN.",
+        "Il n’existe qu’après création manuelle.",
+        "Il ne peut être ni supprimé ni renommé."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les rôles natif et gestion peuvent être déplacés vers d’autres VLAN ; VLAN 1 reste présent.",
+      "pages": "5",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q080",
+      "theme": "T42",
+      "question": "Pourquoi le FCS est-il recalculé lorsqu’une étiquette 802.1Q est ajoutée ?",
+      "options": [
+        "Le numéro de port TCP change.",
+        "Le contenu de la trame protégé par le FCS a changé.",
+        "La trame ne contient plus de données.",
+        "L’adresse IP devient nécessairement différente."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le tag modifie la trame ; le contrôle d’intégrité doit correspondre à cette nouvelle trame.",
+      "pages": "11",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q081",
+      "theme": "T42",
+      "question": "Quelles affirmations sont correctes ? (Deux réponses.)",
+      "options": [
+        "Le CFI est l’adresse IP de destination.",
+        "Le VID porte l’identifiant du VLAN.",
+        "Le champ de priorité remplace le FCS.",
+        "Le TPID 0x8100 identifie l’étiquette 802.1Q présentée."
+      ],
+      "correct": [
+        2,
+        4
+      ],
+      "explanation": "Le tag comporte plusieurs champs distincts ; il ne remplace pas le FCS.",
+      "pages": "11",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q082",
+      "theme": "T42",
+      "question": "Quelle règle faut-il respecter pour le VLAN natif ?",
+      "options": [
+        "Il doit être identique aux deux extrémités d’un même trunk ; des trunks distincts peuvent avoir des VLAN natifs différents.",
+        "Tous les trunks du monde doivent partager le même VLAN natif.",
+        "Il doit toujours être supprimé pour permettre le routage.",
+        "Il doit être différent aux deux extrémités d’un trunk."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "La cohérence est exigée sur chaque liaison trunk.",
+      "pages": "12",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q083",
+      "theme": "T43",
+      "question": "Quelle commande, dans le sous-mode du VLAN, lui attribue un nom ?",
+      "options": [
+        "hostname Etudiants.",
+        "description vlan Etudiants.",
+        "name Etudiants.",
+        "ip name Etudiants."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "vlan entre dans le sous-mode ; name donne le nom du VLAN.",
+      "pages": "15-16",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q084",
+      "theme": "T43",
+      "question": "Quel est l’effet de no switchport access vlan sur un port d’accès ?",
+      "options": [
+        "Transformer forcément le port en trunk.",
+        "Désactiver physiquement le port.",
+        "Supprimer tous les VLAN du commutateur.",
+        "Réaffecter le port au VLAN 1."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Cette commande remet l’appartenance d’accès à sa valeur par défaut.",
+      "pages": "20",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q085",
+      "theme": "T44",
+      "question": "Un VLAN est supprimé sans réaffecter ses ports. Que deviennent les ports concernés ?",
+      "options": [
+        "Ils effacent leur adresse MAC matérielle.",
+        "Ils restent associés au VLAN supprimé mais deviennent inactifs pour ce VLAN jusqu’à réaffectation ou recréation.",
+        "Ils rejoignent automatiquement tous les VLAN.",
+        "Ils deviennent automatiquement des ports routés."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le cours recommande de réaffecter les ports avant suppression.",
+      "pages": "21, 58",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q086",
+      "theme": "T44",
+      "question": "Quelle commande permet de vérifier le VLAN d’accès associé à un port précis ?",
+      "options": [
+        "show startup-config vlan.dat.",
+        "show ip dhcp binding.",
+        "show ip ospf neighbor.",
+        "show interface fa0/18 switchport."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Cette sortie donne notamment le mode et l’appartenance VLAN du port.",
+      "pages": "20, 58",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q087",
+      "theme": "T45",
+      "question": "Quelle commande arrête la négociation DTP sur une interface configurée de façon appropriée ?",
+      "options": [
+        "no vlan 1.",
+        "switchport mode access suffit toujours à supprimer les trames DTP.",
+        "switchport access vlan 1.",
+        "switchport nonegotiate."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le cours distingue le mode d’accès permanent et la désactivation explicite de DTP.",
+      "pages": "30",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q088",
+      "theme": "T45",
+      "question": "Après réinitialisation des paramètres de trunk aux valeurs par défaut présentées, quel résultat attend-on ?",
+      "options": [
+        "VLAN natif 99 obligatoire.",
+        "Tous les ports automatiquement convertis en ports routés.",
+        "VLAN natif 1 et tous les VLAN autorisés par défaut.",
+        "Aucun VLAN autorisé et aucun VLAN natif."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La réinitialisation des paramètres ne doit pas être confondue avec le passage en mode access.",
+      "pages": "26-27",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q089",
+      "theme": "T46",
+      "question": "Quelle limite rend le routage inter-VLAN hérité peu évolutif ?",
+      "options": [
+        "Le besoin d’une interface physique de routeur par VLAN.",
+        "L’absence de toute passerelle.",
+        "L’obligation d’utiliser un serveur DHCP par port.",
+        "L’interdiction d’utiliser IPv4."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le nombre d’interfaces physiques du routeur limite la croissance.",
+      "pages": "36",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q090",
+      "theme": "T46",
+      "question": "Quel avantage le cours attribue au routage inter-VLAN par commutateur de couche 3 ?",
+      "options": [
+        "Le routage remplace entièrement la commutation Ethernet.",
+        "Les paquets peuvent être routés matériellement sans traverser une liaison externe vers un routeur pour chaque échange inter-VLAN.",
+        "Les sous-réseaux peuvent tous utiliser la même passerelle de couche 2 sans SVI.",
+        "Aucun VLAN n’a plus besoin d’exister."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le traitement local matériel réduit notamment la latence et la dépendance au lien externe.",
+      "pages": "38-39",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q091",
+      "theme": "T47",
+      "question": "À quoi correspondent les VLAN 1002 à 1005 dans le cours Catalyst ?",
+      "options": [
+        "Des VLAN hérités réservés, créés automatiquement.",
+        "Les quatre seuls VLAN possibles en 802.1Q.",
+        "Des numéros de ports DHCP.",
+        "Des VLAN utilisateurs ordinaires qu’il faut créer à chaque démarrage."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Ils sont réservés aux anciens usages FDDI/Token Ring et ne sont pas supprimables dans le modèle présenté.",
+      "pages": "14",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q092",
+      "theme": "T47",
+      "question": "Quelle borne supérieure faut-il retenir pour la plage étendue de VLAN configurables du modèle Catalyst présenté ?",
+      "options": [
+        "4094.",
+        "1005.",
+        "65535.",
+        "4095."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Correction de la page 14 : elle indique 4095, mais cet identifiant est réservé. La documentation Cisco donne 1006 à 4094. Il s’agit d’une valeur à connaître, pas d’un calcul.",
+      "pages": "14",
+      "file": "SR71_module6-VLAN.pdf",
+      "ch": "6"
+    },
+    {
+      "id": "Q093",
+      "theme": "T48",
+      "question": "Pour renouveler son bail avant expiration, quel message le client envoie-t-il d’abord ?",
+      "options": [
+        "Un DHCPNAK au serveur DNS.",
+        "Un DHCPREQUEST directement au serveur qui lui a accordé le bail.",
+        "Un DHCPACK au commutateur.",
+        "Un DHCPDISCOVER obligatoirement diffusé dès le début du renouvellement."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Sans réponse après le délai prévu, le client peut diffuser un DHCPREQUEST à d’autres serveurs.",
+      "pages": "7",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q094",
+      "theme": "T49",
+      "question": "Dans un pool DHCPv4 IOS, quelle commande fournit la passerelle aux clients ?",
+      "options": [
+        "ip helper-address.",
+        "ip default-gateway en mode pool.",
+        "default-router.",
+        "router-id."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "default-router est une option distribuée aux clients ; le helper sert au relais.",
+      "pages": "11",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q095",
+      "theme": "T49",
+      "question": "Quelle commande crée un pool DHCPv4 nommé ETUDIANTS ?",
+      "options": [
+        "ip dhcp pool ETUDIANTS.",
+        "show ip dhcp ETUDIANTS.",
+        "ipv6 dhcp server ETUDIANTS.",
+        "ip address dhcp ETUDIANTS."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "La commande globale crée le pool et ouvre son mode de configuration.",
+      "pages": "10",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q096",
+      "theme": "T50",
+      "question": "Quelles commandes répondent aux besoins indiqués ? (Deux réponses.)",
+      "options": [
+        "show ip dhcp server statistics : voir les compteurs de messages.",
+        "show ip dhcp binding : voir les baux/liaisons attribués.",
+        "show vlan brief : voir les baux attribués.",
+        "show ip route : voir tous les messages DHCP reçus."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Les liaisons et les statistiques sont deux vues différentes du serveur.",
+      "pages": "13-16",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q097",
+      "theme": "T50",
+      "question": "Quelle commande désactive globalement le service DHCP IOS présenté ?",
+      "options": [
+        "erase startup-config obligatoire.",
+        "no ip helper-address sur un seul port seulement.",
+        "no service dhcp.",
+        "shutdown dhcp-pool."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "service dhcp permet ensuite de réactiver le service ; les pools doivent toujours être correctement configurés.",
+      "pages": "18",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q098",
+      "theme": "T51",
+      "question": "Quelle commande d’interface transforme le routeur en client DHCPv4 pour cette interface ?",
+      "options": [
+        "ip dhcp pool CLIENT.",
+        "default-router dhcp.",
+        "ip address dhcp.",
+        "ip helper-address dhcp."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le routeur demande alors les paramètres d’adressage au serveur disponible.",
+      "pages": "22-23",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q099",
+      "theme": "T52",
+      "question": "Dans les informations de préfixe d’un RA, quel est le rôle de l’indicateur A présenté dans le cours ?",
+      "options": [
+        "Autoriser l’autoconfiguration SLAAC à partir du préfixe annoncé.",
+        "Indiquer que DHCPv4 est obligatoire.",
+        "Choisir le pont racine STP.",
+        "Transporter l’adresse MAC du serveur DNS."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "A concerne l’autoconfiguration ; O et M indiquent des usages de DHCPv6.",
+      "pages": "29",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q100",
+      "theme": "T52",
+      "question": "Un hôte reçoit son adresse par DHCPv6 avec état. D’où apprend-il normalement sa passerelle par défaut ?",
+      "options": [
+        "De sa propre adresse MAC.",
+        "Du routeur qui émet les RA.",
+        "Du serveur FTP.",
+        "D’un champ default-router du bail DHCPv6 identique à DHCPv4."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "DHCPv6 ne remplace pas le rôle des RA pour la découverte du routeur par défaut.",
+      "pages": "34, 42-43",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q101",
+      "theme": "T53",
+      "question": "Quel enchaînement décrit l’échange DHCPv6 avec état normal présenté, hors option Rapid Commit ?",
+      "options": [
+        "SOLICIT → ADVERTISE → REQUEST → REPLY.",
+        "DISCOVER → OFFER → REQUEST → ACK.",
+        "SYN → SYN-ACK → ACK → FIN.",
+        "RS → ARP → OFFER → FIN."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Les noms et le protocole diffèrent de DORA DHCPv4.",
+      "pages": "39",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q102",
+      "theme": "T53",
+      "question": "Quels sont les ports de destination UDP usuels des échanges DHCPv6 ?",
+      "options": [
+        "53 dans les deux sens.",
+        "547 vers le client et 546 vers le serveur.",
+        "67 vers le client et 68 vers le serveur.",
+        "546 vers le client et 547 vers le serveur."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le cours donne explicitement les ports client et serveur DHCPv6.",
+      "pages": "39",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q103",
+      "theme": "T54",
+      "question": "Quelle commande demande à une interface de routeur de former sa GUA par SLAAC ?",
+      "options": [
+        "ipv6 route autoconfig.",
+        "ip address dhcp.",
+        "ipv6 address autoconfig.",
+        "ipv6 address dhcp."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "autoconfig utilise SLAAC ; ipv6 address dhcp demande l’adressage par DHCPv6.",
+      "pages": "48, 51",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q104",
+      "theme": "T54",
+      "question": "Un routeur doit avoir une LLA sans que l’on configure une GUA statique sur l’interface. Quelle commande est présentée ?",
+      "options": [
+        "ip routing.",
+        "ipv6 route ::/0.",
+        "default-information originate.",
+        "ipv6 enable."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "ipv6 enable active IPv6 sur l’interface et permet la création d’une LLA.",
+      "pages": "48, 51",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q105",
+      "theme": "T54",
+      "question": "Quelle commande vérifie les adresses IPv6 attribuées aux clients par un serveur avec état ?",
+      "options": [
+        "show dtp interface.",
+        "show ip arp.",
+        "show interfaces trunk.",
+        "show ipv6 dhcp binding."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Un serveur sans état ne maintient pas ces liaisons d’adresses.",
+      "pages": "53",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q106",
+      "theme": "T55",
+      "question": "Où configure-t-on le relais DHCPv6 dans le scénario du cours ?",
+      "options": [
+        "Uniquement dans le processus OSPF.",
+        "Sur l’interface tournée vers les clients, avec la destination du serveur.",
+        "Sur tous les ports d’accès avec switchport access.",
+        "Uniquement dans le pool DHCPv4."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La commande de relais se place sur l’interface des clients ; une destination link-local nécessite aussi l’interface de sortie.",
+      "pages": "54-55",
+      "file": "SR71_module7-DHCP.pdf",
+      "ch": "7"
+    },
+    {
+      "id": "Q107",
+      "theme": "T56",
+      "question": "Quel symptôme peut révéler une boucle de couche 2 ?",
+      "options": [
+        "Tous les baux DHCP expirent obligatoirement au même instant.",
+        "Le VLAN natif devient toujours VLAN 1.",
+        "Le nombre de couches OSI diminue.",
+        "L’adresse MAC d’un même hôte semble changer de port très fréquemment dans la table."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Des copies de trames reviennent par différents chemins et rendent l’apprentissage MAC instable.",
+      "pages": "4",
+      "file": "SR71_module8_STP.pdf",
+      "ch": "8S"
+    },
+    {
+      "id": "Q108",
+      "theme": "T56",
+      "question": "Un lien actif tombe. Comment STP peut-il rétablir un chemin disponible ?",
+      "options": [
+        "En recalculant la topologie et en autorisant un port auparavant bloqué à transmettre.",
+        "En attribuant une adresse IP à chaque trame.",
+        "En supprimant définitivement tout lien redondant du câblage.",
+        "En désactivant systématiquement tous les VLAN."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Les liens redondants sont conservés physiquement et peuvent servir après recalcul.",
+      "pages": "5-7",
+      "file": "SR71_module8_STP.pdf",
+      "ch": "8S"
+    },
+    {
+      "id": "Q109",
+      "theme": "T57",
+      "question": "Quel état STP apprend les MAC mais ne transmet pas encore les trames de données ?",
+      "options": [
+        "Disabled, ou désactivé.",
+        "Learning, ou apprentissage.",
+        "Listening, ou écoute.",
+        "Blocking, ou blocage."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Learning met à jour la table MAC ; forwarding autorise ensuite les données.",
+      "pages": "17",
+      "file": "SR71_module8_STP.pdf",
+      "ch": "8S"
+    },
+    {
+      "id": "Q110",
+      "theme": "T57",
+      "question": "Pourquoi STP classique ne passe-t-il pas immédiatement de blocking à forwarding ?",
+      "options": [
+        "Pour laisser le temps de disposer d’informations cohérentes et éviter une boucle transitoire.",
+        "Pour attendre obligatoirement un bail DHCP.",
+        "Pour changer la MAC du commutateur.",
+        "Pour calculer un masque IPv4."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Les états intermédiaires protègent la transition vers la nouvelle topologie.",
+      "pages": "16",
+      "file": "SR71_module8_STP.pdf",
+      "ch": "8S"
+    },
+    {
+      "id": "Q111",
+      "theme": "T57",
+      "question": "Quel comportement correspond à un port en état blocking ?",
+      "options": [
+        "Il apprend les MAC et transmet toutes les trames.",
+        "Il peut recevoir des BPDU mais ne transmet pas les trames de données et n’apprend pas les MAC.",
+        "Il transmet les données mais ignore les BPDU.",
+        "Il émet et reçoit comme un port forwarding."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le tableau du cours distingue clairement BPDU, apprentissage et données.",
+      "pages": "17",
+      "file": "SR71_module8_STP.pdf",
+      "ch": "8S"
+    },
+    {
+      "id": "Q112",
+      "theme": "T58",
+      "question": "En PVST, deux VLAN peuvent-ils avoir des ponts racine différents ?",
+      "options": [
+        "Oui, car chaque VLAN dispose d’une instance STP distincte.",
+        "Non, le pont racine est toujours unique pour tout le réseau physique.",
+        "Non, car STP ne fonctionne pas avec des VLAN.",
+        "Oui, mais uniquement si les adresses IP sont identiques."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Il faut distinguer racine unique par instance et racine unique pour tout le réseau.",
+      "pages": "18",
+      "file": "SR71_module8_STP.pdf",
+      "ch": "8S"
+    },
+    {
+      "id": "Q113",
+      "theme": "T59",
+      "question": "R1 possède une route vers un serveur via R2. Que peut-on en déduire avec certitude ?",
+      "options": [
+        "R1 connaît son prochain saut ; cela ne prouve ni la route sur R2 ni le chemin de retour.",
+        "R2 est nécessairement le serveur destinataire.",
+        "Tous les routeurs possèdent forcément la même table.",
+        "Le serveur dispose automatiquement d’une route retour."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Chaque routeur prend sa décision d’après sa propre table ; le retour doit aussi être possible.",
+      "pages": "21",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q114",
+      "theme": "T59",
+      "question": "Dans l’affichage IPv4 du cours, une ligne parent sans code de source sert principalement à quoi ?",
+      "options": [
+        "Désigner un serveur DHCP.",
+        "Créer automatiquement une route statique vers Internet.",
+        "Regrouper des routes enfants dans la présentation de la table.",
+        "Remplacer le prochain saut de toutes les routes."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La présentation hiérarchique ne doit pas être confondue avec une route utilisable indépendante.",
+      "pages": "29",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q115",
+      "theme": "T60",
+      "question": "Quel mécanisme fait consulter la table de routage par le processeur pour chaque paquet dans le modèle décrit ?",
+      "options": [
+        "DTP.",
+        "Process switching.",
+        "Fast switching avec entrée déjà en cache.",
+        "CEF."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La commutation de processus répète le traitement pour chaque paquet.",
+      "pages": "16",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q116",
+      "theme": "T60",
+      "question": "En fast switching, que se passe-t-il lorsqu’aucune entrée de cache ne correspond ?",
+      "options": [
+        "Le paquet est toujours supprimé.",
+        "Le routeur émet un BPDU.",
+        "Le cache est remplacé par un pool DHCP.",
+        "Le paquet est traité par process switching et les informations sont ensuite mises en cache."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les paquets suivants vers la même destination peuvent réutiliser le cache.",
+      "pages": "17",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q117",
+      "theme": "T61",
+      "question": "Quel est l’objectif d’une route statique résumée ?",
+      "options": [
+        "Représenter plusieurs réseaux par un préfixe commun approprié.",
+        "Créer un bail par hôte.",
+        "Attribuer un VLAN à une interface.",
+        "Remplacer obligatoirement toutes les routes par défaut."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "On travaille ici le rôle du résumé ; le calcul du préfixe est réservé à la partie calculatoire.",
+      "pages": "44",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q118",
+      "theme": "T61",
+      "question": "Quels éléments contient une route statique entièrement spécifiée ?",
+      "options": [
+        "L’interface de sortie et l’adresse du prochain saut.",
+        "Le nom DNS du serveur et le port TCP.",
+        "Seulement l’adresse MAC du destinataire.",
+        "Uniquement la métrique OSPF."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Elle précise à la fois l’interface et le prochain saut.",
+      "pages": "45, 52",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q119",
+      "theme": "T62",
+      "question": "Quelle vérification démontre le mieux le fonctionnement d’une route de secours dans un exercice ?",
+      "options": [
+        "Vérifier seulement le nom du routeur.",
+        "Lire uniquement la configuration avant toute panne.",
+        "Simuler la perte du chemin principal, constater la route de secours dans la table et tester la connectivité.",
+        "Afficher uniquement la table ARP du serveur DNS."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La présence d’une commande ne prouve pas que le basculement et le trajet complet fonctionnent.",
+      "pages": "55, 63-65",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q120",
+      "theme": "T63",
+      "question": "Deux chemins admissibles de même coût vers une destination sont installés dans la table. Quel mécanisme peut les exploiter ?",
+      "options": [
+        "La suppression obligatoire d’un chemin par STP au niveau IP.",
+        "La conversion des chemins en VLAN natifs.",
+        "L’équilibrage de charge à coût égal.",
+        "Le renouvellement DHCP."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le routage peut utiliser plusieurs prochains sauts équivalents ; cela diffère d’un secours flottant moins préféré.",
+      "pages": "42",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q121",
+      "theme": "T64",
+      "question": "Quelle longueur de préfixe désigne exactement un hôte dans une route statique IPv6 ?",
+      "options": [
+        "/64.",
+        "/0.",
+        "/128.",
+        "/48."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Une route d’hôte doit correspondre à toute l’adresse IPv6 ; /64 représente habituellement un sous-réseau.",
+      "pages": "69-71",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "8R"
+    },
+    {
+      "id": "Q122",
+      "theme": "T65",
+      "question": "Quelle association de famille et protocole est correcte ?",
+      "options": [
+        "OSPF : protocole de couche physique ; RIP : serveur DNS.",
+        "RIP : mécanisme de commutation MAC.",
+        "OSPF : état de liens ; RIP : vecteur de distance.",
+        "BGP : protocole limité à un VLAN."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Les protocoles sont classés notamment selon leur algorithme.",
+      "pages": "17",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q123",
+      "theme": "T65",
+      "question": "Quel est le rôle général de BGP dans la classification du cours ?",
+      "options": [
+        "Distribuer les baux DHCP.",
+        "Remplacer STP dans chaque VLAN.",
+        "Échanger des informations de routage entre systèmes autonomes.",
+        "Générer les adresses MAC des routeurs."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "BGP est l’EGP présenté pour les échanges entre domaines administratifs.",
+      "pages": "38",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q124",
+      "theme": "T65",
+      "question": "Quels composants caractérisent un protocole de routage dynamique ?",
+      "options": [
+        "Uniquement une adresse MAC et un câble.",
+        "Une bannière et un mot de passe console uniquement.",
+        "Une liste de VLAN natifs uniquement.",
+        "Structures de données, messages et algorithme."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les données sont conservées, échangées puis traitées pour sélectionner les chemins.",
+      "pages": "4",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q125",
+      "theme": "T66",
+      "question": "Dans le mode router rip, quelle commande active RIPv2 ?",
+      "options": [
+        "router ospf 2.",
+        "version 2.",
+        "no network.",
+        "ip rip dhcp."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "version 2 sélectionne RIPv2 dans le processus RIP.",
+      "pages": "13",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q126",
+      "theme": "T66",
+      "question": "Quel est le rôle de network dans la configuration RIP présentée ?",
+      "options": [
+        "Attribuer un bail aux clients.",
+        "Créer une route statique par défaut.",
+        "Activer RIP sur les interfaces du réseau concerné et annoncer ce réseau.",
+        "Configurer la MAC du routeur."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La commande sélectionne les interfaces et les réseaux annoncés.",
+      "pages": "11",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q127",
+      "theme": "T66",
+      "question": "Quelle commande vérifie le protocole de routage configuré et sa version RIP ?",
+      "options": [
+        "show interfaces trunk.",
+        "show ip arp.",
+        "show vlan brief.",
+        "show ip protocols."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "show ip route complète le diagnostic pour voir les routes effectivement installées.",
+      "pages": "12-13",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q128",
+      "theme": "T67",
+      "question": "Quel est l’effet de no auto-summary dans RIPv2 ?",
+      "options": [
+        "Désactiver entièrement RIP.",
+        "Désactiver le résumé automatique aux frontières des réseaux majeurs.",
+        "Supprimer les adresses des interfaces.",
+        "Effacer toutes les routes statiques."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La commande concerne le résumé automatique, pas l’arrêt du protocole.",
+      "pages": "14",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q129",
+      "theme": "T67",
+      "question": "Une interface LAN devient passive dans RIP. Quelle affirmation est correcte ?",
+      "options": [
+        "Les mises à jour RIP ne sont plus envoyées sur ce LAN, mais son réseau peut rester annoncé aux autres routeurs.",
+        "RIP est désactivé sur tous les routeurs.",
+        "Le réseau disparaît obligatoirement de toutes les annonces.",
+        "L’interface ne peut plus transmettre de données utilisateur."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le mode passif évite des échanges de routage inutiles vers les hôtes.",
+      "pages": "15",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q130",
+      "theme": "T68",
+      "question": "Quel ordre décrit le fonctionnement à état de liens présenté ?",
+      "options": [
+        "Table MAC → FIN → SYN → DR → DHCP.",
+        "Voisinages → échange de LSA → LSDB → SPF → meilleures routes.",
+        "Routes finales → suppression des voisins → création du câble.",
+        "SPF → DHCP → ARP → VLAN → LSDB."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La base d’état de liens doit exister avant le calcul des meilleurs chemins.",
+      "pages": "20",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q131",
+      "theme": "T68",
+      "question": "Quel message OSPF sert à découvrir et maintenir les voisins ?",
+      "options": [
+        "BPDU.",
+        "Hello.",
+        "FIN.",
+        "DHCPDISCOVER."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Hello fait partie des cinq types de paquets OSPF.",
+      "pages": "18",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q132",
+      "theme": "T68",
+      "question": "Quelle association est correcte ?",
+      "options": [
+        "Hello : transfert de fichier applicatif.",
+        "DBD : suppression du pont racine.",
+        "LSR : serveur DNS ; LSU : serveur DHCP.",
+        "LSR : demande d’état de liens ; LSU : mise à jour ; LSAck : accusé de réception."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "DBD décrit la base ; les autres messages permettent de demander, transmettre et acquitter les informations.",
+      "pages": "18",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q133",
+      "theme": "T69",
+      "question": "Deux routeurs voisins utilisent des process-id OSPF différents. Cette seule différence interdit-elle leur voisinage ?",
+      "options": [
+        "Non : parce qu’OSPF n’utilise jamais d’identifiants.",
+        "Oui : il doit être égal au VLAN natif.",
+        "Non : le process-id est localement significatif.",
+        "Oui : il doit être identique à toutes les adresses IP."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "L’identifiant local du processus n’est pas le Router ID ni l’area-id.",
+      "pages": "24",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q134",
+      "theme": "T69",
+      "question": "Quel ordre de sélection du Router ID Cisco est présenté ?",
+      "options": [
+        "router-id explicite, sinon plus haute IPv4 de loopback, sinon plus haute IPv4 d’interface physique active.",
+        "Adresse du serveur DHCP, puis adresse DNS.",
+        "Plus basse MAC, puis plus petit VLAN.",
+        "Toujours la première adresse apprise par ARP."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "On applique ici un ordre de préférence, sans calcul d’adresse.",
+      "pages": "26",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q135",
+      "theme": "T69",
+      "question": "Après modification du Router ID d’un processus actif, quelle action est indiquée pour le prendre en compte ?",
+      "options": [
+        "Changer le port TCP de DNS.",
+        "Ajouter un VLAN natif.",
+        "Redémarrer le processus OSPF avec clear ip ospf process, ou recharger l’équipement.",
+        "Effacer uniquement la table MAC du commutateur."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le cours signale que le changement n’est pas nécessairement appliqué immédiatement au processus actif.",
+      "pages": "29",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q136",
+      "theme": "T70",
+      "question": "Quel est le rôle principal de network ... area ... dans la configuration OSPF du cours ?",
+      "options": [
+        "Activer un serveur DHCP.",
+        "Ajouter obligatoirement une route statique vers un réseau distant.",
+        "Créer les adresses des interfaces.",
+        "Sélectionner les interfaces correspondantes pour OSPF et les rattacher à une zone."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "La commande porte sur les interfaces locales correspondantes.",
+      "pages": "31-33",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q137",
+      "theme": "T70",
+      "question": "Quelle commande active directement le processus OSPF 10, zone 0, sur une interface ?",
+      "options": [
+        "network ospf interface 10.",
+        "ip ospf 10 area 0.",
+        "ip route ospf 0 10.",
+        "router ospf area 10."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Elle se saisit en mode configuration d’interface.",
+      "pages": "34",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q138",
+      "theme": "T71",
+      "question": "Pourquoi rendre passive une interface OSPF raccordée seulement à des postes ?",
+      "options": [
+        "Interdire toute donnée utilisateur sur l’interface.",
+        "Éviter les échanges de routage inutiles tout en annonçant le réseau via les autres interfaces.",
+        "Transformer OSPF en RIP.",
+        "Supprimer la passerelle par défaut des postes."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le mode passif limite les échanges inutiles et les risques associés, sans éteindre l’interface.",
+      "pages": "35-36",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q139",
+      "theme": "T72",
+      "question": "Sur une liaison Ethernet entre seulement deux routeurs, quelle commande évite l’élection DR/BDR dans l’exercice ?",
+      "options": [
+        "ip ospf network point-to-point.",
+        "ip ospf cost 1 uniquement.",
+        "switchport mode access.",
+        "no router ospf."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Le type point-to-point supprime le besoin de cette élection.",
+      "pages": "37-38",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q140",
+      "theme": "T72",
+      "question": "Comment une loopback est-elle normalement annoncée par OSPF dans l’exemple du cours ?",
+      "options": [
+        "Comme VLAN natif.",
+        "Comme route statique flottante uniquement.",
+        "Comme route d’hôte /32.",
+        "Comme route par défaut /0."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Le cours montre ensuite ip ospf network point-to-point pour annoncer le réseau complet.",
+      "pages": "39",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q141",
+      "theme": "T73",
+      "question": "Lors d’une élection initiale simultanée, avec des priorités d’interface identiques et éligibles comme dans l’exemple, quel routeur devient DR ?",
+      "options": [
+        "Celui dont le numéro de processus est le plus petit.",
+        "Celui qui possède le Router ID le plus élevé.",
+        "Celui dont le hostname est le plus court.",
+        "Celui qui possède la MAC la plus faible."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "L’hypothèse de priorités égales est nécessaire ; il ne faut pas confondre l’élection OSPF avec celle de STP.",
+      "pages": "43",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q142",
+      "theme": "T73",
+      "question": "Quelle paire de groupes multicast IPv4 OSPF est correcte ?",
+      "options": [
+        "224.0.0.5 : RIP ; 224.0.0.6 : STP.",
+        "224.0.0.5 : tous les hôtes Internet ; 224.0.0.6 : tous les VLAN.",
+        "224.0.0.5 : DNS ; 224.0.0.6 : DHCP.",
+        "224.0.0.5 : tous les routeurs OSPF ; 224.0.0.6 : DR et BDR."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Les DROTHER adressent leurs informations au groupe des routeurs désignés.",
+      "pages": "42",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q143",
+      "theme": "T73",
+      "question": "Si le DR devient indisponible, quel équipement est prévu pour reprendre son rôle ?",
+      "options": [
+        "Tout client DHCP choisi au hasard.",
+        "Le BDR.",
+        "Le serveur DNS primaire.",
+        "Le pont racine STP du VLAN nécessairement."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Le BDR maintient les relations nécessaires pour assurer la relève.",
+      "pages": "42",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q144",
+      "theme": "T74",
+      "question": "Modifier auto-cost reference-bandwidth augmente-t-il le débit physique des liaisons ?",
+      "options": [
+        "Oui, cela remplace automatiquement les câbles.",
+        "Non, cela modifie la base utilisée pour déterminer les coûts OSPF.",
+        "Non, parce que cette commande concerne uniquement DHCP.",
+        "Oui, cela active toujours le duplex intégral."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "La référence influe sur le choix des chemins, pas sur la capacité matérielle.",
+      "pages": "47",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q145",
+      "theme": "T74",
+      "question": "Quelle commande permet d’imposer manuellement le coût OSPF d’une interface ?",
+      "options": [
+        "ip route cost suivi de la valeur.",
+        "ip ospf cost suivi de la valeur.",
+        "router-id suivi du coût.",
+        "switchport trunk cost suivi de la valeur."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Elle permet d’influencer le choix du chemin sans calculer ici une métrique.",
+      "pages": "52",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q146",
+      "theme": "T75",
+      "question": "Le routeur de bordure possède déjà une route par défaut valide. Quelle commande du processus OSPF l’annonce aux autres routeurs dans l’exercice ?",
+      "options": [
+        "switchport nonegotiate.",
+        "ip helper-address.",
+        "default-information originate.",
+        "passive-interface default obligatoire."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "La commande propage la route par défaut existante dans le scénario étudié.",
+      "pages": "55",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q147",
+      "theme": "T75",
+      "question": "Que signifie O*E2 devant une route par défaut dans la sortie présentée ?",
+      "options": [
+        "Route connectée directement à un port d’accès.",
+        "Route externe apprise par OSPF et candidate comme route par défaut.",
+        "Route RIP désactivée.",
+        "Adresse DHCP en attente."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "O indique OSPF, * la candidature par défaut et E2 une route externe ; les détails E1/E2 ne font pas partie du cours.",
+      "pages": "56",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q148",
+      "theme": "T76",
+      "question": "Quelle association protocole/métrique est correcte ?",
+      "options": [
+        "RIP : adresse MAC ; OSPF : nom DNS.",
+        "RIP : priorité STP ; OSPF : durée du bail DHCP.",
+        "RIP : nombre de sauts ; OSPF : coût.",
+        "RIP : nombre de VLAN ; OSPF : numéro de port TCP."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Ne pas confondre métrique interne d’un protocole et distance administrative comparant les sources.",
+      "pages": "41",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q149",
+      "theme": "T76",
+      "question": "Quels paramètres participent normalement à la métrique EIGRP décrite dans le cours ?",
+      "options": [
+        "La bande passante et le délai.",
+        "Le nom d’hôte et la bannière.",
+        "Le VLAN natif et le serveur DNS.",
+        "Le numéro de port TCP et le type de fichier."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "La question demande seulement la nature des paramètres ; aucune formule EIGRP n’est ajoutée au programme.",
+      "pages": "41",
+      "file": "SR71_module8-routage_static.pdf",
+      "ch": "10"
+    }
+  ]
+}

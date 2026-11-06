@@ -1,6 +1,10 @@
-# SR71 - Révision CCNA 1 et 2
+# SR71 - Révision CCNA 1, CCNA 2 et compléments
 
-Application en français : 216 cartes. CCNA 1 : 113 numéros / 122 cartes. CCNA 2 : 87 numéros / 94 cartes. Les variantes distinctes sont conservées.
+Application en français : 365 cartes. CCNA 1 : 113 numéros / 122 cartes. CCNA 2 : 87 numéros / 94 cartes. Les variantes distinctes sont conservées. Compléments SR71 : 149 questions originales sur les notions absentes ou insuffisamment évaluées dans la sélection des deux banques.
+
+Les trois parties sont accessibles par le filtre « Partie à réviser ». Les compléments comportent les bonnes réponses, une explication et les références au fichier et aux pages du cours. Ils ne sont pas des questions Cisco ni des annales.
+
+Les PDF des notions non couvertes et des QCM complémentaires sont téléchargeables depuis le site. Le cahier existant de calculs (36 méthodes) est également disponible : sa vérification exhaustive et sa transformation en parcours interactif restent à faire. La progression des calculs n'est pas encore suivie.
 
 - Questions à choix unique, multiple et exercices d’association.
 - Schémas, corrigés et références aux pages du cours.
