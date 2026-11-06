@@ -1,0 +1,2670 @@
+[
+  {
+    "question": "Observez le schéma. Que fera R1 d’un paquet destiné à l’adresse IPv6 2001:db8:cafe:5::1 ?",
+    "options": [
+      "Transmettre le paquet par GigabitEthernet0/0.",
+      "Supprimer le paquet.",
+      "Transmettre le paquet par GigabitEthernet0/1.",
+      "Transmettre le paquet par Serial0/0/0."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-1.1",
+    "bank": "CCNA 2",
+    "number": 1,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      2,
+      3
+    ],
+    "images": [
+      "assets/ccna2-1.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. R1 utilise actuellement une route EIGRP apprise de Branch2 pour atteindre 10.10.0.0/16. Quelle route statique flottante assurerait le secours si la liaison entre R1 et Branch2 tombait ?",
+    "options": [
+      "ip route 10.10.0.0 255.255.0.0 Serial 0/0/0 100",
+      "ip route 10.10.0.0 255.255.0.0 209.165.200.226 100",
+      "ip route 10.10.0.0 255.255.0.0 209.165.200.225 100",
+      "ip route 10.10.0.0 255.255.0.0 209.165.200.225 50"
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-2.1",
+    "bank": "CCNA 2",
+    "number": 2,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "31-32, 63-65",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "images": [
+      "assets/ccna2-2.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. R1 a reçu la commande ip route 209.165.200.224 255.255.255.224 S0/0/0 et les utilisateurs de 172.16.0.0/16 ne peuvent pas accéder à Internet. Comment modifier cette route statique pour permettre au trafic du LAN d’atteindre Internet ?",
+    "options": [
+      "Ajouter une distance administrative de 254.",
+      "Remplacer le réseau de destination et le masque par 0.0.0.0 0.0.0.0.",
+      "Remplacer l’interface de sortie par S0/0/1.",
+      "Ajouter l’adresse du prochain saut 209.165.200.226."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-3.1",
+    "bank": "CCNA 2",
+    "number": 3,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      4,
+      5
+    ],
+    "images": [
+      "assets/ccna2-3.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Quelle proposition configure correctement une route statique IPv4 par défaut ?",
+    "options": [
+      "ip route 0.0.0.0 255.255.255.0 S0/0/0",
+      "ip route 0.0.0.0 0.0.0.0 S0/0/0",
+      "ip route 0.0.0.0 255.255.255.255 S0/0/0",
+      "ip route 0.0.0.0 255.0.0.0 S0/0/0"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-4.1",
+    "bank": "CCNA 2",
+    "number": 4,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      5
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Quelle commande de route statique saisir sur R1 pour transmettre le trafic au LAN connecté à R2 ?",
+    "options": [
+      "ipv6 route 2001:db8:12:10::/64 S0/0/0",
+      "ipv6 route 2001:db8:12:10::/64 S0/0/1 fe80::2",
+      "ipv6 route 2001:db8:12:10::/64 S0/0/0 fe80::2",
+      "ipv6 route 2001:db8:12:10::/64 S0/0/1 2001:db8:12:10::1"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-5.1",
+    "bank": "CCNA 2",
+    "number": 5,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "44-55, 71",
+    "sourcePages": [
+      5,
+      6
+    ],
+    "images": [
+      "assets/ccna2-5.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez la sortie. Un administrateur configure un routeur comme serveur DHCPv6 et vérifie avec show ipv6 dhcp pool. Pourquoi le nombre de clients actifs est-il égal à 0 ?",
+    "options": [
+      "L’adresse de la passerelle par défaut n’est pas fournie dans le pool.",
+      "Aucun client n’a encore communiqué avec le serveur DHCPv6.",
+      "Aucune plage d’adresses IPv6 n’est définie dans le pool DHCPv6.",
+      "Le serveur ne conserve pas d’état des clients en fonctionnement DHCPv6 sans état."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-8.1",
+    "bank": "CCNA 2",
+    "number": 8,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "40-41, 46-48, 52",
+    "sourcePages": [
+      7,
+      8
+    ],
+    "images": [
+      "assets/ccna2-8.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Quelle affirmation décrit correctement la décision de transmission des trames par un commutateur de couche 2 ?",
+    "options": [
+      "Les décisions reposent sur les associations entre adresses MAC et ports de la table CAM.",
+      "Seules les trames dont l’adresse de destination est une adresse de diffusion sont transmises sur tous les ports actifs.",
+      "Les trames unicast sont toujours transmises, quelle que soit l’adresse MAC de destination.",
+      "La commutation cut-through garantit que les trames invalides sont toujours supprimées."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-11.1",
+    "bank": "CCNA 2",
+    "number": 11,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      10
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quelle affirmation décrit le résultat de l’interconnexion de plusieurs commutateurs LAN Cisco ?",
+    "options": [
+      "Le domaine de diffusion s’étend à tous les commutateurs.",
+      "Il existe un domaine de collision par commutateur.",
+      "Il existe un domaine de diffusion et un domaine de collision par commutateur.",
+      "Les collisions augmentent sur les segments reliant les commutateurs.",
+      "Les trames unicast sont toujours transmises, quelle que soit l’adresse MAC de destination."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "Hypothèse de la question : un même VLAN, sans segmentation supplémentaire.",
+    "id": "ccna2-12.1",
+    "bank": "CCNA 2",
+    "number": 12,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "3-4, 9-10",
+    "sourcePages": [
+      11
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Comment une trame émise par PCA à destination de PCC est-elle transmise si la table MAC de SW1 est vide ?",
+    "options": [
+      "SW1 transmet directement la trame à SW2. SW2 la diffuse sur tous ses ports sauf le port d’entrée.",
+      "SW1 diffuse la trame sur tous ses ports sauf celui relié à SW2 et le port d’entrée.",
+      "SW1 diffuse la trame sur tous ses ports sauf le port d’entrée.",
+      "SW1 supprime la trame car il ne connaît pas l’adresse MAC de destination."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-14.1",
+    "bank": "CCNA 2",
+    "number": 14,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      12,
+      13
+    ],
+    "images": [
+      "assets/ccna2-14.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Après erase startup-config et un redémarrage, un administrateur constate que les VLAN 10 et 100 existent encore. Pourquoi n’ont-ils pas été supprimés ?",
+    "options": [
+      "Ils sont conservés dans le fichier vlan.dat en mémoire flash, qui doit être supprimé manuellement.",
+      "Ils ne peuvent être supprimés que si le commutateur est en mode client VTP.",
+      "Ce sont des VLAN par défaut impossibles à supprimer.",
+      "Ils peuvent uniquement être supprimés avec no vlan 10 et no vlan 100."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-15.1",
+    "bank": "CCNA 2",
+    "number": 15,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "14-15, 21",
+    "sourcePages": [
+      13
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Associez chaque type de VLAN à sa description. Toutes les propositions ne sont pas utilisées.",
+    "options": [],
+    "correct": [],
+    "matching": true,
+    "left": [
+      "VLAN par défaut",
+      "VLAN de gestion",
+      "VLAN de données",
+      "VLAN natif"
+    ],
+    "right": [
+      "Configuré pour transporter le trafic généré par les utilisateurs.",
+      "Tous les ports du commutateur y sont affectés après son démarrage initial.",
+      "Transporte le trafic non étiqueté.",
+      "Une adresse IP et un masque lui sont attribués pour accéder au commutateur par HTTP, Telnet, SSH ou SNMP.",
+      "Accessible uniquement par l’administrateur réseau."
+    ],
+    "mapping": [
+      2,
+      4,
+      1,
+      3
+    ],
+    "note": "",
+    "id": "ccna2-16.1",
+    "bank": "CCNA 2",
+    "number": 16,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "5-6",
+    "sourcePages": [
+      14
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quelle configuration permet un accès distant sécurisé à un équipement réseau ?",
+    "options": [
+      "Configurer une ACL et l’appliquer aux lignes VTY.",
+      "Configurer 802.1x.",
+      "Configurer SSH.",
+      "Configurer Telnet."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-18.1",
+    "bank": "CCNA 2",
+    "number": 18,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Configuration des équipements",
+    "file": "SR71_module2.pdf",
+    "pages": "4",
+    "sourcePages": [
+      15,
+      16
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. L’hôte A a envoyé un paquet à B. Quelles seront les adresses MAC source et IP source à son arrivée chez B ?",
+    "options": [
+      "MAC source : 00E0.FE91.7799 ; IP source : 10.1.1.10",
+      "MAC source : 00E0.FE10.17A3 ; IP source : 10.1.1.10",
+      "MAC source : 00E0.FE10.17A3 ; IP source : 192.168.1.1",
+      "MAC source : 00E0.FE91.7799 ; IP source : 10.1.1.1",
+      "MAC source : 00E0.FE91.7799 ; IP source : 192.168.1.1"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "L’adresse MAC appartient à la trame qui transporte le paquet.",
+    "id": "ccna2-21.1",
+    "bank": "CCNA 2",
+    "number": 21,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Introduction aux réseaux",
+    "file": "SR71_module1.pdf",
+    "pages": "38-47",
+    "sourcePages": [
+      17
+    ],
+    "images": [
+      "assets/ccna2-21.1-0.png"
+    ],
+    "legend": "Src = source ; Dst = destination ; Data = données."
+  },
+  {
+    "question": "Observez le schéma. En plus des routes statiques vers 10.10.0.0/16 et 10.20.0.0/16, HQ possède la commande ip route 0.0.0.0 0.0.0.0 serial 0/1/1. Quel est son rôle ?",
+    "options": [
+      "Les paquets reçus d’Internet sont transmis à un LAN connecté à R1 ou R2.",
+      "Les paquets dont la destination n’est ni 10.10.0.0/16, ni 10.20.0.0/16, ni un réseau directement connecté sont transmis vers Internet.",
+      "Les paquets de 10.10.0.0/16 sont transmis à 10.20.0.0/16 et inversement.",
+      "Les paquets destinés à des réseaux absents de la table de HQ sont supprimés."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "La route par défaut s’applique lorsqu’aucune route plus spécifique ne correspond.",
+    "id": "ccna2-23.1",
+    "bank": "CCNA 2",
+    "number": 23,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      18
+    ],
+    "images": [
+      "assets/ccna2-23.1-0.png"
+    ],
+    "legend": "Device = équipement ; IP Address = adresse IP ; Mask = masque."
+  },
+  {
+    "question": "Quel protocole ou quelle technologie désactive les chemins redondants pour éliminer les boucles de couche 2 ?",
+    "options": [
+      "VTP",
+      "STP",
+      "EtherChannel",
+      "DTP"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-24.1",
+    "bank": "CCNA 2",
+    "number": 24,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "STP",
+    "file": "SR71_module8_STP.pdf",
+    "pages": "3-7",
+    "sourcePages": [
+      19
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la configuration et la sortie. Pourquoi le VLAN 99 est-il absent ?",
+    "options": [
+      "Le VLAN 99 n’est pas un VLAN de gestion valide.",
+      "Il y a un problème de câblage sur le VLAN 99.",
+      "Le VLAN 1 est actif et il ne peut y avoir qu’un VLAN de gestion.",
+      "Le VLAN 99 n’a pas encore été créé."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-25.1",
+    "bank": "CCNA 2",
+    "number": 25,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "8-12, 17-25, 58-60",
+    "sourcePages": [
+      19,
+      20
+    ],
+    "images": [
+      "assets/ccna2-25.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Tous les commutateurs sont des Cisco 2960, avec la même priorité par défaut et la même bande passante. Quels sont les trois ports désignés STP ? (Trois réponses.)",
+    "options": [
+      "fa0/9",
+      "fa0/13",
+      "fa0/10",
+      "fa0/20",
+      "fa0/21",
+      "fa0/11"
+    ],
+    "correct": [
+      2,
+      3,
+      5
+    ],
+    "note": "SW3 a la MAC la plus faible (00f0, contre 00fe et 00ff) : il est racine, donc Fa0/13 et Fa0/21 sont désignés. À coût égal vers la racine, SW1 gagne contre SW2 : Fa0/10 est désigné.",
+    "id": "ccna2-29.1",
+    "bank": "CCNA 2",
+    "number": 29,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "STP",
+    "file": "SR71_module8_STP.pdf",
+    "pages": "9-15",
+    "sourcePages": [
+      22
+    ],
+    "images": [
+      "assets/ccna2-29.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Par rapport aux routes dynamiques, quels sont deux avantages des routes statiques ? (Deux réponses.)",
+    "options": [
+      "Elles améliorent la sécurité du réseau.",
+      "Elles convergent plus rapidement lorsque la topologie change.",
+      "Elles améliorent l’efficacité de la découverte des réseaux voisins.",
+      "Elles consomment moins de ressources du routeur."
+    ],
+    "correct": [
+      1,
+      4
+    ],
+    "note": "",
+    "id": "ccna2-31.1",
+    "bank": "CCNA 2",
+    "number": 31,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "34-36",
+    "sourcePages": [
+      23,
+      24
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la sortie. Quelle route statique vers un réseau précis a été configurée avec l’adresse du prochain saut ?",
+    "options": [
+      "S 10.17.2.0/24 [1/0] via 10.16.2.2",
+      "S 0.0.0.0/0 [1/0] via 10.16.2.2",
+      "S 10.17.2.0/24 is directly connected, Serial 0/0/0",
+      "C 10.16.2.0/24 is directly connected, Serial0/0/0"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-32.1",
+    "bank": "CCNA 2",
+    "number": 32,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "44-55, 71",
+    "sourcePages": [
+      24
+    ],
+    "images": [
+      "assets/ccna2-32.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Quel préfixe IPv6 est utilisé pour les adresses link-local ?",
+    "options": [
+      "FF01::/8",
+      "2001::/3",
+      "FC00::/7",
+      "FE80::/10"
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-34.1",
+    "bank": "CCNA 2",
+    "number": 34,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Couche réseau et adressage",
+    "file": "SR71_module4_couche_reseau.pdf",
+    "pages": "78, 92",
+    "sourcePages": [
+      25
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Le routage inter-VLAN fonctionne depuis longtemps sur plusieurs commutateurs. Après la panne d’un trunk, STP active un trunk de secours. Les hôtes de deux VLAN n’accèdent plus qu’à certaines ressources auparavant accessibles ; les autres VLAN fonctionnent normalement. Quelle est la cause la plus probable ?",
+    "options": [
+      "La fonction de port périphérique protégé a été désactivée sur le trunk de secours.",
+      "La liste des VLAN autorisés sur la liaison de secours est mal configurée.",
+      "DTP est tombé en panne sur la liaison.",
+      "Le routage inter-VLAN est également tombé en panne avec le trunk."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-36.1",
+    "bank": "CCNA 2",
+    "number": 36,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "8-12, 17-25, 58-60",
+    "sourcePages": [
+      26
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Que fait un commutateur lorsqu’une trame reçue porte une adresse MAC de destination multicast ?",
+    "options": [
+      "Il la transmet sur tous les ports sauf le port d’entrée.",
+      "Il la transmet sur le port indiqué.",
+      "Il ajoute une association entre la MAC de destination et le port d’entrée.",
+      "Il remplace l’ancienne entrée et utilise le port le plus récent."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "Dans le VLAN concerné et dans le modèle de commutation du cours, sans filtrage multicast particulier.",
+    "id": "ccna2-38.1",
+    "bank": "CCNA 2",
+    "number": 38,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      27
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un technicien débutant ajoute une route à un routeur LAN. Un traceroute vers le nouveau réseau montre un mauvais chemin et une destination inaccessible. Que faut-il vérifier ou faire ?",
+    "options": [
+      "Vérifier qu’aucun routeur de bordure ne possède de route par défaut.",
+      "Vérifier la route statique flottante et ajuster sa distance administrative.",
+      "Créer une route statique flottante vers ce réseau.",
+      "Vérifier l’interface de sortie de la nouvelle route statique."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-39.1",
+    "bank": "CCNA 2",
+    "number": 39,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "44-55, 71",
+    "sourcePages": [
+      28
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Une route statique est configurée, mais son réseau de destination n’existe plus. Que doit faire l’administrateur pour retirer cette route de la table ?",
+    "options": [
+      "Supprimer la route avec no ip route.",
+      "Modifier sa distance administrative.",
+      "Modifier sa métrique.",
+      "Rien : la route statique disparaîtra toute seule."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-41.1",
+    "bank": "CCNA 2",
+    "number": 41,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "44-55, 71",
+    "sourcePages": [
+      29
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la configuration de R1. Que peut-on en conclure ?",
+    "options": [
+      "R1 est configuré comme agent relais DHCPv4.",
+      "R1 fonctionne comme serveur DHCPv4.",
+      "R1 diffusera des requêtes DHCPv4 au nom des clients locaux.",
+      "R1 demandera à un client local de contacter un serveur DHCPv4 à 10.10.10.8."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-42.1",
+    "bank": "CCNA 2",
+    "number": 42,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "19-20",
+    "sourcePages": [
+      29,
+      30
+    ],
+    "images": [
+      "assets/ccna2-42.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma et la configuration de R1. PC1 ne reçoit pas d’adresse IPv4. Quel est le problème ?",
+    "options": [
+      "ip helper-address a été appliquée à la mauvaise interface.",
+      "R1 n’est pas configuré comme serveur DHCPv4.",
+      "Le serveur DHCP doit être sur le même LAN que l’hôte recevant l’adresse.",
+      "ip address dhcp n’a pas été saisie sur Gi0/1."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-44.1",
+    "bank": "CCNA 2",
+    "number": 44,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "19-20",
+    "sourcePages": [
+      31
+    ],
+    "images": [
+      "assets/ccna2-44.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. R1 est voisin OSPF du routeur ISP sur 192.168.0.32. La liaison 192.168.0.36 doit servir de secours. Après ip route 0.0.0.0 0.0.0.0 S0/0/1 100, le trafic utilise le secours même lorsque la liaison OSPF fonctionne. Quelle modification permet de privilégier OSPF lorsqu’il fonctionne ?",
+    "options": [
+      "Remplacer la distance administrative par 120.",
+      "Ajouter l’adresse du prochain saut 192.168.0.36.",
+      "Remplacer le réseau de destination par 192.168.0.34.",
+      "Remplacer la distance administrative par 1."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-53.1",
+    "bank": "CCNA 2",
+    "number": 53,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "31-32, 63-65",
+    "sourcePages": [
+      36
+    ],
+    "images": [
+      "assets/ccna2-53.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez la table. Quelle métrique est utilisée pour transmettre un paquet destiné à 2001:DB8:ACAD:E:240:BFF:FED4:9DD2 ?",
+    "options": [
+      "90",
+      "128",
+      "2170112",
+      "2681856",
+      "2682112",
+      "3193856"
+    ],
+    "correct": [
+      5
+    ],
+    "note": "",
+    "id": "ccna2-54.1",
+    "bank": "CCNA 2",
+    "number": 54,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "20-27, 41",
+    "sourcePages": [
+      37
+    ],
+    "images": [
+      "assets/ccna2-54.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Un administrateur configure un nouveau commutateur Cisco pour une gestion à distance. Quels sont les trois éléments à configurer ? (Trois réponses.)",
+    "options": [
+      "Adresse IP",
+      "Domaine VTP",
+      "Lignes VTY",
+      "VLAN par défaut",
+      "Passerelle par défaut",
+      "Adresse de bouclage"
+    ],
+    "correct": [
+      1,
+      3,
+      5
+    ],
+    "note": "La passerelle est nécessaire pour un accès depuis un autre sous-réseau, hypothèse implicite de la question.",
+    "id": "ccna2-55.1",
+    "bank": "CCNA 2",
+    "number": 55,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Configuration des équipements",
+    "file": "SR71_module2.pdf",
+    "pages": "20-23, 33 ; SR71_module4_couche_reseau.pdf : 41-43",
+    "sourcePages": [
+      37,
+      38
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la sortie. Quelle ligne permet à R1 de répondre aux demandes DHCPv6 sans état ?",
+    "options": [
+      "ipv6 nd other-config-flag",
+      "prefix-delegation 2001:DB8:8::/48 00030001000E84244E70",
+      "ipv6 dhcp server LAN1",
+      "ipv6 unicast-routing",
+      "dns-server 2001:DB8:8::8"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "Réponse attendue par la banque : le drapeau O annonce aux clients les paramètres complémentaires disponibles par DHCPv6. Nuance : ipv6 dhcp server LAN1 active effectivement le service sur l’interface ; le drapeau O seul ne suffit pas.",
+    "id": "ccna2-56.1",
+    "bank": "CCNA 2",
+    "number": 56,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "40-41, 46-48, 52",
+    "sourcePages": [
+      38
+    ],
+    "images": [
+      "assets/ccna2-56.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Un commutateur de couche 3 route trois VLAN et se connecte à un routeur pour Internet. Quelles sont les deux configurations à appliquer au commutateur ? (Deux réponses.)",
+    "options": [
+      "(config)# interface gigabitethernet1/1\n(config-if)# switchport mode trunk",
+      "(config)# interface gigabitethernet 1/1\n(config-if)# no switchport\n(config-if)# ip address 192.168.1.2 255.255.255.252",
+      "(config)# interface vlan 1\n(config-if)# ip address 192.168.1.2 255.255.255.0\n(config-if)# no shutdown",
+      "(config)# ip routing",
+      "(config)# interface fastethernet0/4\n(config-if)# switchport mode trunk"
+    ],
+    "correct": [
+      2,
+      4
+    ],
+    "note": "",
+    "id": "ccna2-57.1",
+    "bank": "CCNA 2",
+    "number": 57,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      39
+    ],
+    "images": [
+      "assets/ccna2-57.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Une entreprise change de fournisseur Internet. Le nouveau fournisseur a terminé et vérifié sa connexion, mais les employés n’accèdent pas à Internet. Que faut-il vérifier ou faire ?",
+    "options": [
+      "Vérifier la présence de la route statique vers le serveur.",
+      "Vérifier la route statique flottante et ajuster sa distance administrative.",
+      "Vérifier que l’ancienne route par défaut a été supprimée des routeurs de bordure.",
+      "Créer une route statique flottante vers ce réseau."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-59.1",
+    "bank": "CCNA 2",
+    "number": 59,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      41
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quelles informations un commutateur utilise-t-il pour remplir sa table MAC ?",
+    "options": [
+      "MAC de destination et port d’entrée",
+      "MAC de destination et port de sortie",
+      "MAC source et destination, et port d’entrée",
+      "MAC source et destination, et port de sortie",
+      "MAC source et port d’entrée",
+      "MAC source et port de sortie"
+    ],
+    "correct": [
+      5
+    ],
+    "note": "",
+    "id": "ccna2-60.1",
+    "bank": "CCNA 2",
+    "number": 60,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      41
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel type de route statique possède une distance administrative supérieure pour servir de secours à une route apprise par un protocole dynamique ?",
+    "options": [
+      "Route statique flottante",
+      "Route statique par défaut",
+      "Route statique récapitulative",
+      "Route statique standard"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-62.1",
+    "bank": "CCNA 2",
+    "number": 62,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "31-32, 63-65",
+    "sourcePages": [
+      42,
+      43
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Que se passe-t-il lorsqu’une trame reçue porte une adresse MAC de destination unicast présente dans la table MAC ?",
+    "options": [
+      "Le commutateur réinitialise le temporisateur de l’entrée.",
+      "Il transmet la trame sur le port indiqué.",
+      "Il vide toute la table MAC.",
+      "Il remplace l’ancienne entrée et utilise le port le plus récent."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-63.1",
+    "bank": "CCNA 2",
+    "number": 63,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      43
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Le schéma comporte PC A (172.16.1.1/24) relié par un commutateur à R1 (172.16.1.254), et PC B (172.16.2.1/24) relié par un autre commutateur à R1 (172.16.2.254). L’interface série de R1 (172.16.3.1) est reliée à celle de R2 (172.16.3.2/24). R2 est connecté à Internet. Quelle commande crée sur R2 une route statique permettant d’atteindre PC B ?",
+    "options": [
+      "R2(config)# ip route 172.16.2.1 255.255.255.0 172.16.3.1",
+      "R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.2.254",
+      "R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1",
+      "R2(config)# ip route 172.16.3.0 255.255.255.0 172.16.2.254"
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-64.1",
+    "bank": "CCNA 2",
+    "number": 64,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "44-55, 71",
+    "sourcePages": [
+      43,
+      44
+    ],
+    "images": [
+      "assets/ccna2-64.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Quel protocole ou quelle technologie permet de transmettre des données sur des liaisons redondantes entre commutateurs ?",
+    "options": [
+      "EtherChannel",
+      "DTP",
+      "STP",
+      "VTP"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "Seule cette fonction générale est retenue : le cours VLAN cite les EtherChannel de couche 2 pour augmenter la bande passante. Les questions de configuration EtherChannel sont exclues.",
+    "id": "ccna2-65.1",
+    "bank": "CCNA 2",
+    "number": 65,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "39",
+    "sourcePages": [
+      45
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Quels sont les trois hôtes qui recevront les requêtes ARP de A, si Fa0/4 transporte plusieurs VLAN sur les deux commutateurs ? (Trois réponses.)",
+    "options": [
+      "Hôte B",
+      "Hôte C",
+      "Hôte D",
+      "Hôte E",
+      "Hôte F",
+      "Hôte G"
+    ],
+    "correct": [
+      2,
+      3,
+      5
+    ],
+    "note": "",
+    "id": "ccna2-66.1",
+    "bank": "CCNA 2",
+    "number": 66,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "8-12, 17-25, 58-60",
+    "sourcePages": [
+      45,
+      46
+    ],
+    "images": [
+      "assets/ccna2-66.1-0.png"
+    ],
+    "legend": "Appartenance : VLAN 1 = A, C, D, F ; VLAN 2 = B, E, G."
+  },
+  {
+    "question": "Observez les configurations. C ne peut pas joindre D par ping, et E ne peut pas joindre F. Que doit faire l’administrateur ?",
+    "options": [
+      "Affecter A et B au VLAN 10 plutôt qu’au VLAN 1.",
+      "Configurer l’un des ports de trunk en mode dynamic desirable.",
+      "Ajouter un routeur dans la topologie.",
+      "Supprimer le VLAN natif du trunk.",
+      "Ajouter switchport nonegotiate sur SW2."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-67.1",
+    "bank": "CCNA 2",
+    "number": 67,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "8-12, 17-25, 58-60",
+    "sourcePages": [
+      46
+    ],
+    "images": [
+      "assets/ccna2-67.1-0.png"
+    ],
+    "legend": "Host = hôte."
+  },
+  {
+    "question": "Quel est l’effet de la commande shutdown sur un commutateur ?",
+    "options": [
+      "Activer BPDU Guard sur un port.",
+      "Désactiver un port inutilisé.",
+      "Activer PortFast sur une interface.",
+      "Désactiver DTP sur une interface non trunk."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-68.1",
+    "bank": "CCNA 2",
+    "number": 68,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Couche réseau et adressage",
+    "file": "SR71_module4_couche_reseau.pdf",
+    "pages": "53-60",
+    "sourcePages": [
+      47
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Quelle liaison trunk ne transmettra aucun trafic après l’élection du pont racine ?",
+    "options": [
+      "Trunk1",
+      "Trunk2",
+      "Trunk3",
+      "Trunk4"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "Trunk2 est bloqué pour le trafic utilisateur ; les BPDU de contrôle STP constituent une exception au mot « aucun ».",
+    "id": "ccna2-74.1",
+    "bank": "CCNA 2",
+    "number": 74,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "STP",
+    "file": "SR71_module8_STP.pdf",
+    "pages": "9-15",
+    "sourcePages": [
+      49,
+      50
+    ],
+    "images": [
+      "assets/ccna2-74.1-0.png"
+    ],
+    "legend": "Bridge ID = identifiant du pont ; Priority = priorité."
+  },
+  {
+    "question": "Quelle méthode d’attribution de préfixe IPv6 repose sur le préfixe contenu dans les messages RA ?",
+    "options": [
+      "EUI-64",
+      "SLAAC",
+      "Configuration statique",
+      "DHCPv6 avec état"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-75.1",
+    "bank": "CCNA 2",
+    "number": 75,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "29, 31-37",
+    "sourcePages": [
+      50
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la configuration de RTA. L’administrateur reçoit une erreur et les utilisateurs du VLAN 20 ne joignent pas ceux du VLAN 30. Quelle est la cause ?",
+    "options": [
+      "Fa0/0 n’a pas d’adresse utilisable comme passerelle par défaut.",
+      "RTA utilise le même sous-réseau pour les VLAN 20 et 30.",
+      "Dot1q ne prend pas en charge les sous-interfaces.",
+      "no shutdown aurait dû être saisi sur Fa0/0.20 et Fa0/0.30."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "192.168.3.49/27 appartient à 192.168.3.32/27 ; 192.168.3.62/31 appartient à 192.168.3.62/31. Ces réseaux se chevauchent : « même sous-réseau » est une formulation approximative de la banque.",
+    "id": "ccna2-81.1",
+    "bank": "CCNA 2",
+    "number": 81,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "35-47, 59-61",
+    "sourcePages": [
+      53,
+      54
+    ],
+    "images": [
+      "assets/ccna2-81.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Quelles sont les trois paires de modes qui établissent un trunk fonctionnel entre deux commutateurs Cisco ? (Trois réponses.)",
+    "options": [
+      "dynamic auto — dynamic auto",
+      "access — trunk",
+      "dynamic desirable — trunk",
+      "access — dynamic auto",
+      "dynamic desirable — dynamic desirable",
+      "dynamic desirable — dynamic auto"
+    ],
+    "correct": [
+      3,
+      5,
+      6
+    ],
+    "note": "",
+    "id": "ccna2-82.1",
+    "bank": "CCNA 2",
+    "number": 82,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "29-32",
+    "sourcePages": [
+      54
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un technicien configure un routeur pour une petite entreprise comportant plusieurs WLAN et ne souhaite pas la complexité d’un protocole de routage dynamique. Que doit-il faire ou vérifier ?",
+    "options": [
+      "Vérifier qu’aucun routeur de bordure ne possède de route par défaut.",
+      "Créer des routes statiques vers tous les réseaux internes et une route par défaut vers Internet.",
+      "Créer des routes statiques supplémentaires vers la même destination avec une distance administrative de 1.",
+      "Vérifier les statistiques de la route par défaut pour rechercher une saturation."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-83.1",
+    "bank": "CCNA 2",
+    "number": 83,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "34-36",
+    "sourcePages": [
+      54,
+      55
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Quels sont les rôles possibles des ports A, B, C et D dans ce réseau utilisant RSTP ?",
+    "options": [
+      "Alternatif, désigné, racine, racine",
+      "Désigné, alternatif, racine, racine",
+      "Alternatif, racine, désigné, racine",
+      "Désigné, racine, alternatif, racine"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "La question porte uniquement sur les rôles de ports étudiés dans le cours STP, pas sur les mécanismes avancés de RSTP.",
+    "id": "ccna2-86.1",
+    "bank": "CCNA 2",
+    "number": 86,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "STP",
+    "file": "SR71_module8_STP.pdf",
+    "pages": "9-15",
+    "sourcePages": [
+      56
+    ],
+    "images": [
+      "assets/ccna2-86.1-0.png"
+    ],
+    "legend": "Root Bridge = pont racine."
+  },
+  {
+    "question": "Observez la table. Quelle route statique constitue un secours vers 172.16.1.0, utilisé uniquement si la route principale apprise par RIP disparaît ?",
+    "options": [
+      "ip route 172.16.1.0 255.255.255.0 s0/0/0",
+      "ip route 172.16.1.0 255.255.255.0 s0/0/0 121",
+      "ip route 172.16.1.0 255.255.255.0 s0/0/0 111",
+      "ip route 172.16.1.0 255.255.255.0 s0/0/0 91"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "121 > 120 (RIP). La même interface est utilisée : cela ne protège pas d’une panne physique de cette interface.",
+    "id": "ccna2-87.1",
+    "bank": "CCNA 2",
+    "number": 87,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "31-32, 63-65",
+    "sourcePages": [
+      57
+    ],
+    "images": [
+      "assets/ccna2-87.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Quel message DHCPv4 un client envoie-t-il pour accepter une adresse IPv4 proposée par un serveur DHCP ?",
+    "options": [
+      "DHCPACK en diffusion",
+      "DHCPREQUEST en diffusion",
+      "DHCPACK en unicast",
+      "DHCPREQUEST en unicast"
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-90.1",
+    "bank": "CCNA 2",
+    "number": 90,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "4-7",
+    "sourcePages": [
+      59
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Après avoir obtenu une adresse IPv6 par DHCPv6 ou SLAAC, comment un hôte vérifie-t-il qu’elle est unique et utilisable ?",
+    "options": [
+      "Il envoie une requête d’écho ICMPv6 à cette adresse ; sans réponse, il la considère unique.",
+      "Il envoie une sollicitation de voisin ICMPv6 pour cette adresse ; sans annonce de voisin en retour, il la considère unique.",
+      "Il consulte son cache de voisins ; si l’adresse en est absente, elle est unique.",
+      "Il diffuse une requête ARP sur le lien ; sans réponse, l’adresse est unique."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "Précision : en DAD, la sollicitation cible l’adresse à vérifier et est envoyée à son groupe multicast solicited-node, depuis ::. La formulation source « à l’adresse » est raccourcie.",
+    "id": "ccna2-92.1",
+    "bank": "CCNA 2",
+    "number": 92,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "29, 31-37",
+    "sourcePages": [
+      60
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel protocole sécurise les connexions distantes ?",
+    "options": [
+      "FTP",
+      "HTTP",
+      "NetBEUI",
+      "POP",
+      "SSH"
+    ],
+    "correct": [
+      5
+    ],
+    "note": "",
+    "id": "ccna2-94.1",
+    "bank": "CCNA 2",
+    "number": 94,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Configuration des équipements",
+    "file": "SR71_module2.pdf",
+    "pages": "4",
+    "sourcePages": [
+      61
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la sortie. Un administrateur vérifie le routage inter-VLAN : PC2 ne peut pas communiquer avec PC1. Quelle est la cause possible ?",
+    "options": [
+      "Gi0/0 n’est pas configurée comme port trunk.",
+      "interface GigabitEthernet0/0.5 a été mal saisie.",
+      "Aucune adresse IP n’est configurée sur Gi0/0.",
+      "no shutdown n’a pas été saisi sur les sous-interfaces.",
+      "encapsulation dot1Q 5 contient le mauvais VLAN."
+    ],
+    "correct": [
+      5
+    ],
+    "note": "",
+    "id": "ccna2-95.1",
+    "bank": "CCNA 2",
+    "number": 95,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "35-47, 59-61",
+    "sourcePages": [
+      62
+    ],
+    "images": [
+      "assets/ccna2-95.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. L’administrateur configure le routage inter-VLAN ; un seul VLAN est utilisé actuellement, d’autres seront ajoutés. Que désigne le paramètre manquant représenté par « ? » ?",
+    "options": [
+      "La sous-interface.",
+      "Le numéro de VLAN.",
+      "Le numéro du VLAN natif.",
+      "Le type d’encapsulation utilisé.",
+      "Le nombre d’hôtes autorisés sur l’interface."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-96.1",
+    "bank": "CCNA 2",
+    "number": 96,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "35-47, 59-61",
+    "sourcePages": [
+      63
+    ],
+    "images": [
+      "assets/ccna2-96.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Associez chaque type de message DHCP à sa description. Toutes les propositions ne sont pas utilisées.",
+    "options": [],
+    "correct": [],
+    "matching": true,
+    "left": [
+      "DHCPACK",
+      "DHCPREQUEST",
+      "DHCPNACK",
+      "DHCPDISCOVER",
+      "DHCPOFFER"
+    ],
+    "right": [
+      "Message initial d’un client pour trouver un serveur DHCP.",
+      "Réponse d’un serveur DHCP à la requête initiale d’un client.",
+      "Acceptation par le client de l’adresse IP proposée par le serveur DHCP.",
+      "Confirmation par le serveur DHCP que le bail d’adresse a été accepté."
+    ],
+    "mapping": [
+      4,
+      3,
+      null,
+      1,
+      2
+    ],
+    "note": "",
+    "id": "ccna2-97.1",
+    "bank": "CCNA 2",
+    "number": 97,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "4-7",
+    "sourcePages": [
+      64
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la configuration. Si les adresses de la passerelle par défaut et du serveur DNS sont correctes, quelle erreur subsiste ?",
+    "options": [
+      "Le serveur DNS et la passerelle doivent être dans le même sous-réseau.",
+      "L’adresse IP de la passerelle par défaut n’est pas dans les adresses exclues.",
+      "default-router et dns-server doivent inclure un masque.",
+      "L’adresse IP du serveur DNS n’est pas dans les adresses exclues."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-99.1",
+    "bank": "CCNA 2",
+    "number": 99,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "10-12",
+    "sourcePages": [
+      65
+    ],
+    "images": [
+      "assets/ccna2-99.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Un nouveau sous-réseau doit recevoir ses adresses IPv4 du serveur DHCPv4. Quelles sont les deux commandes nécessaires ? (Deux réponses.)",
+    "options": [
+      "R1(config-if)# ip helper-address 10.2.0.250",
+      "R1(config)# interface G0/1",
+      "R1(config)# interface G0/0",
+      "R2(config-if)# ip helper-address 10.2.0.250",
+      "R2(config)# interface G0/0",
+      "R1(config-if)# ip helper-address 10.1.0.254"
+    ],
+    "correct": [
+      1,
+      3
+    ],
+    "note": "",
+    "id": "ccna2-100.1",
+    "bank": "CCNA 2",
+    "number": 100,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "19-20",
+    "sourcePages": [
+      66
+    ],
+    "images": [
+      "assets/ccna2-100.1-0.png"
+    ],
+    "legend": "Subred nueva = nouveau sous-réseau ; Servidor DHCPv4 = serveur DHCPv4."
+  },
+  {
+    "question": "Pour quelles raisons un administrateur segmente-t-il un réseau avec un commutateur de couche 2 ? (Deux réponses.)",
+    "options": [
+      "Créer moins de domaines de collision.",
+      "Augmenter la bande passante disponible pour les utilisateurs.",
+      "Créer davantage de domaines de diffusion.",
+      "Éliminer les circuits virtuels.",
+      "Isoler le trafic entre les segments.",
+      "Isoler les requêtes ARP du reste du réseau."
+    ],
+    "correct": [
+      2,
+      5
+    ],
+    "note": "",
+    "id": "ccna2-104.1",
+    "bank": "CCNA 2",
+    "number": 104,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "14-17, 27-30",
+    "sourcePages": [
+      68
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un administrateur utilise le modèle router-on-a-stick pour le routage inter-VLAN. Comment configurer le port du commutateur relié au routeur ?",
+    "options": [
+      "Comme trunk n’autorisant que le trafic non étiqueté.",
+      "Comme port access membre du VLAN 1.",
+      "Comme port trunk 802.1Q.",
+      "Comme port trunk affecté au VLAN 1."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-106.1",
+    "bank": "CCNA 2",
+    "number": 106,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "35-47, 59-61",
+    "sourcePages": [
+      69
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Associez les messages aux étapes du processus DHCPv4. Toutes les propositions ne sont pas utilisées.",
+    "options": [],
+    "correct": [],
+    "matching": true,
+    "left": [
+      "Étape 1",
+      "Étape 2",
+      "Étape 3",
+      "Étape 4"
+    ],
+    "right": [
+      "DHCPACK",
+      "DHCPREQUEST",
+      "DHCPDISCOVER",
+      "DHCPREPLY",
+      "DHCPINFORMATION-REQUEST",
+      "DHCPOFFER"
+    ],
+    "mapping": [
+      3,
+      6,
+      2,
+      1
+    ],
+    "note": "",
+    "id": "ccna2-108.1",
+    "bank": "CCNA 2",
+    "number": 108,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "4-7",
+    "sourcePages": [
+      70
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Dans quelle situation un technicien utiliserait-il show interfaces sur un commutateur ?",
+    "options": [
+      "Pour savoir si l’accès distant est activé.",
+      "Lorsque des paquets d’un hôte directement connecté sont perdus.",
+      "Lorsqu’un terminal atteint les équipements locaux mais pas les équipements distants.",
+      "Pour connaître la MAC d’un équipement directement connecté à une interface."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-109.1",
+    "bank": "CCNA 2",
+    "number": 109,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Couche réseau et adressage",
+    "file": "SR71_module4_couche_reseau.pdf",
+    "pages": "55, 58",
+    "sourcePages": [
+      71
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Que fait un client DHCPv4 s’il reçoit plusieurs DHCPOFFER de différents serveurs ?",
+    "options": [
+      "Il envoie un DHCPREQUEST identifiant l’offre de bail qu’il accepte.",
+      "Il envoie un DHCPNAK et recommence le processus.",
+      "Il ignore les deux offres et renvoie DHCPDISCOVER.",
+      "Il accepte les deux DHCPOFFER et envoie DHCPACK."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-111.1",
+    "bank": "CCNA 2",
+    "number": 111,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "4-7",
+    "sourcePages": [
+      72
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Quelle commande saisie sur HQ configure une route IPv6 par défaut vers Internet pour les destinations absentes de la table de routage ?",
+    "options": [
+      "ipv6 route ::/0 serial 0/0/0",
+      "ip route 0.0.0.0 0.0.0.0 serial 0/1/1",
+      "ipv6 route ::1/0 serial 0/1/1",
+      "ipv6 route ::/0 serial 0/1/1"
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-118.1",
+    "bank": "CCNA 2",
+    "number": 118,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      77
+    ],
+    "images": [
+      "assets/ccna2-118.1-0.png"
+    ],
+    "legend": "Device = équipement ; IP Address = adresse IP ; Mask = masque."
+  },
+  {
+    "question": "Que se passe-t-il si la MAC source d’une trame reçue figure déjà dans la table MAC, mais associée à un autre port ?",
+    "options": [
+      "Le commutateur vide toute la table MAC.",
+      "Il remplace l’ancienne entrée par le port le plus récent.",
+      "Il réinitialise le temporisateur de l’entrée.",
+      "Il transmet la trame sur le port indiqué."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-120.1",
+    "bank": "CCNA 2",
+    "number": 120,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      78
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Créer des interfaces SVI",
+      "Ajuster la métrique de route",
+      "Activer le routage IP",
+      "Affecter les ports aux VLAN",
+      "Supprimer le VLAN par défaut",
+      "Affecter les ports au VLAN natif",
+      "Modifier le VLAN par défaut"
+    ],
+    "correct": [
+      1,
+      3,
+      4
+    ],
+    "note": "Cas source 7. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.1",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 1,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Installer une route statique",
+      "Affecter les ports au VLAN natif",
+      "Saisir no switchport sur le port relié au routeur",
+      "Modifier le VLAN par défaut",
+      "Affecter les ports aux VLAN",
+      "Activer le routage IP",
+      "Ajuster la métrique de route"
+    ],
+    "correct": [
+      3,
+      5,
+      6
+    ],
+    "note": "Cas source 1. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.2",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 2,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79,
+      80
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Établir des adjacences",
+      "Ajuster la métrique de route",
+      "Affecter les ports aux VLAN",
+      "Mettre en œuvre un protocole de routage",
+      "Créer des interfaces SVI",
+      "Installer une route statique",
+      "Créer les VLAN"
+    ],
+    "correct": [
+      3,
+      5,
+      7
+    ],
+    "note": "Cas source 2. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.3",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 3,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79,
+      80
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Affecter les ports aux VLAN",
+      "Affecter les ports au VLAN natif",
+      "Modifier le VLAN par défaut",
+      "Supprimer le VLAN par défaut",
+      "Activer le routage IP",
+      "Installer une route statique",
+      "Saisir no switchport sur le port relié au routeur"
+    ],
+    "correct": [
+      1,
+      5,
+      7
+    ],
+    "note": "Cas source 3. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.4",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 4,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79,
+      80
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Installer une route statique",
+      "Activer le routage IP",
+      "Modifier le VLAN par défaut",
+      "Mettre en œuvre un protocole de routage",
+      "Affecter les ports aux VLAN",
+      "Affecter les ports au VLAN natif",
+      "Créer des interfaces SVI"
+    ],
+    "correct": [
+      2,
+      5,
+      7
+    ],
+    "note": "Cas source 4. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.5",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 5,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79,
+      80,
+      81
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Affecter les ports aux VLAN",
+      "Affecter les ports au VLAN natif",
+      "Activer le routage IP",
+      "Modifier le VLAN par défaut",
+      "Installer une route statique",
+      "Mettre en œuvre un protocole de routage",
+      "Créer des interfaces SVI"
+    ],
+    "correct": [
+      1,
+      3,
+      7
+    ],
+    "note": "Cas source 5. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.6",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 6,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79,
+      81
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un nouveau commutateur de couche 3 est connecté à un routeur et configuré pour le routage inter-VLAN. Quelles sont trois des cinq étapes de configuration nécessaires ? (Trois réponses.)",
+    "options": [
+      "Établir des adjacences",
+      "Activer le routage IP",
+      "Affecter les ports au VLAN natif",
+      "Ajuster la métrique de route",
+      "Modifier le VLAN par défaut",
+      "Saisir no switchport sur le port relié au routeur",
+      "Affecter les ports aux VLAN"
+    ],
+    "correct": [
+      2,
+      6,
+      7
+    ],
+    "note": "Cas source 6. Les trois choix attendus concernent la configuration inter-VLAN ; une route vers Internet peut être nécessaire séparément.",
+    "id": "ccna2-122.7",
+    "bank": "CCNA 2",
+    "number": 122,
+    "variant": 7,
+    "variants": 7,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "38-39, 49-54",
+    "sourcePages": [
+      79,
+      81
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez la configuration de R1 pour router entre les VLAN 10 et 20. Les équipements ne communiquent pas entre ces VLAN. Quelle est la cause possible ?",
+    "options": [
+      "Gi0/0 devrait être configurée comme port trunk.",
+      "L’encapsulation est mal configurée sur une sous-interface.",
+      "Il manque no shutdown sur chaque sous-interface.",
+      "interface gigabitEthernet 0/0.1 est incorrecte."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-124.1",
+    "bank": "CCNA 2",
+    "number": 124,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "35-47, 59-61",
+    "sourcePages": [
+      82,
+      83
+    ],
+    "images": [
+      "assets/ccna2-124.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez la configuration partielle de R1. Quelle méthode d’attribution des adresses IPv6 globales unicast l’administrateur veut-il mettre en œuvre ?",
+    "options": [
+      "DHCPv6 avec état",
+      "DHCPv6 sans état",
+      "Configuration manuelle",
+      "SLAAC"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-127.1",
+    "bank": "CCNA 2",
+    "number": 127,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "42-43, 49-50",
+    "sourcePages": [
+      84
+    ],
+    "images": [
+      "assets/ccna2-127.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Le courant vient d’être rétabli et PC3 émet une requête DHCP IPv4 en diffusion. Sur quels ports SW1 la transmet-il ?",
+    "options": [
+      "Fa0/1, Fa0/2 et Fa0/3 uniquement",
+      "Fa0/1, Fa0/2, Fa0/3 et Fa0/4",
+      "Fa0/1 uniquement",
+      "Fa0/1, Fa0/2 et Fa0/4 uniquement",
+      "Fa0/1 et Fa0/2 uniquement"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-130.1",
+    "bank": "CCNA 2",
+    "number": 130,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "8-12, 17-25, 58-60",
+    "sourcePages": [
+      86,
+      87
+    ],
+    "images": [
+      "assets/ccna2-130.1-0.png"
+    ],
+    "legend": "DHCP Server = serveur DHCP."
+  },
+  {
+    "question": "Que fait un commutateur si la MAC source d’une trame reçue ne figure pas dans sa table MAC ?",
+    "options": [
+      "Il transmet la trame sur le port indiqué.",
+      "Il la transmet sur tous les ports sauf le port d’entrée.",
+      "Il ajoute la MAC et le numéro du port d’entrée à la table.",
+      "Il ajoute une association entre la MAC de destination et le port d’entrée."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-131.1",
+    "bank": "CCNA 2",
+    "number": 131,
+    "variant": 1,
+    "variants": 2,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      87
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Que fait un commutateur si la MAC source d’une trame reçue ne figure pas dans sa table MAC ?",
+    "options": [
+      "Il ajoute une association entre la MAC de destination et le port de sortie.",
+      "Il ajoute la MAC et le numéro du port d’entrée à la table.",
+      "Il remplace l’ancienne entrée par le port le plus récent.",
+      "Il réinitialise le temporisateur de l’entrée."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-131.2",
+    "bank": "CCNA 2",
+    "number": 131,
+    "variant": 2,
+    "variants": 2,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      87
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Les employés ne parviennent pas à se connecter aux serveurs d’un réseau interne. Que faut-il faire ou vérifier ?",
+    "options": [
+      "Utiliser show ip interface brief pour voir si une interface est hors service.",
+      "Vérifier qu’aucun routeur de bordure ne possède de route par défaut.",
+      "Créer des routes statiques vers tous les réseaux internes et une route par défaut vers Internet.",
+      "Vérifier les statistiques de la route par défaut pour rechercher une saturation."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-132.1",
+    "bank": "CCNA 2",
+    "number": 132,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Couche réseau et adressage",
+    "file": "SR71_module4_couche_reseau.pdf",
+    "pages": "53-60",
+    "sourcePages": [
+      88
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel est le résultat de l’interconnexion de deux commutateurs ou plus ?",
+    "options": [
+      "Le nombre de domaines de diffusion augmente.",
+      "La taille du domaine de diffusion augmente.",
+      "Le nombre de domaines de collision diminue.",
+      "La taille du domaine de collision augmente."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "Hypothèse : les liaisons appartiennent au même VLAN.",
+    "id": "ccna2-136.1",
+    "bank": "CCNA 2",
+    "number": 136,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "3-4, 9-10",
+    "sourcePages": [
+      90
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Les utilisateurs d’une agence accédaient à un site le matin mais n’y accèdent plus depuis midi. Que faut-il faire ou vérifier ?",
+    "options": [
+      "Vérifier que la route statique vers le serveur figure dans la table de routage.",
+      "Utiliser show ip interface brief pour voir si une interface est hors service.",
+      "Vérifier la route statique flottante et ajuster sa distance administrative.",
+      "Créer une route statique flottante vers ce réseau."
+    ],
+    "correct": [
+      1
+    ],
+    "note": "C’est le choix attendu par la banque. L’énoncé ne permet pas de prouver cette cause : vérifier les interfaces reste également pertinent dans un diagnostic réel.",
+    "id": "ccna2-138.1",
+    "bank": "CCNA 2",
+    "number": 138,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "24-25, 55",
+    "sourcePages": [
+      90,
+      91
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. PC-A et PC-B appartiennent au VLAN 60 mais ne communiquent pas. Quel est le problème ?",
+    "options": [
+      "Le VLAN natif devrait être le VLAN 60.",
+      "Le VLAN natif est retiré de la liaison.",
+      "Le trunk utilise switchport nonegotiate.",
+      "Le VLAN de PC-A ne figure pas dans la liste des VLAN autorisés sur le trunk."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-141.1",
+    "bank": "CCNA 2",
+    "number": 141,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "8-12, 17-25, 58-60",
+    "sourcePages": [
+      92
+    ],
+    "images": [
+      "assets/ccna2-141.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Un routeur est configuré pour DHCPv6 sans état, mais les postes ne reçoivent pas les informations DNS. Quelles sont les deux lignes à vérifier ? (Deux réponses.)",
+    "options": [
+      "domain-name figure dans la section ipv6 dhcp pool.",
+      "dns-server figure dans la section ipv6 dhcp pool.",
+      "ipv6 nd other-config-flag est configurée sur l’interface tournée vers le LAN.",
+      "address prefix figure dans la section ipv6 dhcp pool.",
+      "ipv6 nd managed-config-flag est configurée sur l’interface tournée vers le LAN."
+    ],
+    "correct": [
+      2,
+      3
+    ],
+    "note": "",
+    "id": "ccna2-144.1",
+    "bank": "CCNA 2",
+    "number": 144,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "40-41, 46-48, 52",
+    "sourcePages": [
+      94
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Observez le schéma. Après l’ajout d’une route statique IPv6 sur R1 vers le réseau connecté à R2, la connexion échoue encore. Quelle erreur a été commise ?",
+    "options": [
+      "L’adresse du prochain saut est incorrecte.",
+      "L’interface est incorrecte.",
+      "Le réseau de destination est incorrect.",
+      "Le préfixe réseau est incorrect."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-146.1",
+    "bank": "CCNA 2",
+    "number": 146,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "47, 49, 53-54, 71",
+    "sourcePages": [
+      95
+    ],
+    "images": [
+      "assets/ccna2-146.1-0.png"
+    ],
+    "legend": ""
+  },
+  {
+    "question": "Que fait un commutateur lorsqu’une trame reçue porte une MAC de destination unicast absente de la table MAC ?",
+    "options": [
+      "Il réinitialise le temporisateur de l’entrée.",
+      "Il réinitialise tous les temporisateurs de la table MAC.",
+      "Il remplace l’ancienne entrée par le port le plus récent.",
+      "Il transmet la trame sur tous les ports sauf le port d’entrée."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "Dans le VLAN concerné, sur les ports autorisés à transmettre.",
+    "id": "ccna2-147.1",
+    "bank": "CCNA 2",
+    "number": 147,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      96
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un technicien débutant ajoute une route à un routeur LAN. Un traceroute vers le nouveau réseau montre un mauvais chemin et une destination inaccessible. Que faut-il vérifier ou faire ?",
+    "options": [
+      "Créer une route statique flottante vers ce réseau.",
+      "Vérifier la route statique flottante et ajuster sa distance administrative.",
+      "Vérifier l’interface de sortie de la nouvelle route statique.",
+      "Vérifier la présence de la route statique vers le serveur dans la table de routage."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-148.1",
+    "bank": "CCNA 2",
+    "number": 148,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "44-55, 71",
+    "sourcePages": [
+      96,
+      97
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel protocole ou quelle technologie gère la négociation des trunks entre commutateurs ?",
+    "options": [
+      "VTP",
+      "EtherChannel",
+      "DTP",
+      "STP"
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-150.1",
+    "bank": "CCNA 2",
+    "number": 150,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "29-32",
+    "sourcePages": [
+      97,
+      98
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Les utilisateurs d’un LAN n’atteignent pas le serveur web de leur entreprise, mais accèdent aux autres destinations. Que faut-il faire ou vérifier ?",
+    "options": [
+      "Vérifier que l’ancienne route par défaut a été supprimée des routeurs de bordure.",
+      "Vérifier la présence de la route statique vers le serveur dans la table de routage.",
+      "Vérifier la route statique flottante et ajuster sa distance administrative.",
+      "Créer une route statique flottante vers ce réseau."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-152.1",
+    "bank": "CCNA 2",
+    "number": 152,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "24-25, 55",
+    "sourcePages": [
+      98,
+      99
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel préfixe IPv6 est destiné aux communications link-local ?",
+    "options": [
+      "2001::/3",
+      "ff00::/8",
+      "fc::/07",
+      "fe80::/10"
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-153.1",
+    "bank": "CCNA 2",
+    "number": 153,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Couche réseau et adressage",
+    "file": "SR71_module4_couche_reseau.pdf",
+    "pages": "78, 92",
+    "sourcePages": [
+      99
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel protocole ou quelle technologie est propriétaire Cisco et automatiquement activé sur les commutateurs 2960 ?",
+    "options": [
+      "DTP",
+      "STP",
+      "VTP",
+      "EtherChannel"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-157.1",
+    "bank": "CCNA 2",
+    "number": 157,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "29-32",
+    "sourcePages": [
+      101
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quelle adresse et quelle longueur de préfixe utilise-t-on pour une route statique IPv6 par défaut ?",
+    "options": [
+      "::/0",
+      "FF02::1/8",
+      "0.0.0.0/0",
+      "::1/128"
+    ],
+    "correct": [
+      1
+    ],
+    "note": "",
+    "id": "ccna2-158.1",
+    "bank": "CCNA 2",
+    "number": 158,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "28, 57-61",
+    "sourcePages": [
+      101,
+      102
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quelles sont deux caractéristiques de Cisco Express Forwarding (CEF) ? (Deux réponses.)",
+    "options": [
+      "À l’arrivée d’un paquet, le plan de contrôle et le processeur recherchent une correspondance dans la table de routage.",
+      "C’est le mécanisme de transmission le plus rapide des routeurs et commutateurs multicouches Cisco.",
+      "Les informations de flux sont stockées dans le cache fast-switching pour transmettre les futurs paquets vers la même destination sans intervention du processeur.",
+      "Les paquets sont transmis à partir de la FIB et d’une table de contiguïté.",
+      "À l’arrivée d’un paquet, le plan de contrôle et le processeur recherchent une correspondance dans le cache fast-switching."
+    ],
+    "correct": [
+      2,
+      4
+    ],
+    "note": "",
+    "id": "ccna2-159.1",
+    "bank": "CCNA 2",
+    "number": 159,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "15-18",
+    "sourcePages": [
+      102
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Que se passe-t-il si la MAC source d’une trame reçue figure déjà dans la table MAC du commutateur ?",
+    "options": [
+      "Il transmet la trame sur le port indiqué.",
+      "Il réinitialise le temporisateur de l’entrée.",
+      "Il remplace l’ancienne entrée par le port le plus récent.",
+      "Il ajoute une association entre la MAC de destination et le port de sortie."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "Hypothèse : la MAC est apprise sur le même port. Si le port change, l’entrée est mise à jour (question 120).",
+    "id": "ccna2-165.1",
+    "bank": "CCNA 2",
+    "number": 165,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Ethernet et commutation",
+    "file": "SR71_module3.pdf",
+    "pages": "27-30",
+    "sourcePages": [
+      105
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Dans une petite maison d’édition, une diffusion LAN atteint 200 équipements. Comment réduire le nombre d’équipements qui reçoivent ces diffusions ?",
+    "options": [
+      "Ajouter des commutateurs pour réduire le nombre d’équipements par commutateur.",
+      "Remplacer les commutateurs par des modèles ayant davantage de ports.",
+      "Diviser le LAN en LAN plus petits et router entre eux.",
+      "Remplacer au moins la moitié des commutateurs par des concentrateurs."
+    ],
+    "correct": [
+      3
+    ],
+    "note": "",
+    "id": "ccna2-166.1",
+    "bank": "CCNA 2",
+    "number": 166,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "VLAN et routage inter-VLAN",
+    "file": "SR71_module6-VLAN.pdf",
+    "pages": "3-4, 9-10",
+    "sourcePages": [
+      105,
+      106
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Qu’est-ce qui définit une route d’hôte sur un routeur Cisco ?",
+    "options": [
+      "L’adresse link-local est ajoutée automatiquement à la table comme route d’hôte IPv6.",
+      "Une route statique IPv4 d’hôte utilise l’adresse du périphérique visé et un masque /32.",
+      "Une route d’hôte porte le code C dans la table.",
+      "Une route statique IPv6 d’hôte doit contenir le type et le numéro d’interface du routeur de prochain saut."
+    ],
+    "correct": [
+      2
+    ],
+    "note": "",
+    "id": "ccna2-167.1",
+    "bank": "CCNA 2",
+    "number": 167,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "66-70",
+    "sourcePages": [
+      106
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quel élément supplémentaire faut-il préciser pour une route statique IPv6 utilisant l’adresse link-local du prochain saut ?",
+    "options": [
+      "La distance administrative.",
+      "L’adresse IP du routeur voisin.",
+      "Le numéro de réseau et le masque de l’interface du routeur voisin.",
+      "Le type et le numéro de l’interface."
+    ],
+    "correct": [
+      4
+    ],
+    "note": "",
+    "id": "ccna2-168.1",
+    "bank": "CCNA 2",
+    "number": 168,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "Routage statique",
+    "file": "SR71_module8-routage_static.pdf",
+    "pages": "47, 49, 53-54, 71",
+    "sourcePages": [
+      107
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Un PC envoie un message RS à un routeur IPv6 du même réseau. Quelles sont les deux informations que le routeur lui transmettra ? (Deux réponses.)",
+    "options": [
+      "Longueur du préfixe",
+      "Masque en notation décimale pointée",
+      "Nom de domaine",
+      "Distance administrative",
+      "Préfixe",
+      "Adresse IP du serveur DNS"
+    ],
+    "correct": [
+      1,
+      5
+    ],
+    "note": "Réponses attendues : préfixe et longueur. Un RA peut aussi contenir des informations DNS et de domaine selon sa configuration (cours réseau, page 84) ; ces options ne sont pas systématiques.",
+    "id": "ccna2-171.1",
+    "bank": "CCNA 2",
+    "number": 171,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "DHCP et autoconfiguration IPv6",
+    "file": "SR71_module7-DHCP.pdf",
+    "pages": "29, 31-37",
+    "sourcePages": [
+      108
+    ],
+    "images": [],
+    "legend": ""
+  },
+  {
+    "question": "Quels sont les trois composants d’un identifiant de pont (Bridge ID) ?",
+    "options": [
+      "Identifiant système étendu",
+      "Coût",
+      "Adresse IP",
+      "Priorité du pont",
+      "Adresse MAC",
+      "Identifiant de port"
+    ],
+    "correct": [
+      1,
+      4,
+      5
+    ],
+    "note": "",
+    "id": "ccna2-173.1",
+    "bank": "CCNA 2",
+    "number": 173,
+    "variant": 1,
+    "variants": 1,
+    "chapter": "STP",
+    "file": "SR71_module8_STP.pdf",
+    "pages": "9-11",
+    "sourcePages": [
+      109
+    ],
+    "images": [],
+    "legend": ""
+  }
+]
