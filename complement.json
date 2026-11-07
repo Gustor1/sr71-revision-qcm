@@ -943,7 +943,8 @@
       "questions": [
         "Q122",
         "Q123",
-        "Q124"
+        "Q124",
+        "Q150"
       ]
     },
     {
@@ -987,7 +988,8 @@
       "questions": [
         "Q130",
         "Q131",
-        "Q132"
+        "Q132",
+        "Q153"
       ]
     },
     {
@@ -1016,7 +1018,8 @@
       "extra": "",
       "questions": [
         "Q136",
-        "Q137"
+        "Q137",
+        "Q152"
       ]
     },
     {
@@ -1072,7 +1075,8 @@
       "extra": "",
       "questions": [
         "Q144",
-        "Q145"
+        "Q145",
+        "Q151"
       ]
     },
     {
@@ -3788,6 +3792,78 @@
       "explanation": "La question demande seulement la nature des paramètres ; aucune formule EIGRP n’est ajoutée au programme.",
       "pages": "41",
       "file": "SR71_module8-routage_static.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q150",
+      "theme": "T65",
+      "question": "Parmi ces propositions, laquelle ne fait PAS partie des rôles d’un protocole de routage dynamique présentés dans le cours ?",
+      "options": [
+        "Découvrir les réseaux distants.",
+        "Choisir le meilleur chemin vers les réseaux de destination.",
+        "Trouver un nouveau meilleur chemin si le chemin actuel n’est plus disponible.",
+        "Attribuer automatiquement une adresse IP aux hôtes du réseau."
+      ],
+      "correct": [
+        4
+      ],
+      "explanation": "Le cours liste quatre rôles : découvrir les réseaux distants, maintenir à jour les informations de routage, choisir le meilleur chemin et trouver un nouveau chemin en cas de panne. Attribuer des adresses aux hôtes est le rôle de DHCP (module 7).",
+      "pages": "4",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q151",
+      "theme": "T74",
+      "question": "Avec la bande passante de référence par défaut, pourquoi une interface Gigabit Ethernet a-t-elle le même coût OSPF qu’une interface Fast Ethernet ?",
+      "options": [
+        "Le calcul donne 10^8 / 10^9 = 0,1 ; le coût doit être un entier d’au moins 1, donc il vaut 1, comme pour Fast Ethernet (10^8 / 10^8 = 1).",
+        "OSPF ne tient pas compte de la bande passante, seulement du nombre de sauts.",
+        "Les deux interfaces fonctionnent en réalité à 100 Mbit/s.",
+        "La bande passante de référence par défaut vaut 10^9 bit/s."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Coût = bande passante de référence / bande passante de l’interface, avec une référence par défaut de 10^8 bit/s. Le coût est un entier : toutes les interfaces plus rapides que Fast Ethernet obtiennent donc le coût 1. Pour les distinguer, on augmente la bande passante de référence (fiche de calcul 40).",
+      "pages": "45-46",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q152",
+      "theme": "T70",
+      "question": "Dans le mode router ospf 10, quelle commande active OSPF dans la zone 0 sur les interfaces du réseau 10.10.1.0/24 ?",
+      "options": [
+        "network 10.10.1.0 0.0.0.255 area 0",
+        "network 10.10.1.0/24 area 0",
+        "network 10.10.1.0 0.0.0.255",
+        "ip ospf 10 area 0 10.10.1.0"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Syntaxe du cours : network adresse-réseau masque-générique area id-zone. Le masque générique d’un /24 est 0.0.0.255. L’exemple du cours utilise exactement network 10.10.1.0 0.0.0.255 area 0.",
+      "pages": "31-32",
+      "file": "SR71_module10-routage_dynamique.pdf",
+      "ch": "10"
+    },
+    {
+      "id": "Q153",
+      "theme": "T68",
+      "question": "D’après la sortie show ip ospf interface présentée dans le cours, quelles sont les valeurs par défaut des minuteurs Hello et Dead sur une interface Ethernet ?",
+      "options": [
+        "Hello 10 s et Dead 40 s.",
+        "Hello 2 s et Dead 6 s.",
+        "Hello 30 s et Dead 120 s.",
+        "Hello 40 s et Dead 10 s."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "La sortie affiche « Timer intervals configured, Hello 10, Dead 40 ». L’intervalle Dead vaut quatre fois l’intervalle Hello. Ne pas confondre avec les BPDU STP, envoyées toutes les 2 secondes.",
+      "pages": "37",
+      "file": "SR71_module10-routage_dynamique.pdf",
       "ch": "10"
     }
   ]
