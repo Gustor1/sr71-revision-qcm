@@ -5,3 +5,4 @@ __pycache__/
 *.json
 !bank2.json
 !complement.json
+!reflexes.json

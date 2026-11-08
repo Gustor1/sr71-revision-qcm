@@ -1,6 +1,8 @@
 # SR71 - Révision CCNA 1, CCNA 2 et compléments
 
-Application en français : 365 cartes. CCNA 1 : 113 numéros / 122 cartes. CCNA 2 : 87 numéros / 94 cartes. Les variantes distinctes sont conservées. Compléments SR71 : 153 questions originales (dont 4 sur RIP/OSPF ajoutées le 8 novembre 2026, absentes du PDF 04) sur les notions absentes ou insuffisamment évaluées dans la sélection des deux banques.
+Application en français : 369 cartes. CCNA 1 : 113 numéros / 122 cartes. CCNA 2 : 87 numéros / 94 cartes. Les variantes distinctes sont conservées. Compléments SR71 : 153 questions originales (dont 4 sur RIP/OSPF ajoutées le 8 novembre 2026, absentes du PDF 04) sur les notions absentes ou insuffisamment évaluées dans la sélection des deux banques.
+
+Méthode rapide : « Fiches réflexes CCNA 1 / CCNA 2 » regroupe les 200 questions Cisco en 41 familles (règle, moyen mnémotechnique, piège, question type). Le parcours essentiel propose 46 questions types qui couvrent 145 questions Cisco. Familles définies dans tmp/reflexes.py → reflexes.json, intégrées par build.py.
 
 Les trois parties sont accessibles par le filtre « Partie à réviser ». Les compléments comportent les bonnes réponses, une explication et les références au fichier et aux pages du cours. Ils ne sont pas des questions Cisco ni des annales.
 

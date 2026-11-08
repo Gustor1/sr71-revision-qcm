@@ -1,0 +1,980 @@
+[
+ {
+  "bank": "CCNA 1",
+  "id": "c1-masque",
+  "tier": 1,
+  "title": "Choisir un masque pour N hôtes",
+  "qs": [
+   23,
+   27,
+   50,
+   70,
+   107,
+   116,
+   133,
+   105,
+   151,
+   150
+  ],
+  "reps": [
+   23,
+   105
+  ],
+  "rule": "Cherche le plus petit bloc dont le nombre d’hôtes utilisables (2^h − 2) est supérieur ou égal au besoin. Si un seul masque doit servir à plusieurs sous-réseaux, dimensionne-le pour le plus gros.",
+  "memo": "Hôtes utilisables : 2 · 6 · 14 · 30 · 62 · 126 · 254 (chaque fois ×2 + 2). Les masques suivent : 252 · 248 · 240 · 224 · 192 · 128 · 0.",
+  "trap": "« 30 hôtes » tient pile dans un /27 ; « 31 hôtes » demande déjà un /26.",
+  "table": [
+   [
+    "/30 · 255.255.255.252",
+    "2 hôtes"
+   ],
+   [
+    "/29 · .248",
+    "6"
+   ],
+   [
+    "/28 · .240",
+    "14"
+   ],
+   [
+    "/27 · .224",
+    "30"
+   ],
+   [
+    "/26 · .192",
+    "62"
+   ],
+   [
+    "/25 · .128",
+    "126"
+   ],
+   [
+    "/24 · .0",
+    "254"
+   ]
+  ]
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-sousreseau",
+  "tier": 1,
+  "title": "Sous-réseau, plage d’adresses et VLSM",
+  "qs": [
+   42,
+   118,
+   121,
+   113,
+   17,
+   28
+  ],
+  "reps": [
+   42,
+   17
+  ],
+  "rule": "Pas = 256 − dernier octet du masque. Les réseaux tombent sur les multiples du pas ; l’adresse de diffusion est juste avant le réseau suivant. En VLSM, place les plus gros besoins en premier.",
+  "memo": "« Pas, multiple, moins un » : en /27 (pas 32) les réseaux sont .0 .32 .64 .96… donc .96 est une adresse réseau ; en /26 (pas 64), .96 est un hôte du réseau .64.",
+  "trap": "Une adresse égale à un multiple du pas est l’adresse du réseau, pas un hôte utilisable.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-ports",
+  "tier": 1,
+  "title": "Numéro de port → service",
+  "qs": [
+   7,
+   22,
+   52,
+   61,
+   75,
+   111,
+   114,
+   123,
+   30
+  ],
+  "reps": [
+   7,
+   30
+  ],
+  "rule": "Le port de destination identifie le service demandé sur le serveur. Les questions donnent un numéro : récite la table.",
+  "memo": "La vingtaine = accès et envoi : 20-21 FTP, 22 SSH, 23 Telnet, 25 SMTP. Puis 53 DNS, 67-68 DHCP, 69 TFTP (le petit frère de FTP), 80 Web, 110 POP3, 143 IMAP, 443 Web sécurisé.",
+  "trap": "UDP pour les « rapides sans accusé » : DHCP, TFTP, SNMP et DNS (requêtes). FTP, HTTP, SMTP, POP3, IMAP sont en TCP.",
+  "table": [
+   [
+    "20-21",
+    "FTP (TCP)"
+   ],
+   [
+    "22",
+    "SSH"
+   ],
+   [
+    "23",
+    "Telnet"
+   ],
+   [
+    "25",
+    "SMTP"
+   ],
+   [
+    "53",
+    "DNS (UDP/TCP)"
+   ],
+   [
+    "67 / 68",
+    "DHCP serveur / client (UDP)"
+   ],
+   [
+    "69",
+    "TFTP (UDP)"
+   ],
+   [
+    "80",
+    "HTTP"
+   ],
+   [
+    "110",
+    "POP3"
+   ],
+   [
+    "143",
+    "IMAP"
+   ],
+   [
+    "443",
+    "HTTPS"
+   ]
+  ]
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-services",
+  "tier": 1,
+  "title": "À quoi sert ce service ? (DNS, HTTP, mail, FTP, DHCP)",
+  "qs": [
+   6,
+   4,
+   25,
+   31,
+   36,
+   53,
+   60,
+   71,
+   88,
+   125
+  ],
+  "reps": [
+   6,
+   53
+  ],
+  "rule": "Chaque service a une phrase-clé : DNS traduit un nom en IP ; HTTP transfère les pages web, HTTPS les chiffre ; SMTP envoie le courrier ; POP3 le télécharge ; IMAP le laisse sur le serveur ; FTP transfère des fichiers ; DHCP distribue les adresses.",
+  "memo": "Mail : « SMTP Sort, POP Prend, IMAP Immobilise sur le serveur ». DNS : A = IPv4, AAAA = IPv6 (4 fois plus long), MX = Mail, NS = serveur de noms.",
+  "trap": "TCP, UDP, IP et Ethernet ne sont pas des protocoles de couche application.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-macip",
+  "tier": 1,
+  "title": "Adresses MAC et IP pendant un trajet",
+  "qs": [
+   136,
+   33,
+   47,
+   134,
+   146,
+   110
+  ],
+  "reps": [
+   136,
+   33
+  ],
+  "rule": "L’adresse IP (source et destination) reste la même de bout en bout sans NAT. L’adresse MAC change à chaque saut : vers un réseau distant, la MAC de destination est celle de la passerelle.",
+  "memo": "IP = l’adresse postale, écrite une fois sur le colis. MAC = l’étiquette du livreur, refaite à chaque dépôt (chaque routeur).",
+  "trap": "Un routeur retire l’en-tête Ethernet reçu et en construit un nouveau pour le lien suivant.",
+  "table": [
+   [
+    "Adresse IP",
+    "couche 3 · 32 ou 128 bits · partie réseau + hôte · constante"
+   ],
+   [
+    "Adresse MAC",
+    "couche 2 · 48 bits · OUI + identifiant · change à chaque saut"
+   ]
+  ]
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-passerelle",
+  "tier": 1,
+  "title": "Passerelle par défaut",
+  "qs": [
+   48,
+   15,
+   20,
+   89,
+   56,
+   144
+  ],
+  "reps": [
+   48,
+   15
+  ],
+  "rule": "La passerelle est l’adresse de l’interface du routeur située sur le même réseau que l’hôte. Mauvaise passerelle : le local marche, le distant ne marche plus. Pour ouvrir un site web, l’hôte a besoin d’un serveur DNS et d’une passerelle. Un commutateur a besoin d’une IP et d’une passerelle seulement pour être administré à distance.",
+  "memo": "Passerelle = la porte de sortie de TON réseau : elle est forcément dans ton propre sous-réseau.",
+  "trap": "Pour joindre un hôte distant, l’hôte fait une requête ARP pour la MAC de la passerelle, pas pour celle du destinataire.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-arp",
+  "tier": 1,
+  "title": "ARP",
+  "qs": [
+   49,
+   18,
+   62,
+   92,
+   119,
+   127
+  ],
+  "reps": [
+   49,
+   119
+  ],
+  "rule": "ARP trouve la MAC d’une IP du réseau local : requête en diffusion, réponse en monodiffusion par le propriétaire de l’IP. La diffusion reste dans le réseau local (le routeur ne la transmet pas).",
+  "memo": "ARP = « Qui a cette IP ? Dis-le moi » crié à tout le LAN ; seul le concerné répond. Pour une IP distante, on demande la MAC de la passerelle.",
+  "trap": "Qui reçoit la requête ? Tous les équipements du même réseau local, y compris l’interface du routeur, mais rien au-delà du routeur.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-couches",
+  "tier": 1,
+  "title": "Couches OSI / TCP-IP et encapsulation",
+  "qs": [
+   46,
+   3,
+   13,
+   126,
+   145,
+   38,
+   141
+  ],
+  "reps": [
+   46,
+   126
+  ],
+  "rule": "TCP/IP a 4 couches : Application (= OSI 7, 6, 5), Transport (4), Internet (3), Accès réseau (2 et 1). Ports → couche 4 ; IP, TTL → couche 3 ; MAC, FCS → couche 2. Un protocole fixe le codage, le format, la taille, la synchronisation et les modalités de remise des messages.",
+  "memo": "Ordre OSI de 7 à 1 : « Après Plusieurs Semaines, Tout Respire La Paix » (Application, Présentation, Session, Transport, Réseau, Liaison, Physique). Encapsulation : données → segment → paquet → trame → bits.",
+  "trap": "La couche Internet (TCP/IP) achemine entre réseaux ; la couche transport ne choisit pas la route.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-ip",
+  "tier": 1,
+  "title": "Protocole IP, TTL et en-têtes",
+  "qs": [
+   74,
+   155,
+   158,
+   39,
+   104
+  ],
+  "reps": [
+   74,
+   39
+  ],
+  "rule": "IP est sans connexion, au mieux (sans garantie) et indépendant du support. Chaque routeur retire 1 au TTL ; à 0 le paquet est détruit et un message ICMP « délai dépassé » est renvoyé. En IPv6, le TTL s’appelle Hop Limit.",
+  "memo": "TTL = un ticket de métro à N trajets : chaque routeur en composte un, à 0 on descend.",
+  "trap": "C’est TCP qui garantit et remet dans l’ordre, pas IP.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-ipv6",
+  "tier": 1,
+  "title": "Adresses IPv6 : préfixes et structure",
+  "qs": [
+   87,
+   79,
+   12,
+   100,
+   132
+  ],
+  "reps": [
+   87,
+   100
+  ],
+  "rule": "GUA = préfixe de routage global (fourni par le FAI) + ID de sous-réseau (choisi par l’organisation) + ID d’interface (64 bits). En /64, l’ID de sous-réseau s’arrête au 4e bloc. Link-local = FE80::/10 ; multicast = FF00::/8.",
+  "memo": "FE80 = Fait Entre voisins (lien local) ; FF = Foule (multicast) ; 2000::/3 = Internet (global). /56 → 64 − 56 = 8 bits → 256 sous-réseaux /64.",
+  "trap": "Il n’y a ni masque ni diffusion en IPv6.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-ndp",
+  "tier": 1,
+  "title": "IPv6 : RA, RS, NS, NA, SLAAC et EUI-64",
+  "qs": [
+   130,
+   51,
+   129,
+   45,
+   78,
+   91
+  ],
+  "reps": [
+   130,
+   91
+  ],
+  "rule": "RS/RA : l’hôte demande, le routeur annonce préfixe et longueur (ipv6 unicast-routing active les RA). NS/NA : remplacent ARP et servent à vérifier qu’une adresse est unique (DAD). EUI-64 : couper la MAC en deux, insérer FFFE, inverser le 7e bit.",
+  "memo": "RS = Router Solicitation (« un routeur ? »), RA = Router Advertisement (« moi ! voici le préfixe »). NS/NA = le ARP d’IPv6. FF02::1 = tous les nœuds, FF02::2 = tous les routeurs (« 2 comme deux-routeurs »).",
+  "trap": "EUI-64 : 1C → 1E (le 7e bit passe de 0 à 1), puis FFFE au milieu.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-tcpudp",
+  "tier": 1,
+  "title": "TCP et UDP",
+  "qs": [
+   26,
+   32,
+   84,
+   112,
+   148,
+   149
+  ],
+  "reps": [
+   26,
+   112
+  ],
+  "rule": "Les numéros de port distinguent les conversations (port source côté client, port destination = service). TCP : connexion, accusés, retransmission, fenêtre (contrôle de flux). UDP : léger, sans garantie. Les deux ont ports et somme de contrôle.",
+  "memo": "TCP = lettre recommandée (accusé, renvoi) ; UDP = carte postale (rapide, sans suivi). Fenêtre = « combien tu peux m’envoyer avant que je réponde ».",
+  "trap": "Le port source ne désigne pas l’hôte, il désigne la session de l’application.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-liaison",
+  "tier": 1,
+  "title": "Couche liaison : trame, FCS, carte réseau",
+  "qs": [
+   83,
+   69,
+   99,
+   115,
+   137
+  ],
+  "reps": [
+   69,
+   99
+  ],
+  "rule": "La couche liaison échange des trames sur le support local, rend le support transparent pour les couches hautes et détecte les erreurs avec le FCS (en fin de trame). La carte réseau y est rattachée par son adresse MAC.",
+  "memo": "FCS = le « code de contrôle » au dos de l’enveloppe : il ne corrige pas, il détecte.",
+  "trap": "Le choix du chemin entre réseaux est le rôle de la couche 3, pas de la liaison.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-llcmac",
+  "tier": 2,
+  "title": "Sous-couches LLC et MAC",
+  "qs": [
+   55,
+   77,
+   97
+  ],
+  "reps": [
+   55
+  ],
+  "rule": "LLC (en haut, côté logiciel) : identifie le protocole de couche 3 transporté, permet à IPv4 et IPv6 de partager le support. MAC (en bas, côté matériel) : encapsulation (délimitation, adresses, FCS) et accès au support.",
+  "memo": "LLC = Lien vers le Logiciel ; MAC = Matériel, Adresses, Contrôle d’accès.",
+  "trap": "Les variantes changent les propositions : classe chaque phrase en « haut » (LLC) ou « bas » (MAC).",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-outils",
+  "tier": 2,
+  "title": "Outils Windows : ipconfig, ping, tracert, nslookup",
+  "qs": [
+   8,
+   63,
+   54,
+   43,
+   154
+  ],
+  "reps": [
+   63
+  ],
+  "rule": "ipconfig = ma configuration IP ; ping = est-ce que ça répond ? ; tracert = par où ça passe (sauts) ; nslookup = le DNS fonctionne-t-il ? ; netstat = connexions ouvertes ; arp -a = table ARP.",
+  "memo": "« Le ping répond à l’IP mais pas au nom » → c’est le DNS → nslookup.",
+  "trap": "tracert est cité dans le cours mais sa lecture n’y est pas détaillée (questions 43 et 154 limites).",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-ios",
+  "tier": 2,
+  "title": "Cisco IOS : modes, fichiers, commandes show",
+  "qs": [
+   35,
+   139,
+   103,
+   153,
+   98,
+   81
+  ],
+  "reps": [
+   35,
+   139
+  ],
+  "rule": "Modes : utilisateur (>) → enable → privilégié (#) → configure terminal → configuration globale. running-config en RAM, startup-config en NVRAM. service password-encryption chiffre les mots de passe dans les fichiers de configuration. show ip interface brief : IP et états.",
+  "memo": "« RAM = Running = Risque de tout perdre au redémarrage ; NVRAM = celle qui reste ».",
+  "trap": "Une commande de configuration refusée : on n’est pas dans le bon mode (il faut passer en privilégié puis en configuration).",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-acces",
+  "tier": 2,
+  "title": "Accès distant : SSH, Telnet, console",
+  "qs": [
+   66,
+   57
+  ],
+  "reps": [
+   66
+  ],
+  "rule": "SSH chiffre l’identifiant, le mot de passe et toute la session ; Telnet envoie tout en clair ; la console est un accès physique local.",
+  "memo": "SSH = Secure : le S de sécurité.",
+  "trap": "Question 57 limite (commande transport input ssh absente du cours).",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-csma",
+  "tier": 2,
+  "title": "Accès au support : CSMA/CD et CSMA/CA",
+  "qs": [
+   138,
+   82
+  ],
+  "reps": [
+   138
+  ],
+  "rule": "CSMA/CD (anciens Ethernet en semi-duplex) : écouter avant d’émettre, détecter la collision, signal de brouillage, réessayer après un délai aléatoire. CSMA/CA : réseaux sans fil (Wi-Fi), on évite les collisions.",
+  "memo": "CD = Collision Détectée (câble) ; CA = Collision Avoidance, évitée (sans fil).",
+  "trap": "Le jeton et les priorités ne font pas partie de CSMA/CD.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-types-ipv4",
+  "tier": 2,
+  "title": "Types d’adresses IPv4 et NAT",
+  "qs": [
+   157,
+   90
+  ],
+  "reps": [
+   157
+  ],
+  "rule": "127.x = bouclage ; 169.254.x.x = lien local (APIPA, pas de DHCP) ; 240.x et plus = expérimentales (classe E) ; privées : 10/8, 172.16/12, 192.168/16. NAT économise les adresses publiques mais casse la connectivité de bout en bout.",
+  "memo": "169.254 = « DHCP n’a pas répondu ».",
+  "trap": "",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-routage",
+  "tier": 2,
+  "title": "Décision de routage et table de routage",
+  "qs": [
+   64,
+   142
+  ],
+  "reps": [
+   142
+  ],
+  "rule": "Le routeur compare la destination à sa table : réseau directement connecté → il sort par cette interface ; sinon prochain saut ; sinon route par défaut (S*). La table contient les routes des interfaces actives (C et L).",
+  "memo": "C = Connecté, L = Local (l’adresse de l’interface), S = Statique, S* = statique par défaut.",
+  "trap": "",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-normes",
+  "tier": 3,
+  "title": "Normes ouvertes et protocoles propriétaires",
+  "qs": [
+   147,
+   5
+  ],
+  "reps": [
+   147
+  ],
+  "rule": "Norme ouverte : utilisable par tous → concurrence et choix. Propriétaire : contrôlé par l’organisation qui l’a créé.",
+  "memo": "Ouvert = tout le monde peut fabriquer ; propriétaire = une seule marque décide.",
+  "trap": "Question 5 limite.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 1",
+  "id": "c1-topologie",
+  "tier": 3,
+  "title": "Topologie physique et logique, connecteur",
+  "qs": [
+   152,
+   122
+  ],
+  "reps": [
+   152
+  ],
+  "rule": "Topologie physique = emplacements et câbles ; topologie logique = adresses IP, équipements et groupes.",
+  "memo": "Physique = où c’est ; logique = comment c’est adressé.",
+  "trap": "Question 122 (connecteur RJ-45) hors cours.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-tablemac",
+  "tier": 1,
+  "title": "Table MAC du commutateur",
+  "qs": [
+   60,
+   147,
+   11,
+   14,
+   38,
+   63,
+   120,
+   131,
+   165
+  ],
+  "reps": [
+   60,
+   147
+  ],
+  "rule": "Le commutateur apprend avec l’adresse MAC SOURCE et le port d’entrée ; il transmet avec la MAC DESTINATION : connue → le bon port ; inconnue, diffusion ou multicast → tous les ports sauf celui d’entrée.",
+  "memo": "« J’apprends qui parle, j’envoie à qui on parle. Inconnu = tout le monde sauf l’expéditeur. » Source déjà connue sur le même port → minuteur remis à zéro ; sur un autre port → entrée remplacée.",
+  "trap": "On ne remplit jamais la table avec la MAC de destination.",
+  "table": [
+   [
+    "MAC source inconnue",
+    "ajoutée avec le port d’entrée"
+   ],
+   [
+    "MAC source connue, même port",
+    "minuteur réinitialisé"
+   ],
+   [
+    "MAC source connue, autre port",
+    "entrée remplacée"
+   ],
+   [
+    "Destination connue",
+    "envoi sur ce port"
+   ],
+   [
+    "Destination inconnue / diffusion / multicast",
+    "tous les ports sauf l’entrée"
+   ]
+  ]
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-defaut",
+  "tier": 1,
+  "title": "Route par défaut IPv4 / IPv6",
+  "qs": [
+   4,
+   158,
+   1,
+   3,
+   23,
+   118
+  ],
+  "reps": [
+   4,
+   1
+  ],
+  "rule": "Route par défaut : ip route 0.0.0.0 0.0.0.0 <sortie> ; en IPv6 : ipv6 route ::/0 <sortie>. Elle sert pour toute destination absente de la table.",
+  "memo": "« Quatre zéros, puis quatre zéros » ; en IPv6, « deux-points deux-points slash zéro ».",
+  "trap": "0.0.0.0 255.255.255.255 ou ::1/0 sont faux.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-flottante",
+  "tier": 1,
+  "title": "Route statique flottante et distance administrative",
+  "qs": [
+   62,
+   2,
+   53,
+   87
+  ],
+  "reps": [
+   62,
+   53
+  ],
+  "rule": "Une route flottante est une route de secours : on lui donne une distance administrative PLUS GRANDE que celle de la route principale, pour qu’elle ne s’installe qu’en cas de panne.",
+  "memo": "Distances : Connecté 0, Statique 1, EIGRP 90, OSPF 110, RIP 120 (« 0-1-90-110-120 »). Secours d’OSPF → plus de 110 ; de RIP → plus de 120 ; d’EIGRP → plus de 90.",
+  "trap": "Plus la distance est petite, plus la route est crue.",
+  "table": [
+   [
+    "Connecté",
+    "0"
+   ],
+   [
+    "Statique",
+    "1"
+   ],
+   [
+    "EIGRP",
+    "90"
+   ],
+   [
+    "OSPF",
+    "110"
+   ],
+   [
+    "RIP",
+    "120"
+   ]
+  ]
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-statique",
+  "tier": 1,
+  "title": "Écrire et corriger une route statique",
+  "qs": [
+   64,
+   5,
+   32,
+   146,
+   168,
+   167,
+   41
+  ],
+  "reps": [
+   64,
+   5
+  ],
+  "rule": "ip route <réseau de destination> <masque> <IP du prochain saut OU interface de sortie>. Le prochain saut est l’IP du routeur voisin, côté lien partagé. En IPv6 avec une adresse link-local (FE80) comme prochain saut, il faut aussi l’interface de sortie. Route d’hôte = /32 (/128 en IPv6). Une route statique reste jusqu’à no ip route.",
+  "memo": "« Où je vais, avec quel masque, par qui je passe ».",
+  "trap": "Le réseau de destination est le réseau (172.16.2.0), pas l’adresse d’un hôte (172.16.2.1).",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-dora",
+  "tier": 1,
+  "title": "DHCPv4 : DORA",
+  "qs": [
+   90,
+   97,
+   108,
+   111
+  ],
+  "reps": [
+   108,
+   111
+  ],
+  "rule": "Ordre : DISCOVER (client, diffusion) → OFFER (serveur) → REQUEST (client, diffusion, désigne l’offre choisie) → ACK (serveur confirme).",
+  "memo": "DORA, comme l’exploratrice : Discover, Offer, Request, Ack. Le REQUEST part en diffusion pour que les autres serveurs sachent qu’ils ne sont pas choisis.",
+  "trap": "Plusieurs offres ? Le client en accepte une seule avec un DHCPREQUEST.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-relais",
+  "tier": 1,
+  "title": "Relais DHCP : ip helper-address",
+  "qs": [
+   42,
+   44,
+   100
+  ],
+  "reps": [
+   44
+  ],
+  "rule": "Quand le serveur DHCP est sur un autre réseau, le routeur relaie : ip helper-address <IP du serveur> sur l’interface qui reçoit les diffusions des clients (côté LAN des clients).",
+  "memo": "Le « helper » se met là où sont les clients, et il pointe vers le serveur.",
+  "trap": "Mauvaise interface = pas d’adresse pour les PC.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-dhcpv6",
+  "tier": 1,
+  "title": "SLAAC, DHCPv6 sans état / avec état",
+  "qs": [
+   127,
+   8,
+   56,
+   75,
+   92,
+   144,
+   171
+  ],
+  "reps": [
+   127,
+   56
+  ],
+  "rule": "SLAAC : l’hôte prend le préfixe du RA. Indicateur O (other-config-flag) = DHCPv6 sans état : adresse par SLAAC, DNS et autres infos par DHCPv6. Indicateur M (managed-config-flag) = DHCPv6 avec état : le serveur donne l’adresse. Après avoir obtenu son adresse, l’hôte vérifie l’unicité par un NS.",
+  "memo": "M = Managed : le serveur Manage l’adresse. O = Other : seulement les Autres infos. Sans état = le serveur ne retient personne → 0 client actif.",
+  "trap": "Le RA donne préfixe et longueur de préfixe, pas le DNS.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-routeronstick",
+  "tier": 1,
+  "title": "Router-on-a-stick",
+  "qs": [
+   106,
+   81,
+   95,
+   96,
+   124
+  ],
+  "reps": [
+   106,
+   95
+  ],
+  "rule": "Le port du commutateur vers le routeur est un trunk 802.1Q. Sur le routeur : une sous-interface par VLAN (G0/0.10), encapsulation dot1Q <n° de VLAN>, et une IP dans le sous-réseau du VLAN.",
+  "memo": "Un seul câble, plusieurs VLAN : le « bâton » transporte tout en trunk.",
+  "trap": "Erreurs classiques : mauvais numéro dans encapsulation dot1Q, ou même sous-réseau sur deux sous-interfaces.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-trunk",
+  "tier": 1,
+  "title": "Trunks, VLAN autorisés et diffusion par VLAN",
+  "qs": [
+   141,
+   36,
+   66,
+   130
+  ],
+  "reps": [
+   141,
+   66
+  ],
+  "rule": "Un VLAN absent de la liste des VLAN autorisés d’un trunk ne passe pas : ses hôtes ne communiquent plus entre commutateurs. Une diffusion (ARP, DHCP) ne va qu’aux ports du même VLAN, trunks compris.",
+  "memo": "Le trunk est une autoroute à péages : un VLAN non autorisé reste à l’entrée.",
+  "trap": "",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-dtp",
+  "tier": 1,
+  "title": "DTP et modes de trunk",
+  "qs": [
+   82,
+   150,
+   157,
+   67
+  ],
+  "reps": [
+   82
+  ],
+  "rule": "DTP négocie les trunks (propriétaire Cisco, actif par défaut ; dynamic auto par défaut sur 2960). Un trunk se forme si un côté est trunk ou dynamic desirable et que l’autre n’est pas en access.",
+  "memo": "auto est passif, desirable est actif : deux passifs (auto + auto) ne se parlent jamais.",
+  "trap": "access + n’importe quoi = pas de trunk.",
+  "table": [
+   [
+    "desirable + desirable / auto / trunk",
+    "trunk"
+   ],
+   [
+    "auto + auto",
+    "pas de trunk"
+   ],
+   [
+    "access + …",
+    "pas de trunk"
+   ]
+  ]
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-stp",
+  "tier": 1,
+  "title": "STP : pont racine, rôles des ports, BID",
+  "qs": [
+   173,
+   24,
+   29,
+   74,
+   86
+  ],
+  "reps": [
+   173,
+   29
+  ],
+  "rule": "STP bloque les chemins redondants. BID = priorité + ID système étendu + MAC. Le plus petit BID devient racine (priorité, puis MAC). Chaque autre commutateur a un port racine (meilleur coût vers la racine) ; chaque segment a un port désigné ; le reste est bloqué (alternatif).",
+  "memo": "« Le plus petit gagne » partout : BID, coût, puis ID de port. Sur le pont racine, tous les ports sont désignés.",
+  "trap": "À priorité égale, regarde la MAC la plus petite.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-diffusion",
+  "tier": 2,
+  "title": "Domaines de diffusion et segmentation",
+  "qs": [
+   136,
+   12,
+   166,
+   104
+  ],
+  "reps": [
+   136
+  ],
+  "rule": "Relier des commutateurs agrandit le domaine de diffusion. Pour le réduire, on découpe en plusieurs LAN (ou VLAN) et on route entre eux.",
+  "memo": "Commutateur = rallonge la pièce ; routeur (ou VLAN) = met des murs.",
+  "trap": "Question 104 limite (domaine de collision non enseigné).",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-depannage",
+  "tier": 2,
+  "title": "Dépannage : « que faut-il vérifier ? »",
+  "qs": [
+   59,
+   138,
+   152,
+   132,
+   39,
+   148,
+   83
+  ],
+  "reps": [
+   59,
+   132
+  ],
+  "rule": "Lis le symptôme : tout Internet coupé après un changement de FAI → ancienne route par défaut ; une seule destination injoignable → sa route statique ; réseau interne injoignable → show ip interface brief ; mauvais chemin après une nouvelle route → son interface de sortie ; pas de protocole dynamique voulu → routes statiques + route par défaut.",
+  "memo": "Le symptôme dit où chercher : 1 destination → sa route ; tout Internet → la route par défaut ; tout l’interne → les interfaces.",
+  "trap": "Les propositions se ressemblent d’une question à l’autre : ne réponds qu’à partir du symptôme.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-vlan",
+  "tier": 2,
+  "title": "VLAN : types et stockage",
+  "qs": [
+   15,
+   16,
+   25
+  ],
+  "reps": [
+   15,
+   16
+  ],
+  "rule": "Les VLAN sont stockés dans vlan.dat (flash), pas dans startup-config. VLAN par défaut = VLAN 1 (tous les ports au départ) ; natif = non étiqueté sur le trunk ; gestion = reçoit l’IP du commutateur ; données = trafic des utilisateurs.",
+  "memo": "erase startup-config n’efface pas les VLAN : il faut aussi delete vlan.dat.",
+  "trap": "Une interface vlan 99 ne marche pas si le VLAN 99 n’a pas été créé.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-l3",
+  "tier": 2,
+  "title": "Routage inter-VLAN sur commutateur de couche 3",
+  "qs": [
+   122,
+   57
+  ],
+  "reps": [
+   122
+  ],
+  "rule": "Créer les VLAN et y affecter les ports, créer une SVI (interface vlan n) par VLAN, activer ip routing, et passer le port vers le routeur en port routé avec no switchport.",
+  "memo": "SVI + ip routing = le commutateur devient routeur.",
+  "trap": "Les 7 variantes de la question 122 changent l’ordre des propositions : retiens la liste des étapes.",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-gestion",
+  "tier": 2,
+  "title": "Gestion du commutateur et accès distant",
+  "qs": [
+   55,
+   18,
+   94,
+   68,
+   109
+  ],
+  "reps": [
+   55
+  ],
+  "rule": "Pour administrer à distance : une adresse IP (SVI), une passerelle par défaut et des lignes VTY. SSH sécurise l’accès distant. shutdown désactive un port inutilisé ; show interfaces aide quand des paquets se perdent sur un lien direct.",
+  "memo": "IP + passerelle + VTY = le trio de la gestion à distance.",
+  "trap": "",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-table",
+  "tier": 2,
+  "title": "Statique ou dynamique, table et commutation",
+  "qs": [
+   31,
+   54,
+   159
+  ],
+  "reps": [
+   31
+  ],
+  "rule": "Routes statiques : plus sûres et moins gourmandes, mais pas d’adaptation automatique. La plus longue correspondance l’emporte. CEF transmet avec la FIB et la table de contiguïté : c’est le mécanisme le plus rapide.",
+  "memo": "Statique = carte papier ; dynamique = GPS qui recalcule.",
+  "trap": "",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-linklocal",
+  "tier": 3,
+  "title": "Préfixe link-local IPv6",
+  "qs": [
+   34,
+   153
+  ],
+  "reps": [
+   34
+  ],
+  "rule": "Lien local = FE80::/10.",
+  "memo": "FE80 = Fait Entre voisins.",
+  "trap": "",
+  "table": []
+ },
+ {
+  "bank": "CCNA 2",
+  "id": "c2-divers",
+  "tier": 3,
+  "title": "Cas isolés",
+  "qs": [
+   99,
+   21,
+   65
+  ],
+  "reps": [
+   99
+  ],
+  "rule": "Pool DHCP : la passerelle et les adresses fixes doivent être exclues (ip dhcp excluded-address). MAC/IP : à l’arrivée, la MAC source est celle du dernier routeur, l’IP source reste celle de l’émetteur. EtherChannel regroupe des liens redondants.",
+  "memo": "On exclut ce qui est déjà pris.",
+  "trap": "Question 65 limite.",
+  "table": []
+ }
+]
