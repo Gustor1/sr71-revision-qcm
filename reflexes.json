@@ -52,6 +52,28 @@
     "/24 · .0",
     "254"
    ]
+  ],
+  "basics": "Une adresse IPv4 fait 32 bits, écrits en 4 nombres de 0 à 255. Le masque (ou le préfixe /n) indique combien de bits désignent le réseau ; les h = 32 − n bits restants numérotent les hôtes. Dans chaque sous-réseau, 2 adresses sont réservées (l’adresse du réseau et celle de diffusion) : il reste 2^h − 2 adresses pour les équipements.",
+  "clues": "« doit prendre en charge N équipements », « plus petit sous-réseau », « même masque pour tous les réseaux », « le plus de sous-réseaux possible ».",
+  "steps": [
+   "Repère le besoin N. Si un seul masque doit servir à plusieurs sous-réseaux, prends le plus gros besoin.",
+   "Dans le tableau, descends jusqu’à la première ligne dont le nombre d’hôtes est supérieur ou égal à N.",
+   "Lis le masque de cette ligne (en décimal pointé ou en /n, selon les propositions).",
+   "Vérifie que la ligne juste au-dessus est trop petite : sinon tu gaspilles des adresses."
+  ],
+  "examples": [
+   [
+    "Question 23 · 25 équipements",
+    "14 < 25 ≤ 30 → ligne /27 → 255.255.255.224."
+   ],
+   [
+    "Question 27 · 61 équipements",
+    "30 < 61 ≤ 62 → ligne /26 → 255.255.255.192."
+   ],
+   [
+    "Question 105 · un masque unique pour 22, 20, 2 et 2 adresses",
+    "Le plus gros besoin est 22 : 14 < 22 ≤ 30 → /27 → 255.255.255.224 pour les quatre sous-réseaux."
+   ]
   ]
  },
  {
@@ -74,7 +96,27 @@
   "rule": "Pas = 256 − dernier octet du masque. Les réseaux tombent sur les multiples du pas ; l’adresse de diffusion est juste avant le réseau suivant. En VLSM, place les plus gros besoins en premier.",
   "memo": "« Pas, multiple, moins un » : en /27 (pas 32) les réseaux sont .0 .32 .64 .96… donc .96 est une adresse réseau ; en /26 (pas 64), .96 est un hôte du réseau .64.",
   "trap": "Une adresse égale à un multiple du pas est l’adresse du réseau, pas un hôte utilisable.",
-  "table": []
+  "table": [],
+  "basics": "Un sous-réseau est un bloc d’adresses qui se suivent. Sa première adresse est l’adresse du réseau, sa dernière l’adresse de diffusion ; toutes celles entre les deux sont des adresses d’hôtes utilisables.",
+  "clues": "« quel sous-réseau contient l’adresse… », « adresse d’hôte utilisable », « le cinquième sous-réseau », « adresses inutilisées », association réseau ↔ préfixe sur un schéma (VLSM).",
+  "steps": [
+   "Calcule le pas : 256 − la valeur du masque dans l’octet qui n’est ni 255 ni 0 (/25 → 128, /26 → 64, /27 → 32, /28 → 16, /29 → 8, /30 → 4).",
+   "Les adresses de réseau sont les multiples du pas : 0, pas, 2 × pas…",
+   "Le réseau qui contient une adresse = le plus grand multiple du pas inférieur ou égal à cette adresse.",
+   "Diffusion = réseau suivant − 1 ; hôtes utilisables = de réseau + 1 à diffusion − 1.",
+   "« n-ième sous-réseau, le sous-réseau zéro étant le premier » → adresse = (n − 1) × pas.",
+   "En VLSM, attribue d’abord le plus gros besoin, puis les suivants à la suite, sans chevauchement."
+  ],
+  "examples": [
+   [
+    "Question 42 · quel sous-réseau contient l’hôte 192.168.1.96 ?",
+    "Teste chaque proposition. 192.168.1.64/26 : pas 64 → hôtes .65 à .126 → .96 est dedans ✓. 192.168.1.32/27 : hôtes .33 à .62 ✗. 192.168.1.32/28 : .33 à .46 ✗. 192.168.1.64/29 : .65 à .70 ✗. Réponse : 192.168.1.64/26."
+   ],
+   [
+    "Question 118 · 192.168.10.0 en /29, cinquième sous-réseau",
+    "Pas = 256 − 248 = 8. Cinquième sous-réseau → (5 − 1) × 8 = 32 → réseau 192.168.10.32, hôtes .33 à .38, diffusion .39. Le routeur prend la première adresse (.33, la passerelle), le serveur la dernière (.38), masque 255.255.255.248."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -144,6 +186,27 @@
     "443",
     "HTTPS"
    ]
+  ],
+  "basics": "Un numéro de port (0 à 65535) désigne l’application sur une machine. Le client envoie sa demande vers le port de destination du service : 80 pour le web, 53 pour le DNS, etc. Le port est porté par TCP ou par UDP (couche transport).",
+  "clues": "« le numéro de port de destination est X », « quel service le client demande-t-il ? », association protocole ↔ TCP ou UDP.",
+  "steps": [
+   "Lis le numéro de port de l’énoncé.",
+   "Retrouve-le dans le tableau, appris par blocs : la vingtaine (20 à 25), puis 53 · 67 · 69, puis 80 · 110 · 143 · 443.",
+   "Pour TCP ou UDP : UDP pour les services courts et rapides sans accusé (DHCP, TFTP, DNS, SNMP), TCP pour tous les autres (FTP, HTTP, SMTP, POP3, IMAP…)."
+  ],
+  "examples": [
+   [
+    "Question 7 · port 110",
+    "110 → POP3 (récupérer le courrier)."
+   ],
+   [
+    "Question 22 · port 53",
+    "53 → DNS."
+   ],
+   [
+    "Question 30 · TCP ou UDP ?",
+    "DHCP → UDP ; FTP → TCP ; HTTP → TCP ; SMTP → TCP ; TFTP → UDP (le T de TFTP veut dire Trivial : la version simple, sans accusé)."
+   ]
   ]
  },
  {
@@ -170,7 +233,28 @@
   "rule": "Chaque service a une phrase-clé : DNS traduit un nom en IP ; HTTP transfère les pages web, HTTPS les chiffre ; SMTP envoie le courrier ; POP3 le télécharge ; IMAP le laisse sur le serveur ; FTP transfère des fichiers ; DHCP distribue les adresses.",
   "memo": "Mail : « SMTP Sort, POP Prend, IMAP Immobilise sur le serveur ». DNS : A = IPv4, AAAA = IPv6 (4 fois plus long), MX = Mail, NS = serveur de noms.",
   "trap": "TCP, UDP, IP et Ethernet ne sont pas des protocoles de couche application.",
-  "table": []
+  "table": [],
+  "basics": "Les services de la couche application rendent un service à l’utilisateur : trouver l’adresse d’un nom (DNS), afficher une page (HTTP), envoyer ou lire le courrier (SMTP, POP3, IMAP), transférer un fichier (FTP), obtenir une adresse (DHCP).",
+  "clues": "« Quel service X fournit-il ? », « enregistrements A, AAAA, MX, NS », « IMAP plutôt que POP », « protocoles de la couche supérieure / application ».",
+  "steps": [
+   "Associe le sigle à son verbe : DNS traduit ; HTTP affiche le web ; HTTPS chiffre le web ; SMTP envoie ; POP3 télécharge ; IMAP conserve sur le serveur ; FTP transfère des fichiers ; DHCP attribue des adresses.",
+   "Élimine les propositions qui décrivent un autre service (« chiffrement pour un accès distant » = SSH, « discuter en temps réel » = messagerie instantanée).",
+   "Pour « couche application / supérieure » : élimine TCP et UDP (transport), IP (Internet) et Ethernet (accès réseau)."
+  ],
+  "examples": [
+   [
+    "Question 6 · service DNS",
+    "DNS traduit les noms de domaine (cisco.com) en adresses IP."
+   ],
+   [
+    "Question 53 · IMAP plutôt que POP",
+    "Avec IMAP, les messages restent sur le serveur jusqu’à ce qu’on les supprime ; POP3 les télécharge sur le poste."
+   ],
+   [
+    "Question 25 · service HTTPS",
+    "Piège : une proposition parle de chiffrement pour l’accès distant (c’est SSH). HTTPS chiffre l’échange de texte, d’images, de son et de vidéo sur le web."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -201,6 +285,28 @@
     "Adresse MAC",
     "couche 2 · 48 bits · OUI + identifiant · change à chaque saut"
    ]
+  ],
+  "basics": "Chaque carte réseau a une adresse MAC (couche 2, valable seulement sur le réseau local) et chaque interface une adresse IP (couche 3, valable de bout en bout). Pour sortir de son réseau, un hôte passe par sa passerelle, c’est-à-dire le routeur.",
+  "clues": "« adresses de couche 2 et de couche 3 », « adresse de destination de la trame quand elle quitte l’hôte », « que fait le routeur de l’en-tête Ethernet », « sans NAT ».",
+  "steps": [
+   "Adresses IP : source = l’émetteur, destination = le destinataire final. Elles ne changent jamais pendant le trajet (sans NAT).",
+   "Adresses MAC : regarde seulement le tronçon demandé (de quel équipement à quel équipement, sur ce lien).",
+   "MAC source = l’équipement qui émet sur ce lien ; MAC destination = le prochain équipement sur ce lien, donc la passerelle si le destinataire est dans un autre réseau.",
+   "À chaque routeur, l’ancien en-tête Ethernet est retiré et un nouveau est construit pour le lien suivant."
+  ],
+  "examples": [
+   [
+    "Question 33 · de l’hôte B au routeur, vers D dans un autre réseau",
+    "IP source = B (172.16.10.200), IP destination = D (172.16.20.200). Sur ce tronçon : MAC source = B (…36-bb), MAC destination = le routeur (…36-ab), pas D."
+   ],
+   [
+    "Question 47 · que fait R1 de l’en-tête Ethernet ?",
+    "Il le supprime et construit un nouvel en-tête de couche 2 avant d’envoyer par S0/0/0."
+   ],
+   [
+    "Question 136 · affirmations justes",
+    "Les adresses IP de destination restent constantes ; les adresses MAC ont une portée locale et changent à chaque passage d’un LAN à un autre."
+   ]
   ]
  },
  {
@@ -223,7 +329,30 @@
   "rule": "La passerelle est l’adresse de l’interface du routeur située sur le même réseau que l’hôte. Mauvaise passerelle : le local marche, le distant ne marche plus. Pour ouvrir un site web, l’hôte a besoin d’un serveur DNS et d’une passerelle. Un commutateur a besoin d’une IP et d’une passerelle seulement pour être administré à distance.",
   "memo": "Passerelle = la porte de sortie de TON réseau : elle est forcément dans ton propre sous-réseau.",
   "trap": "Pour joindre un hôte distant, l’hôte fait une requête ARP pour la MAC de la passerelle, pas pour celle du destinataire.",
-  "table": []
+  "table": [],
+  "basics": "La passerelle par défaut est le routeur qui permet de sortir de son réseau local. Sur un hôte, on configure l’adresse IP de l’interface du routeur qui est branchée sur son propre réseau.",
+  "clues": "« passerelle par défaut », « mal configurée », « équipement sur un réseau distant », « ip default-gateway », « pourquoi un commutateur aurait besoin d’une adresse IP ».",
+  "steps": [
+   "Identifie le réseau (le LAN) de l’hôte.",
+   "La passerelle est l’interface du routeur branchée sur ce LAN : jamais une interface série, jamais l’interface d’un autre routeur.",
+   "Passerelle fausse : le réseau local fonctionne encore, mais plus rien vers les autres réseaux.",
+   "Pour ouvrir un site web par son nom, l’hôte a besoin d’un serveur DNS (le nom) et d’une passerelle (sortir du réseau).",
+   "Un commutateur n’a besoin d’une IP et d’une passerelle que pour être administré à distance."
+  ],
+  "examples": [
+   [
+    "Question 48 · passerelle mal configurée",
+    "L’hôte ne communique plus avec les autres réseaux. Il communique encore avec son LAN, et un ping vers 127.0.0.1 marche toujours."
+   ],
+   [
+    "Question 20 · destination distante, cache ARP vide",
+    "L’hôte envoie une requête ARP pour la MAC de sa passerelle, pas pour celle du destinataire."
+   ],
+   [
+    "Question 89 · accéder à http://www.cisco.com",
+    "Il faut le serveur DNS et la passerelle par défaut."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -245,7 +374,29 @@
   "rule": "ARP trouve la MAC d’une IP du réseau local : requête en diffusion, réponse en monodiffusion par le propriétaire de l’IP. La diffusion reste dans le réseau local (le routeur ne la transmet pas).",
   "memo": "ARP = « Qui a cette IP ? Dis-le moi » crié à tout le LAN ; seul le concerné répond. Pour une IP distante, on demande la MAC de la passerelle.",
   "trap": "Qui reçoit la requête ? Tous les équipements du même réseau local, y compris l’interface du routeur, mais rien au-delà du routeur.",
-  "table": []
+  "table": [],
+  "basics": "ARP fait le lien, sur le réseau local, entre une adresse IPv4 connue et l’adresse MAC correspondante, inconnue. Les correspondances trouvées sont gardées dans la table (cache) ARP, visible sous Windows avec arp -a.",
+  "clues": "« requête ARP », « table ARP », « qui recevra la requête ARP », « cache ARP vide », « beaucoup de requêtes ARP ».",
+  "steps": [
+   "Destination dans le même réseau → ARP pour sa MAC ; destination dans un autre réseau → ARP pour la MAC de la passerelle.",
+   "La requête est une diffusion : tous les équipements du même réseau la reçoivent (les hôtes et l’interface du routeur), à travers les commutateurs. Elle ne traverse pas le routeur.",
+   "Seul l’équipement qui possède l’IP demandée répond (réponse ARP).",
+   "Beaucoup d’ARP = beaucoup de diffusions que tous les équipements du réseau doivent traiter."
+  ],
+  "examples": [
+   [
+    "Question 119 · A veut joindre D, situé dans un autre réseau",
+    "A demande la MAC de sa passerelle. La diffusion atteint tout le réseau de A : les hôtes B et C et le routeur R1. D est derrière le routeur et ne la reçoit pas."
+   ],
+   [
+    "Question 49 · caractéristiques d’ARP",
+    "Un hôte qui connaît l’IP mais pas la MAC d’un équipement local envoie une requête ARP en diffusion ; l’équipement qui possède cette IP répond."
+   ],
+   [
+    "Question 62 · trop de requêtes ARP",
+    "La requête part en diffusion dans tout le sous-réseau, et tous les nœuds doivent la traiter."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -268,7 +419,29 @@
   "rule": "TCP/IP a 4 couches : Application (= OSI 7, 6, 5), Transport (4), Internet (3), Accès réseau (2 et 1). Ports → couche 4 ; IP, TTL → couche 3 ; MAC, FCS → couche 2. Un protocole fixe le codage, le format, la taille, la synchronisation et les modalités de remise des messages.",
   "memo": "Ordre OSI de 7 à 1 : « Après Plusieurs Semaines, Tout Respire La Paix » (Application, Présentation, Session, Transport, Réseau, Liaison, Physique). Encapsulation : données → segment → paquet → trame → bits.",
   "trap": "La couche Internet (TCP/IP) achemine entre réseaux ; la couche transport ne choisit pas la route.",
-  "table": []
+  "table": [],
+  "basics": "Les modèles en couches découpent une communication en étapes. Le modèle OSI a 7 couches, le modèle TCP/IP en a 4. En descendant les couches, chacune ajoute son en-tête : c’est l’encapsulation.",
+  "clues": "« quelle couche… », « correspondent à la couche application du modèle TCP/IP », « associez chaque champ d’en-tête à sa couche », « exigences des protocoles ».",
+  "steps": [
+   "Écris les 7 couches OSI de haut en bas : Application, Présentation, Session, Transport, Réseau, Liaison, Physique.",
+   "Regroupe-les en TCP/IP : 7-6-5 = Application ; 4 = Transport ; 3 = Internet ; 2-1 = Accès réseau.",
+   "Classe un champ : port, numéro de séquence ou d’acquittement → couche 4 ; adresse IP, TTL → couche 3 ; adresse MAC, FCS, en-tête 802.2 → couche 2.",
+   "« Route à travers un interréseau » → couche Internet (= Réseau en OSI)."
+  ],
+  "examples": [
+   [
+    "Question 46 · couches OSI dans la couche application TCP/IP",
+    "Application, Présentation et Session."
+   ],
+   [
+    "Question 3 · route à travers un interréseau",
+    "La couche Internet."
+   ],
+   [
+    "Question 13 · transfert d’un fichier vers un serveur",
+    "Les 4 couches TCP/IP : application, transport, Internet et accès réseau. Les propositions qui mélangent des noms OSI sont fausses."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -289,7 +462,28 @@
   "rule": "IP est sans connexion, au mieux (sans garantie) et indépendant du support. Chaque routeur retire 1 au TTL ; à 0 le paquet est détruit et un message ICMP « délai dépassé » est renvoyé. En IPv6, le TTL s’appelle Hop Limit.",
   "memo": "TTL = un ticket de métro à N trajets : chaque routeur en composte un, à 0 on descend.",
   "trap": "C’est TCP qui garantit et remet dans l’ordre, pas IP.",
-  "table": []
+  "table": [],
+  "basics": "IP transporte les paquets d’un réseau à un autre. Il ne vérifie pas que les paquets arrivent : c’est TCP (couche 4) qui s’occupe de la fiabilité.",
+  "clues": "« caractéristiques du protocole IP », « TTL », « empêcher un paquet de circuler indéfiniment », « tracert », « en-têtes IPv4 et IPv6 ».",
+  "steps": [
+   "IP = sans connexion, au mieux (sans garantie de livraison), indépendant du support.",
+   "TTL : chaque routeur retire 1 ; à 0, le paquet est détruit et un message ICMP « délai dépassé » est renvoyé à la source.",
+   "En IPv6, le TTL s’appelle Hop Limit ; les champs Adresse source et Adresse de destination gardent leur nom."
+  ],
+  "examples": [
+   [
+    "Question 74 · éviter qu’un paquet tourne indéfiniment",
+    "Le routeur diminue le TTL de 1 ; si le résultat vaut 0, il abandonne le paquet et envoie « délai dépassé ». Écarte « augmente » et « 100 »."
+   ],
+   [
+    "Question 39 · caractéristiques d’IP",
+    "Pas de connexion dédiée de bout en bout ; fonctionne indépendamment du support. Retransmettre et garantir, c’est TCP."
+   ],
+   [
+    "Question 158 · tracert",
+    "Le routeur cesse de transmettre le paquet quand le TTL atteint zéro."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -310,7 +504,29 @@
   "rule": "GUA = préfixe de routage global (fourni par le FAI) + ID de sous-réseau (choisi par l’organisation) + ID d’interface (64 bits). En /64, l’ID de sous-réseau s’arrête au 4e bloc. Link-local = FE80::/10 ; multicast = FF00::/8.",
   "memo": "FE80 = Fait Entre voisins (lien local) ; FF = Foule (multicast) ; 2000::/3 = Internet (global). /56 → 64 − 56 = 8 bits → 256 sous-réseaux /64.",
   "trap": "Il n’y a ni masque ni diffusion en IPv6.",
-  "table": []
+  "table": [],
+  "basics": "Une adresse IPv6 fait 128 bits, écrits en 8 groupes hexadécimaux séparés par « : ». On peut omettre les zéros en tête d’un groupe, et remplacer une seule fois une suite de groupes nuls par « :: ».",
+  "clues": "« lien local / link-local », « plage », « identifiant de sous-réseau », « trois parties d’une adresse globale (GUA) », « /56 ou /48 : combien de sous-réseaux ».",
+  "steps": [
+   "Reconnais le type par le début : FE80 = lien local ; FF = multicast ; 2… ou 3… = globale (GUA) ; FC ou FD = locale unique ; ::1 = bouclage.",
+   "GUA = préfixe de routage global (donné par le FAI) + identifiant de sous-réseau (choisi par l’organisation) + identifiant d’interface (64 bits, comme la partie hôte en IPv4).",
+   "En /64, l’identifiant de sous-réseau = les 4 premiers groupes, suivis de ::/64.",
+   "Nombre de /64 dans un préfixe /p = 2^(64 − p)."
+  ],
+  "examples": [
+   [
+    "Question 100 · sous-réseau de 2001:DA48:FC5:A4:3D1B::1/64",
+    "On garde les 4 premiers groupes : 2001:DA48:FC5:A4::/64."
+   ],
+   [
+    "Question 87 · plage de lien local",
+    "FE80::/10."
+   ],
+   [
+    "Question 132 · combien de /64 dans 2001:db8:0:ca00::/56 ?",
+    "64 − 56 = 8 bits → 2^8 = 256 sous-réseaux."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -332,7 +548,30 @@
   "rule": "RS/RA : l’hôte demande, le routeur annonce préfixe et longueur (ipv6 unicast-routing active les RA). NS/NA : remplacent ARP et servent à vérifier qu’une adresse est unique (DAD). EUI-64 : couper la MAC en deux, insérer FFFE, inverser le 7e bit.",
   "memo": "RS = Router Solicitation (« un routeur ? »), RA = Router Advertisement (« moi ! voici le préfixe »). NS/NA = le ARP d’IPv6. FF02::1 = tous les nœuds, FF02::2 = tous les routeurs (« 2 comme deux-routeurs »).",
   "trap": "EUI-64 : 1C → 1E (le 7e bit passe de 0 à 1), puis FFFE au milieu.",
-  "table": []
+  "table": [],
+  "basics": "En IPv6, il n’y a plus d’ARP : ICMPv6 s’en charge et aide aussi l’hôte à se configurer. RS/RA : dialogue avec le routeur. NS/NA : dialogue entre voisins. SLAAC : l’hôte fabrique lui-même son adresse avec le préfixe annoncé dans le RA et un identifiant d’interface (EUI-64 ou aléatoire).",
+  "clues": "« ICMPv6 », « SLAAC », « avant de commencer à l’utiliser », « résolution des adresses de couche 3 en adresses MAC », « EUI-64 », « ipv6 unicast-routing », « FF02::… ».",
+  "steps": [
+   "Trouver une MAC, ou vérifier qu’une adresse n’est pas déjà prise (DAD) → NS puis NA.",
+   "Trouver le routeur et le préfixe → RS puis RA. Un routeur n’envoie des RA qu’avec ipv6 unicast-routing.",
+   "Messages qui n’existent qu’en ICMPv6 : NS, NA, RS, RA.",
+   "EUI-64 : coupe la MAC en deux moitiés, insère FFFE au milieu, puis inverse le 7e bit du premier octet.",
+   "FF02::1 = tous les nœuds du lien ; FF02::2 = tous les routeurs du lien."
+  ],
+  "examples": [
+   [
+    "Question 91 · EUI-64 de 1C-6F-65-C2-BD-F8",
+    "Moitiés 1C6F65 | C2BDF8 → 1C6F:65FF:FEC2:BDF8. Premier octet 1C = 0001 1100 ; le 7e bit passe à 1 → 0001 1110 = 1E. Résultat : 1E6F:65FF:FEC2:BDF8."
+   ],
+   [
+    "Question 130 · après SLAAC, avant d’utiliser l’adresse",
+    "L’hôte envoie une sollicitation de voisin (NS) pour vérifier que l’adresse n’est pas déjà utilisée."
+   ],
+   [
+    "Question 51 · messages absents d’ICMP pour IPv4",
+    "Sollicitation de voisin (NS) et annonce de routeur (RA)."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -354,7 +593,29 @@
   "rule": "Les numéros de port distinguent les conversations (port source côté client, port destination = service). TCP : connexion, accusés, retransmission, fenêtre (contrôle de flux). UDP : léger, sans garantie. Les deux ont ports et somme de contrôle.",
   "memo": "TCP = lettre recommandée (accusé, renvoi) ; UDP = carte postale (rapide, sans suivi). Fenêtre = « combien tu peux m’envoyer avant que je réponde ».",
   "trap": "Le port source ne désigne pas l’hôte, il désigne la session de l’application.",
-  "table": []
+  "table": [],
+  "basics": "La couche transport fait dialoguer des applications. TCP établit une connexion, numérote les données, accuse réception et renvoie ce qui manque. UDP envoie sans tout cela, plus rapidement. Les deux utilisent des numéros de port.",
+  "clues": "« distinguer les sessions », « deux fenêtres de navigateur », « caractéristiques communes à TCP et UDP », « fenêtre glissante », « port source / port de destination ».",
+  "steps": [
+   "Plusieurs conversations sur un même PC → elles sont distinguées par les numéros de port (le port source de chaque session).",
+   "Points communs à TCP et UDP : numéros de port et somme de contrôle. Connexion, fenêtre et accusés de réception → TCP seulement.",
+   "Fenêtre = contrôle de flux : le récepteur fixe la quantité qu’il accepte, et peut faire ralentir la source.",
+   "Port de destination = le service sur le serveur ; port source = choisi par le client pour sa session."
+  ],
+  "examples": [
+   [
+    "Question 26 · distinguer les flux des applications",
+    "Grâce au numéro de port source utilisé par chaque application."
+   ],
+   [
+    "Question 112 · points communs TCP / UDP",
+    "Les numéros de port et la somme de contrôle."
+   ],
+   [
+    "Question 84 · rôle de la fenêtre glissante",
+    "Demander à la source de diminuer son débit (contrôle de flux)."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -375,7 +636,29 @@
   "rule": "La couche liaison échange des trames sur le support local, rend le support transparent pour les couches hautes et détecte les erreurs avec le FCS (en fin de trame). La carte réseau y est rattachée par son adresse MAC.",
   "memo": "FCS = le « code de contrôle » au dos de l’enveloppe : il ne corrige pas, il détecte.",
   "trap": "Le choix du chemin entre réseaux est le rôle de la couche 3, pas de la liaison.",
-  "table": []
+  "table": [],
+  "basics": "La couche liaison (couche 2) transporte des trames entre deux équipements d’un même réseau local. Une trame = un en-tête (adresses MAC, type) + les données + une fin de trame (FCS).",
+  "clues": "« trame », « vérifier que les données n’ont pas été altérées », « fonction ou caractéristique de la couche liaison », « carte réseau (NIC) ».",
+  "steps": [
+   "Détecter une erreur dans la trame → FCS, placé en fin de trame.",
+   "Rôle de la couche 2 : échanger des trames sur un support local commun ; les couches hautes n’ont pas à connaître le support.",
+   "La carte réseau est rattachée à la couche 2 par son adresse MAC.",
+   "Champs : adressage → diriger la trame ; type → protocole de couche 3 transporté ; début de trame → délimiter ; FCS → erreurs."
+  ],
+  "examples": [
+   [
+    "Question 69 · vérifier que les données ne sont pas altérées",
+    "Le champ FCS (séquence de contrôle de trame)."
+   ],
+   [
+    "Question 83 · fonction de la couche liaison",
+    "Échanger des trames sur un support local commun."
+   ],
+   [
+    "Question 115 · ce qui rattache la carte réseau à la couche 2",
+    "L’adresse MAC."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -393,7 +676,29 @@
   "rule": "LLC (en haut, côté logiciel) : identifie le protocole de couche 3 transporté, permet à IPv4 et IPv6 de partager le support. MAC (en bas, côté matériel) : encapsulation (délimitation, adresses, FCS) et accès au support.",
   "memo": "LLC = Lien vers le Logiciel ; MAC = Matériel, Adresses, Contrôle d’accès.",
   "trap": "Les variantes changent les propositions : classe chaque phrase en « haut » (LLC) ou « bas » (MAC).",
-  "table": []
+  "table": [],
+  "basics": "La couche liaison est divisée en deux sous-couches : LLC en haut, qui dialogue avec la couche 3 (IPv4, IPv6), et MAC en bas, qui dialogue avec le support physique.",
+  "clues": "« sous-couche LLC », « sous-couche MAC », « deux fonctions / responsabilités ».",
+  "steps": [
+   "Pour chaque proposition, demande-toi de quoi elle parle.",
+   "Protocole de couche 3 (identifier IPv4 ou IPv6, les faire partager le support) → LLC.",
+   "Trame (délimitation, adresses MAC, FCS), encapsulation, accès au support (CSMA/CD) → MAC.",
+   "Coche exactement le nombre de réponses demandé."
+  ],
+  "examples": [
+   [
+    "Question 55 · fonctions de LLC",
+    "Permettre à IPv4 et IPv6 d’utiliser le même support ; identifier le protocole de couche réseau encapsulé."
+   ],
+   [
+    "Question 77 · fonctions de MAC",
+    "Ajouter un FCS en fin de trame pour détecter les erreurs ; délimiter les champs de la trame."
+   ],
+   [
+    "Question 97 · responsabilités de MAC",
+    "L’accès au support et l’encapsulation des données."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -413,7 +718,30 @@
   "rule": "ipconfig = ma configuration IP ; ping = est-ce que ça répond ? ; tracert = par où ça passe (sauts) ; nslookup = le DNS fonctionne-t-il ? ; netstat = connexions ouvertes ; arp -a = table ARP.",
   "memo": "« Le ping répond à l’IP mais pas au nom » → c’est le DNS → nslookup.",
   "trap": "tracert est cité dans le cours mais sa lecture n’y est pas détaillée (questions 43 et 154 limites).",
-  "table": []
+  "table": [],
+  "basics": "Ce sont des commandes Windows, à taper dans l’invite de commandes pour vérifier le réseau. Les commandes qui commencent par show sont des commandes Cisco, pas Windows.",
+  "clues": "« PC Windows », « vérifier la configuration IP ou DNS », « connectivité », « ping vers l’IP réussit, mais pas vers l’URL ».",
+  "steps": [
+   "Voir sa configuration (adresse, masque, passerelle, DNS) → ipconfig.",
+   "Tester si une machine répond → ping.",
+   "Voir le chemin et les sauts → tracert.",
+   "Tester la résolution des noms → nslookup.",
+   "Voir les connexions TCP ouvertes → netstat ; voir la table ARP → arp -a."
+  ],
+  "examples": [
+   [
+    "Question 63 · vérifier IP, DNS et lien avec le routeur",
+    "ipconfig (configuration), ping (connectivité) et nslookup (DNS)."
+   ],
+   [
+    "Question 54 · ping vers l’IP OK, vers l’URL KO",
+    "Le problème vient du nom → nslookup."
+   ],
+   [
+    "Question 8 · voir la configuration IP sous Windows",
+    "ipconfig."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -435,7 +763,30 @@
   "rule": "Modes : utilisateur (>) → enable → privilégié (#) → configure terminal → configuration globale. running-config en RAM, startup-config en NVRAM. service password-encryption chiffre les mots de passe dans les fichiers de configuration. show ip interface brief : IP et états.",
   "memo": "« RAM = Running = Risque de tout perdre au redémarrage ; NVRAM = celle qui reste ».",
   "trap": "Une commande de configuration refusée : on n’est pas dans le bon mode (il faut passer en privilégié puis en configuration).",
-  "table": []
+  "table": [],
+  "basics": "Cisco IOS est le système des routeurs et commutateurs Cisco. On le pilote en ligne de commande, en passant par des modes successifs.",
+  "clues": "« message d’erreur », « show startup-config / running-config », « service password-encryption », « show ip interface brief », « bannière ».",
+  "steps": [
+   "Modes : Switch> (utilisateur) → enable → Switch# (privilégié) → configure terminal → Switch(config)# (configuration). Une commande de configuration refusée signifie qu’on n’est pas dans le bon mode.",
+   "running-config = configuration en cours, en RAM ; startup-config = configuration sauvegardée, en NVRAM, chargée au démarrage.",
+   "service password-encryption chiffre les mots de passe stockés dans les fichiers de configuration.",
+   "show ip interface brief affiche les adresses IP et l’état (up/down) de chaque interface.",
+   "La bannière s’affiche à la connexion : pour la voir, quitter puis appuyer sur Entrée."
+  ],
+  "examples": [
+   [
+    "Question 35 · commande refusée",
+    "L’administrateur doit d’abord passer en mode EXEC privilégié (enable)."
+   ],
+   [
+    "Question 139 · show startup-config",
+    "Le fichier de configuration sauvegardé en NVRAM."
+   ],
+   [
+    "Question 153 · show ip interface brief",
+    "Les adresses IP et les états de couche 1."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -452,7 +803,24 @@
   "rule": "SSH chiffre l’identifiant, le mot de passe et toute la session ; Telnet envoie tout en clair ; la console est un accès physique local.",
   "memo": "SSH = Secure : le S de sécurité.",
   "trap": "Question 57 limite (commande transport input ssh absente du cours).",
-  "table": []
+  "table": [],
+  "basics": "Pour administrer un équipement, on peut se brancher dessus (console, câble sur place) ou s’y connecter à distance par les lignes VTY, avec Telnet (en clair) ou SSH (chiffré).",
+  "clues": "« confidentialité », « chiffré », « à distance », « transport input ssh ».",
+  "steps": [
+   "À distance + sécurité, chiffrement ou confidentialité → SSH.",
+   "Sur place, avec un câble → console.",
+   "Telnet n’est jamais la réponse quand on parle de sécurité."
+  ],
+  "examples": [
+   [
+    "Question 66 · préserver identifiant, mot de passe et session",
+    "SSH."
+   ],
+   [
+    "Question 57 · transport input ssh",
+    "Les communications à distance sont chiffrées (seul SSH est accepté)."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -469,7 +837,24 @@
   "rule": "CSMA/CD (anciens Ethernet en semi-duplex) : écouter avant d’émettre, détecter la collision, signal de brouillage, réessayer après un délai aléatoire. CSMA/CA : réseaux sans fil (Wi-Fi), on évite les collisions.",
   "memo": "CD = Collision Détectée (câble) ; CA = Collision Avoidance, évitée (sans fil).",
   "trap": "Le jeton et les priorités ne font pas partie de CSMA/CD.",
-  "table": []
+  "table": [],
+  "basics": "Quand plusieurs équipements partagent le même support, il faut une règle pour parler chacun son tour : c’est le contrôle d’accès au support.",
+  "clues": "« CSMA/CD », « réseau sans fil », « contention », « collision ».",
+  "steps": [
+   "Sans fil → CSMA/CA.",
+   "Ancien Ethernet partagé (semi-duplex) → CSMA/CD : écouter avant d’émettre ; tous les équipements voient les données ; en cas de collision, signal de brouillage puis nouvel essai après un délai aléatoire.",
+   "Écarte le jeton et les priorités, qui ne font pas partie de CSMA/CD."
+  ],
+  "examples": [
+   [
+    "Question 82 · réseau sans fil",
+    "CSMA/CA."
+   ],
+   [
+    "Question 138 · caractéristiques de CSMA/CD",
+    "Écouter le support avant d’émettre ; tous voient les données ; après une collision, réessayer après un délai aléatoire. Piège : le signal de brouillage signale une collision, il n’annonce pas que le support est libre."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -486,7 +871,26 @@
   "rule": "127.x = bouclage ; 169.254.x.x = lien local (APIPA, pas de DHCP) ; 240.x et plus = expérimentales (classe E) ; privées : 10/8, 172.16/12, 192.168/16. NAT économise les adresses publiques mais casse la connectivité de bout en bout.",
   "memo": "169.254 = « DHCP n’a pas répondu ».",
   "trap": "",
-  "table": []
+  "table": [],
+  "basics": "Certaines plages d’adresses IPv4 ont un usage réservé. On les reconnaît au premier nombre de l’adresse.",
+  "clues": "« expérimentale », « lien local », « bouclage », « publique », « NAT ».",
+  "steps": [
+   "127.x.x.x → bouclage (tester sa propre pile TCP/IP).",
+   "169.254.x.x → lien local (APIPA : aucun serveur DHCP n’a répondu).",
+   "224 à 239 → multicast ; 240 et plus → expérimentale (classe E).",
+   "10.x, 172.16 à 172.31, 192.168.x → privées ; tout le reste → publiques.",
+   "NAT : avantage = économise les adresses publiques ; inconvénient = casse la connectivité de bout en bout."
+  ],
+  "examples": [
+   [
+    "Question 157 · associer chaque adresse",
+    "240.2.6.255 → expérimentale ; 169.254.1.5 → lien local ; 198.133.219.2 → publique ; 127.0.0.1 → bouclage."
+   ],
+   [
+    "Question 90 · NAT",
+    "Gêne les applications qui ont besoin d’une connectivité de bout en bout ; ralentit l’épuisement des adresses IPv4."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -503,7 +907,25 @@
   "rule": "Le routeur compare la destination à sa table : réseau directement connecté → il sort par cette interface ; sinon prochain saut ; sinon route par défaut (S*). La table contient les routes des interfaces actives (C et L).",
   "memo": "C = Connecté, L = Local (l’adresse de l’interface), S = Statique, S* = statique par défaut.",
   "trap": "",
-  "table": []
+  "table": [],
+  "basics": "Un routeur reçoit un paquet, regarde l’adresse IP de destination et cherche dans sa table de routage par où l’envoyer.",
+  "clues": "« table de routage », « réseau directement connecté », « que fait le routeur après avoir trouvé… ».",
+  "steps": [
+   "Destination dans un réseau directement connecté (code C) → le paquet sort par cette interface.",
+   "Sinon, une route vers un prochain saut (S, O, R…).",
+   "Sinon, la route par défaut (S*). Sans route, le paquet est détruit.",
+   "La table contient les routes des interfaces actives (C et L) et les routes statiques (code S)."
+  ],
+  "examples": [
+   [
+    "Question 64 · destination directement connectée",
+    "Le routeur transfère le paquet vers cette interface."
+   ],
+   [
+    "Question 142 · caractéristiques de la table",
+    "Elle contient les routes des interfaces actives ; une route statique par défaut y apparaît avec le code S."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -520,7 +942,23 @@
   "rule": "Norme ouverte : utilisable par tous → concurrence et choix. Propriétaire : contrôlé par l’organisation qui l’a créé.",
   "memo": "Ouvert = tout le monde peut fabriquer ; propriétaire = une seule marque décide.",
   "trap": "Question 5 limite.",
-  "table": []
+  "table": [],
+  "basics": "Un protocole est une règle de communication. Il peut être défini par une norme ouverte (publique) ou par une seule entreprise (propriétaire).",
+  "clues": "« norme ouverte », « protocole propriétaire ».",
+  "steps": [
+   "Norme ouverte → tout fabricant peut l’utiliser → concurrence et choix.",
+   "Propriétaire → contrôlé par l’organisation qui le définit."
+  ],
+  "examples": [
+   [
+    "Question 147 · avantage d’une norme ouverte",
+    "Elle encourage la concurrence et le choix."
+   ],
+   [
+    "Question 5 · protocoles propriétaires",
+    "Développés par des organisations qui contrôlent leur définition et leur fonctionnement."
+   ]
+  ]
  },
  {
   "bank": "CCNA 1",
@@ -537,7 +975,20 @@
   "rule": "Topologie physique = emplacements et câbles ; topologie logique = adresses IP, équipements et groupes.",
   "memo": "Physique = où c’est ; logique = comment c’est adressé.",
   "trap": "Question 122 (connecteur RJ-45) hors cours.",
-  "table": []
+  "table": [],
+  "basics": "Un schéma de topologie représente le réseau. Le schéma physique montre où sont les choses ; le schéma logique montre comment elles sont adressées.",
+  "clues": "« schéma de topologie physique / logique ».",
+  "steps": [
+   "Emplacement d’un équipement, trajet des câbles, salles → topologie physique.",
+   "Adresses IP, groupes d’équipements, réseaux → topologie logique.",
+   "Ce qui n’est ni l’un ni l’autre (un port USB) → non utilisé."
+  ],
+  "examples": [
+   [
+    "Question 152 · associer les éléments",
+    "Adresse IP d’un serveur → logique ; emplacement d’un ordinateur et trajet des câbles → physique ; port USB → non utilisé."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -583,6 +1034,27 @@
     "Destination inconnue / diffusion / multicast",
     "tous les ports sauf l’entrée"
    ]
+  ],
+  "basics": "Un commutateur relie les équipements d’un réseau local. Il tient une table MAC (appelée aussi table CAM) qui indique quelle adresse MAC se trouve derrière quel port.",
+  "clues": "« table MAC / CAM », « adresse MAC source », « MAC de destination absente de la table », « remplir la table », « multicast ».",
+  "steps": [
+   "Regarde d’abord la MAC SOURCE → apprentissage : ajout, minuteur remis à zéro, ou remplacement de l’entrée (voir le tableau).",
+   "Regarde ensuite la MAC DESTINATION → transmission : port connu → ce port seulement ; inconnue → tous les ports sauf celui d’entrée.",
+   "Diffusion et multicast → tous les ports sauf celui d’entrée."
+  ],
+  "examples": [
+   [
+    "Question 60 · remplir la table MAC",
+    "Avec la MAC source et le port d’entrée."
+   ],
+   [
+    "Question 147 · destination unicast absente de la table",
+    "Transmettre sur tous les ports sauf le port d’entrée."
+   ],
+   [
+    "Question 14 · table de SW1 vide, PCA vers PCC",
+    "SW1 envoie la trame sur tous ses ports sauf le port d’entrée, y compris vers SW2."
+   ]
   ]
  },
  {
@@ -605,7 +1077,29 @@
   "rule": "Route par défaut : ip route 0.0.0.0 0.0.0.0 <sortie> ; en IPv6 : ipv6 route ::/0 <sortie>. Elle sert pour toute destination absente de la table.",
   "memo": "« Quatre zéros, puis quatre zéros » ; en IPv6, « deux-points deux-points slash zéro ».",
   "trap": "0.0.0.0 255.255.255.255 ou ::1/0 sont faux.",
-  "table": []
+  "table": [],
+  "basics": "Une route par défaut est la route « pour tout le reste » : elle envoie, en général vers Internet, tout ce que la table ne connaît pas.",
+  "clues": "« route par défaut », « accéder à Internet », « destinations absentes de la table », « ::/0 ».",
+  "steps": [
+   "IPv4 : ip route 0.0.0.0 0.0.0.0 <IP du voisin ou interface de sortie>.",
+   "IPv6 : ipv6 route ::/0 <interface ou IP du voisin>.",
+   "Dans la table, elle apparaît avec le code S* (« Gateway of last resort »).",
+   "Si aucune route plus précise ne correspond à la destination, c’est elle qui s’applique."
+  ],
+  "examples": [
+   [
+    "Question 4 · route par défaut IPv4",
+    "ip route 0.0.0.0 0.0.0.0 S0/0/0 (réseau ET masque à zéro)."
+   ],
+   [
+    "Question 3 · une route vers un seul réseau, pas d’Internet",
+    "La route ne vise que 209.165.200.224/27 : il faut remplacer réseau et masque par 0.0.0.0 0.0.0.0."
+   ],
+   [
+    "Question 158 · route par défaut IPv6",
+    "::/0."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -646,6 +1140,28 @@
     "RIP",
     "120"
    ]
+  ],
+  "basics": "La distance administrative (DA) mesure la confiance dans la source d’une route : plus elle est petite, plus la route est préférée. Une route flottante est une route de secours qui ne s’installe que si la route principale disparaît.",
+  "clues": "« route de secours », « flottante », « distance administrative », « si la liaison tombe ».",
+  "steps": [
+   "Trouve le protocole de la route principale (OSPF, RIP, EIGRP…).",
+   "Retrouve sa DA dans le tableau : EIGRP 90, OSPF 110, RIP 120.",
+   "La route flottante doit avoir une DA strictement plus grande.",
+   "Vérifie aussi le prochain saut : l’IP du voisin sur le lien de secours."
+  ],
+  "examples": [
+   [
+    "Question 53 · le secours est utilisé même quand OSPF marche",
+    "Le secours a une DA de 100, plus petite que 110 (OSPF) : il gagne toujours. Il faut une DA plus grande → 120."
+   ],
+   [
+    "Question 87 · secours d’une route RIP",
+    "RIP = 120 → une DA plus grande : 121."
+   ],
+   [
+    "Question 2 · secours d’une route EIGRP",
+    "EIGRP = 90 → DA 100, avec le bon prochain saut (209.165.200.225)."
+   ]
   ]
  },
  {
@@ -669,7 +1185,30 @@
   "rule": "ip route <réseau de destination> <masque> <IP du prochain saut OU interface de sortie>. Le prochain saut est l’IP du routeur voisin, côté lien partagé. En IPv6 avec une adresse link-local (FE80) comme prochain saut, il faut aussi l’interface de sortie. Route d’hôte = /32 (/128 en IPv6). Une route statique reste jusqu’à no ip route.",
   "memo": "« Où je vais, avec quel masque, par qui je passe ».",
   "trap": "Le réseau de destination est le réseau (172.16.2.0), pas l’adresse d’un hôte (172.16.2.1).",
-  "table": []
+  "table": [],
+  "basics": "Une route statique est écrite à la main par l’administrateur : « pour aller vers tel réseau, passe par tel voisin (ou telle interface) ».",
+  "clues": "« quelle commande de route statique », « atteindre le LAN de… », « prochain saut », « adresse link-local fe80 », « route d’hôte ».",
+  "steps": [
+   "Destination = l’adresse du RÉSEAU à atteindre (souvent terminée par .0) et son masque.",
+   "Prochain saut = l’IP de l’interface du routeur voisin, sur le lien qui vous relie (pas une adresse de son LAN).",
+   "IPv6 avec un prochain saut en FE80 → ajouter l’interface de sortie avant l’adresse.",
+   "Dans une table : « via X » = route avec prochain saut ; « directly connected » = route avec interface de sortie.",
+   "Route d’hôte = masque /32 (255.255.255.255) ou /128 en IPv6. Une route statique ne disparaît qu’avec no ip route."
+  ],
+  "examples": [
+   [
+    "Question 64 · sur R2, route vers le LAN de PC B (172.16.2.0/24)",
+    "Destination 172.16.2.0 255.255.255.0 ; prochain saut = R1 côté lien série, 172.16.3.1 → ip route 172.16.2.0 255.255.255.0 172.16.3.1. Pièges : 172.16.2.1 est un hôte, et 172.16.2.254 n’est pas joignable directement depuis R2."
+   ],
+   [
+    "Question 5 · route IPv6 avec link-local",
+    "ipv6 route 2001:db8:12:10::/64 S0/0/1 fe80::2 : interface de sortie puis adresse link-local du voisin."
+   ],
+   [
+    "Question 32 · route configurée avec le prochain saut",
+    "La ligne « S 10.17.2.0/24 [1/0] via 10.16.2.2 » (« via » = prochain saut)."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -689,7 +1228,28 @@
   "rule": "Ordre : DISCOVER (client, diffusion) → OFFER (serveur) → REQUEST (client, diffusion, désigne l’offre choisie) → ACK (serveur confirme).",
   "memo": "DORA, comme l’exploratrice : Discover, Offer, Request, Ack. Le REQUEST part en diffusion pour que les autres serveurs sachent qu’ils ne sont pas choisis.",
   "trap": "Plusieurs offres ? Le client en accepte une seule avec un DHCPREQUEST.",
-  "table": []
+  "table": [],
+  "basics": "DHCPv4 attribue automatiquement à un client une adresse IPv4 (avec masque, passerelle et DNS) pour une durée limitée, le bail.",
+  "clues": "« étapes du processus DHCP », « plusieurs DHCPOFFER », « accepter une adresse proposée », « DHCPACK ».",
+  "steps": [
+   "Récite DORA : Discover (le client cherche un serveur) → Offer (le serveur propose) → Request (le client accepte) → Ack (le serveur confirme).",
+   "Plusieurs offres → le client envoie un seul DHCPREQUEST qui désigne l’offre choisie.",
+   "Le client n’a pas encore d’adresse : ses messages partent en diffusion."
+  ],
+  "examples": [
+   [
+    "Question 108 · ordre des étapes",
+    "1 DISCOVER, 2 OFFER, 3 REQUEST, 4 ACK."
+   ],
+   [
+    "Question 90 · accepter une adresse proposée",
+    "DHCPREQUEST, en diffusion."
+   ],
+   [
+    "Question 111 · plusieurs offres",
+    "Le client envoie un DHCPREQUEST qui identifie l’offre qu’il accepte."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -707,7 +1267,28 @@
   "rule": "Quand le serveur DHCP est sur un autre réseau, le routeur relaie : ip helper-address <IP du serveur> sur l’interface qui reçoit les diffusions des clients (côté LAN des clients).",
   "memo": "Le « helper » se met là où sont les clients, et il pointe vers le serveur.",
   "trap": "Mauvaise interface = pas d’adresse pour les PC.",
-  "table": []
+  "table": [],
+  "basics": "Les messages DHCP du client sont des diffusions, et un routeur ne transmet pas les diffusions. Si le serveur DHCP est sur un autre réseau, le routeur doit les relayer.",
+  "clues": "« serveur DHCP sur un autre réseau », « ip helper-address », « le PC ne reçoit pas d’adresse », « agent relais ».",
+  "steps": [
+   "Trouve l’interface du routeur côté clients (celle qui est leur passerelle).",
+   "Sur cette interface : ip helper-address <IP du serveur DHCP>.",
+   "Erreurs classiques : commande placée sur la mauvaise interface, ou mauvaise adresse de serveur."
+  ],
+  "examples": [
+   [
+    "Question 44 · PC1 ne reçoit pas d’adresse",
+    "ip helper-address est sur la mauvaise interface."
+   ],
+   [
+    "Question 100 · nouveau sous-réseau",
+    "Sur R1 : interface G0/0 (côté nouveau sous-réseau), puis ip helper-address 10.2.0.250 (le serveur)."
+   ],
+   [
+    "Question 42 · que conclure de ip helper-address ?",
+    "R1 est configuré comme agent relais DHCPv4."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -730,7 +1311,29 @@
   "rule": "SLAAC : l’hôte prend le préfixe du RA. Indicateur O (other-config-flag) = DHCPv6 sans état : adresse par SLAAC, DNS et autres infos par DHCPv6. Indicateur M (managed-config-flag) = DHCPv6 avec état : le serveur donne l’adresse. Après avoir obtenu son adresse, l’hôte vérifie l’unicité par un NS.",
   "memo": "M = Managed : le serveur Manage l’adresse. O = Other : seulement les Autres infos. Sans état = le serveur ne retient personne → 0 client actif.",
   "trap": "Le RA donne préfixe et longueur de préfixe, pas le DNS.",
-  "table": []
+  "table": [],
+  "basics": "En IPv6, un hôte obtient son adresse globale de trois façons : SLAAC seul, SLAAC + DHCPv6 sans état, ou DHCPv6 avec état. Le routeur l’indique dans ses annonces (RA) avec deux indicateurs : M et O.",
+  "clues": "« other-config-flag », « managed-config-flag », « sans état / avec état », « clients actifs : 0 », « message RS / RA ».",
+  "steps": [
+   "Cherche les commandes d’interface : managed-config-flag (M = 1) → avec état ; other-config-flag (O = 1) → sans état ; aucune → SLAAC seul.",
+   "Pool avec address prefix → avec état ; pool avec seulement dns-server ou domain-name → sans état.",
+   "Sans état = le serveur ne garde aucune trace des clients → « 0 client actif » est normal.",
+   "Le RA donne le préfixe et sa longueur ; l’hôte vérifie ensuite que son adresse est unique avec un NS."
+  ],
+  "examples": [
+   [
+    "Question 56 · ligne qui active le DHCPv6 sans état",
+    "ipv6 nd other-config-flag."
+   ],
+   [
+    "Question 8 · 0 client actif",
+    "Le serveur ne garde pas d’état en DHCPv6 sans état."
+   ],
+   [
+    "Question 144 · pas d’information DNS en sans état",
+    "Vérifier dns-server dans le pool et ipv6 nd other-config-flag sur l’interface côté LAN."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -751,7 +1354,28 @@
   "rule": "Le port du commutateur vers le routeur est un trunk 802.1Q. Sur le routeur : une sous-interface par VLAN (G0/0.10), encapsulation dot1Q <n° de VLAN>, et une IP dans le sous-réseau du VLAN.",
   "memo": "Un seul câble, plusieurs VLAN : le « bâton » transporte tout en trunk.",
   "trap": "Erreurs classiques : mauvais numéro dans encapsulation dot1Q, ou même sous-réseau sur deux sous-interfaces.",
-  "table": []
+  "table": [],
+  "basics": "Des VLAN différents sont des réseaux différents : il faut un routeur pour qu’ils communiquent. Avec router-on-a-stick, un seul câble trunk relie le commutateur au routeur, et l’interface du routeur est découpée en sous-interfaces, une par VLAN.",
+  "clues": "« router-on-a-stick », « sous-interface », « encapsulation dot1Q », « le VLAN X ne joint pas le VLAN Y ».",
+  "steps": [
+   "Port du commutateur vers le routeur : trunk 802.1Q.",
+   "Sur le routeur, pour chaque VLAN : interface G0/0.<n>, puis encapsulation dot1Q <numéro du VLAN>, puis ip address <passerelle du VLAN>.",
+   "Dépannage : compare le numéro dans encapsulation dot1Q au VLAN des PC ; chaque sous-interface doit être dans un sous-réseau différent."
+  ],
+  "examples": [
+   [
+    "Question 106 · port du commutateur relié au routeur",
+    "Trunk 802.1Q."
+   ],
+   [
+    "Question 95 · PC2 ne joint pas PC1",
+    "encapsulation dot1Q 5 porte le mauvais numéro de VLAN."
+   ],
+   [
+    "Question 81 · erreur et VLAN 20 ↔ 30 impossible",
+    "Les deux sous-interfaces utilisent le même sous-réseau."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -771,7 +1395,28 @@
   "rule": "Un VLAN absent de la liste des VLAN autorisés d’un trunk ne passe pas : ses hôtes ne communiquent plus entre commutateurs. Une diffusion (ARP, DHCP) ne va qu’aux ports du même VLAN, trunks compris.",
   "memo": "Le trunk est une autoroute à péages : un VLAN non autorisé reste à l’entrée.",
   "trap": "",
-  "table": []
+  "table": [],
+  "basics": "Un trunk transporte plusieurs VLAN entre deux commutateurs en étiquetant les trames (802.1Q). Une diffusion reste toujours dans son VLAN.",
+  "clues": "« VLAN autorisés », « trunk de secours », « qui recevra les requêtes ARP de A », « sur quels ports la diffusion est transmise ».",
+  "steps": [
+   "Repère le VLAN de l’émetteur.",
+   "Une diffusion part vers tous les ports de ce VLAN et vers les trunks qui l’autorisent, sauf le port d’entrée.",
+   "Deux hôtes du même VLAN, sur deux commutateurs, ne se parlent pas → le VLAN manque dans la liste des VLAN autorisés du trunk."
+  ],
+  "examples": [
+   [
+    "Question 141 · PC-A et PC-B du VLAN 60 ne communiquent pas",
+    "Le VLAN de PC-A n’est pas autorisé sur le trunk."
+   ],
+   [
+    "Question 66 · qui reçoit l’ARP de A ?",
+    "Seulement les hôtes du même VLAN que A, sur les deux commutateurs : C, D et F."
+   ],
+   [
+    "Question 36 · après bascule sur le trunk de secours",
+    "La liste des VLAN autorisés du lien de secours est mal configurée."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -803,6 +1448,27 @@
     "access + …",
     "pas de trunk"
    ]
+  ],
+  "basics": "DTP est un protocole Cisco qui permet à deux ports de commutateur de négocier automatiquement la création d’un trunk.",
+  "clues": "« dynamic auto », « dynamic desirable », « négociation des trunks », « propriétaire Cisco activé sur 2960 ».",
+  "steps": [
+   "Un côté en trunk ou en dynamic desirable, l’autre en trunk, desirable ou auto → trunk.",
+   "auto + auto → pas de trunk : aucun des deux ne le demande.",
+   "access d’un côté → jamais de trunk."
+  ],
+  "examples": [
+   [
+    "Question 82 · paires qui forment un trunk",
+    "desirable–trunk, desirable–desirable et desirable–auto."
+   ],
+   [
+    "Question 67 · trunk qui ne se forme pas",
+    "Les deux côtés sont en auto : passer l’un d’eux en dynamic desirable."
+   ],
+   [
+    "Question 157 · propriétaire Cisco, actif sur 2960",
+    "DTP."
+   ]
   ]
  },
  {
@@ -824,7 +1490,29 @@
   "rule": "STP bloque les chemins redondants. BID = priorité + ID système étendu + MAC. Le plus petit BID devient racine (priorité, puis MAC). Chaque autre commutateur a un port racine (meilleur coût vers la racine) ; chaque segment a un port désigné ; le reste est bloqué (alternatif).",
   "memo": "« Le plus petit gagne » partout : BID, coût, puis ID de port. Sur le pont racine, tous les ports sont désignés.",
   "trap": "À priorité égale, regarde la MAC la plus petite.",
-  "table": []
+  "table": [],
+  "basics": "Les liens redondants entre commutateurs créent des boucles de couche 2 (les trames tournent sans fin). STP en bloque certains pour ne garder qu’un arbre sans boucle.",
+  "clues": "« pont racine », « ports désignés », « Bridge ID », « désactive les chemins redondants », « liaison qui ne transmettra aucun trafic ».",
+  "steps": [
+   "Pont racine : la plus petite priorité ; à égalité, la plus petite adresse MAC.",
+   "Sur chaque autre commutateur, port racine = celui qui a le coût le plus bas vers la racine (1 Gbit/s = 4, 100 Mbit/s = 19).",
+   "Sur chaque lien, un port désigné : celui du côté le plus proche de la racine. Tous les ports du pont racine sont désignés.",
+   "Les ports restants sont bloqués (alternatifs) : leur lien ne transmet plus de trafic."
+  ],
+  "examples": [
+   [
+    "Question 173 · composants du Bridge ID",
+    "Priorité du pont, identifiant système étendu et adresse MAC."
+   ],
+   [
+    "Question 24 · désactiver les chemins redondants",
+    "STP."
+   ],
+   [
+    "Question 29 · trois ports désignés (même priorité partout)",
+    "La racine est le commutateur à la plus petite MAC : ses ports sont désignés. Puis, sur chaque lien restant, le port le plus proche de la racine. Réponse : fa0/13, fa0/10 et fa0/21 (voir le schéma)."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -843,7 +1531,23 @@
   "rule": "Relier des commutateurs agrandit le domaine de diffusion. Pour le réduire, on découpe en plusieurs LAN (ou VLAN) et on route entre eux.",
   "memo": "Commutateur = rallonge la pièce ; routeur (ou VLAN) = met des murs.",
   "trap": "Question 104 limite (domaine de collision non enseigné).",
-  "table": []
+  "table": [],
+  "basics": "Un domaine de diffusion est l’ensemble des équipements qui reçoivent une diffusion. Les commutateurs la font passer ; les routeurs l’arrêtent.",
+  "clues": "« interconnexion de commutateurs », « domaine de diffusion », « réduire le nombre d’équipements qui reçoivent les diffusions ».",
+  "steps": [
+   "Relier des commutateurs → un seul domaine de diffusion, plus grand.",
+   "Pour le réduire → découper en plusieurs LAN (ou VLAN) et router entre eux."
+  ],
+  "examples": [
+   [
+    "Question 136 · interconnexion de commutateurs",
+    "La taille du domaine de diffusion augmente."
+   ],
+   [
+    "Question 166 · diffusions qui touchent 200 équipements",
+    "Diviser le LAN en LAN plus petits et router entre eux."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -866,7 +1570,48 @@
   "rule": "Lis le symptôme : tout Internet coupé après un changement de FAI → ancienne route par défaut ; une seule destination injoignable → sa route statique ; réseau interne injoignable → show ip interface brief ; mauvais chemin après une nouvelle route → son interface de sortie ; pas de protocole dynamique voulu → routes statiques + route par défaut.",
   "memo": "Le symptôme dit où chercher : 1 destination → sa route ; tout Internet → la route par défaut ; tout l’interne → les interfaces.",
   "trap": "Les propositions se ressemblent d’une question à l’autre : ne réponds qu’à partir du symptôme.",
-  "table": []
+  "table": [
+   [
+    "Une seule destination injoignable (un serveur, un site)",
+    "route statique vers cette destination"
+   ],
+   [
+    "Tout Internet coupé après un changement de FAI",
+    "ancienne route par défaut à supprimer"
+   ],
+   [
+    "Réseau interne injoignable",
+    "show ip interface brief (interface hors service)"
+   ],
+   [
+    "Mauvais chemin après l’ajout d’une route",
+    "interface de sortie de la nouvelle route"
+   ],
+   [
+    "Petit réseau, pas de protocole dynamique voulu",
+    "routes statiques + route par défaut"
+   ]
+  ],
+  "basics": "Ces questions décrivent un symptôme de panne et demandent la bonne vérification. Les propositions reviennent d’une question à l’autre : seul le symptôme permet de choisir.",
+  "clues": "« Que faut-il faire ou vérifier ? ».",
+  "steps": [
+   "Résume le symptôme en une phrase : qu’est-ce qui ne marche plus, depuis quand, et qu’est-ce qui marche encore ?",
+   "Cherche la ligne correspondante dans le tableau, puis choisis la proposition qui en parle."
+  ],
+  "examples": [
+   [
+    "Question 59 · changement de FAI, plus d’Internet",
+    "Tout Internet est touché → vérifier que l’ancienne route par défaut a été supprimée."
+   ],
+   [
+    "Question 132 · serveurs internes injoignables",
+    "Tout l’interne → show ip interface brief pour voir si une interface est hors service."
+   ],
+   [
+    "Question 152 · seul le serveur web est injoignable",
+    "Une seule destination → vérifier la route statique vers ce serveur dans la table."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -885,7 +1630,28 @@
   "rule": "Les VLAN sont stockés dans vlan.dat (flash), pas dans startup-config. VLAN par défaut = VLAN 1 (tous les ports au départ) ; natif = non étiqueté sur le trunk ; gestion = reçoit l’IP du commutateur ; données = trafic des utilisateurs.",
   "memo": "erase startup-config n’efface pas les VLAN : il faut aussi delete vlan.dat.",
   "trap": "Une interface vlan 99 ne marche pas si le VLAN 99 n’a pas été créé.",
-  "table": []
+  "table": [],
+  "basics": "Un VLAN découpe un commutateur en plusieurs réseaux logiques séparés : des PC de VLAN différents ne se voient pas sans routeur.",
+  "clues": "« erase startup-config », « vlan.dat », « types de VLAN », « interface vlan … absente ».",
+  "steps": [
+   "Les VLAN sont stockés dans vlan.dat (mémoire flash) : erase startup-config ne les efface pas.",
+   "Types : par défaut (VLAN 1, tous les ports au départ) ; données (trafic des utilisateurs) ; gestion (porte l’IP du commutateur) ; natif (trafic non étiqueté sur un trunk).",
+   "Une interface vlan X qui ne fonctionne pas → vérifier d’abord que le VLAN X a été créé."
+  ],
+  "examples": [
+   [
+    "Question 15 · VLAN encore présents après erase startup-config",
+    "Ils sont dans vlan.dat, en flash : il faut supprimer ce fichier."
+   ],
+   [
+    "Question 16 · types de VLAN",
+    "Défaut → tous les ports au démarrage ; gestion → IP et masque pour administrer ; données → trafic des utilisateurs ; natif → trafic non étiqueté."
+   ],
+   [
+    "Question 25 · VLAN 99 absent",
+    "Le VLAN 99 n’a pas encore été créé."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -902,7 +1668,25 @@
   "rule": "Créer les VLAN et y affecter les ports, créer une SVI (interface vlan n) par VLAN, activer ip routing, et passer le port vers le routeur en port routé avec no switchport.",
   "memo": "SVI + ip routing = le commutateur devient routeur.",
   "trap": "Les 7 variantes de la question 122 changent l’ordre des propositions : retiens la liste des étapes.",
-  "table": []
+  "table": [],
+  "basics": "Un commutateur de couche 3 peut router lui-même entre les VLAN, grâce à des interfaces virtuelles appelées SVI (une par VLAN).",
+  "clues": "« commutateur de couche 3 », « routage inter-VLAN », « étapes de configuration », « SVI », « ip routing ».",
+  "steps": [
+   "Créer les VLAN et y affecter les ports.",
+   "Créer une SVI par VLAN : interface vlan n + ip address (elle sert de passerelle aux PC du VLAN).",
+   "Activer le routage : ip routing.",
+   "Port relié au routeur : no switchport (il devient port routé) + ip address."
+  ],
+  "examples": [
+   [
+    "Question 122 · trois des étapes",
+    "Créer les SVI, activer le routage IP, affecter les ports aux VLAN (selon les variantes : aussi créer les VLAN, ou no switchport sur le port vers le routeur)."
+   ],
+   [
+    "Question 57 · deux configurations à appliquer",
+    "Sur le port vers le routeur : no switchport + ip address 192.168.1.2 255.255.255.252 ; et ip routing."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -922,7 +1706,25 @@
   "rule": "Pour administrer à distance : une adresse IP (SVI), une passerelle par défaut et des lignes VTY. SSH sécurise l’accès distant. shutdown désactive un port inutilisé ; show interfaces aide quand des paquets se perdent sur un lien direct.",
   "memo": "IP + passerelle + VTY = le trio de la gestion à distance.",
   "trap": "",
-  "table": []
+  "table": [],
+  "basics": "Administrer un commutateur à distance, c’est s’y connecter par le réseau au lieu de se brancher dessus avec un câble console.",
+  "clues": "« gestion à distance », « accès distant sécurisé », « shutdown », « show interfaces ».",
+  "steps": [
+   "Donner une IP au commutateur, sur une SVI (VLAN de gestion).",
+   "Configurer ip default-gateway pour être joignable depuis d’autres réseaux.",
+   "Configurer les lignes VTY, et utiliser SSH pour sécuriser l’accès.",
+   "shutdown désactive un port inutilisé ; show interfaces aide quand des paquets se perdent sur un lien direct."
+  ],
+  "examples": [
+   [
+    "Question 55 · éléments pour la gestion à distance",
+    "Adresse IP, lignes VTY et passerelle par défaut."
+   ],
+   [
+    "Question 18 · accès distant sécurisé",
+    "Configurer SSH."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -940,7 +1742,24 @@
   "rule": "Routes statiques : plus sûres et moins gourmandes, mais pas d’adaptation automatique. La plus longue correspondance l’emporte. CEF transmet avec la FIB et la table de contiguïté : c’est le mécanisme le plus rapide.",
   "memo": "Statique = carte papier ; dynamique = GPS qui recalcule.",
   "trap": "",
-  "table": []
+  "table": [],
+  "basics": "Une route statique est écrite à la main ; une route dynamique est apprise par un protocole de routage (RIP, OSPF…). Le routeur choisit toujours la route la plus précise (préfixe le plus long).",
+  "clues": "« avantages des routes statiques », « quelle métrique », « CEF ».",
+  "steps": [
+   "Routes statiques : plus sûres et moins gourmandes en ressources, mais elles ne s’adaptent pas seules aux pannes.",
+   "Pour une destination, prends la route de la table dont le préfixe est le plus long et contient l’adresse, puis lis sa métrique.",
+   "CEF transmet avec la FIB et une table de contiguïté : c’est le mécanisme le plus rapide."
+  ],
+  "examples": [
+   [
+    "Question 31 · avantages des routes statiques",
+    "Plus de sécurité et moins de ressources consommées."
+   ],
+   [
+    "Question 159 · CEF",
+    "Le mécanisme le plus rapide ; il transmet à partir de la FIB et de la table de contiguïté."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -957,7 +1776,18 @@
   "rule": "Lien local = FE80::/10.",
   "memo": "FE80 = Fait Entre voisins.",
   "trap": "",
-  "table": []
+  "table": [],
+  "basics": "Une adresse IPv6 de lien local ne sert qu’entre voisins d’un même lien ; elle n’est jamais routée.",
+  "clues": "« link-local », « lien local ».",
+  "steps": [
+   "Lien local = FE80::/10, quelle que soit l’écriture (majuscules ou minuscules)."
+  ],
+  "examples": [
+   [
+    "Question 34 · préfixe link-local",
+    "FE80::/10."
+   ]
+  ]
  },
  {
   "bank": "CCNA 2",
@@ -975,6 +1805,23 @@
   "rule": "Pool DHCP : la passerelle et les adresses fixes doivent être exclues (ip dhcp excluded-address). MAC/IP : à l’arrivée, la MAC source est celle du dernier routeur, l’IP source reste celle de l’émetteur. EtherChannel regroupe des liens redondants.",
   "memo": "On exclut ce qui est déjà pris.",
   "trap": "Question 65 limite.",
-  "table": []
+  "table": [],
+  "basics": "Trois cas isolés, chacun relié à une notion d’une autre famille.",
+  "clues": "« adresses exclues du pool », « adresses MAC et IP à l’arrivée », « liaisons redondantes ».",
+  "steps": [
+   "Pool DHCP : la passerelle et toutes les adresses fixes doivent être exclues avec ip dhcp excluded-address.",
+   "À l’arrivée chez B : MAC source = l’interface du dernier routeur ; IP source = toujours celle de l’émetteur A.",
+   "EtherChannel regroupe plusieurs liens redondants pour transmettre en même temps."
+  ],
+  "examples": [
+   [
+    "Question 99 · erreur restante dans la configuration DHCP",
+    "L’adresse de la passerelle n’est pas dans les adresses exclues."
+   ],
+   [
+    "Question 21 · adresses à l’arrivée chez B",
+    "MAC source = le routeur (00E0.FE91.7799) ; IP source = A (10.1.1.10)."
+   ]
+  ]
  }
 ]
