@@ -1,0 +1,1198 @@
+[
+ {
+  "id": "m1",
+  "file": "SR71_module1.pdf",
+  "title": "Module 1 · Protocoles et modèles",
+  "goal": "Comprendre comment deux machines communiquent : les éléments d’un réseau, les règles (protocoles), les modèles en couches et les adresses utilisées.",
+  "sections": [
+   {
+    "t": "Les composants d’un réseau",
+    "p": "3-5",
+    "pts": [
+     "Terminal : là où le message naît ou arrive (PC, téléphone, serveur).",
+     "Équipement intermédiaire : relaie les données (commutateur, routeur, point d’accès).",
+     "Support : le chemin physique (câble cuivre → impulsions électriques, fibre → lumière, sans fil → ondes)."
+    ]
+   },
+   {
+    "t": "Types de réseaux",
+    "p": "6-10",
+    "pts": [
+     "LAN : réseau local d’une maison ou d’une entreprise, géré par une seule organisation.",
+     "WAN : relie des LAN éloignés, souvent géré par un opérateur.",
+     "Internet : l’ensemble des réseaux interconnectés ; il n’appartient à personne."
+    ]
+   },
+   {
+    "t": "Les règles de communication",
+    "p": "11-18",
+    "pts": [
+     "Un protocole fixe : le codage, le format (encapsulation), la taille, la synchronisation et les options de remise (unicast à un, multicast à un groupe, broadcast à tous)."
+    ]
+   },
+   {
+    "t": "Protocoles et modèles en couches",
+    "p": "19-28",
+    "pts": [
+     "TCP/IP est une suite de protocoles à norme ouverte : utilisable par tous les fabricants.",
+     "Modèle OSI : 7 couches (Application, Présentation, Session, Transport, Réseau, Liaison, Physique).",
+     "Modèle TCP/IP : 4 couches (Application, Transport, Internet, Accès réseau)."
+    ]
+   },
+   {
+    "t": "L’encapsulation",
+    "p": "29-34",
+    "pts": [
+     "Le message est découpé en morceaux (segmentation) et numéroté (séquençage).",
+     "En descendant les couches, chaque couche ajoute son en-tête : données → segment → paquet → trame → bits.",
+     "À l’arrivée, on fait l’inverse : la désencapsulation."
+    ]
+   },
+   {
+    "t": "Adresses IP et MAC",
+    "p": "35-47",
+    "pts": [
+     "Adresse IP (couche 3) : identifie l’émetteur et le destinataire final ; elle ne change pas pendant le trajet.",
+     "Adresse MAC (couche 2) : identifie la carte réseau sur le lien local ; elle change à chaque saut.",
+     "Même réseau : on envoie directement à la MAC du destinataire. Réseau distant : on envoie à la MAC de la passerelle (le routeur)."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Les couches et leurs unités de données",
+    "s": "OSI              TCP/IP        Unité\n7 Application ┐\n6 Présentation├ Application   Données\n5 Session     ┘\n4 Transport     Transport     Segment\n3 Réseau        Internet      Paquet\n2 Liaison     ┐\n1 Physique    ┘ Accès réseau  Trame / bits"
+   },
+   {
+    "t": "Un paquet de A vers B (réseau distant)",
+    "s": "A ──── Routeur ──── B\nIP  : A → B   (identique de bout en bout)\nMAC : A → R   puis   R → B\n      (refaite à chaque saut)"
+   }
+  ],
+  "lexique": [
+   [
+    "Protocole",
+    "règle de communication"
+   ],
+   [
+    "OSI",
+    "modèle de référence en 7 couches"
+   ],
+   [
+    "TCP/IP",
+    "suite de protocoles d’Internet, 4 couches"
+   ],
+   [
+    "PDU",
+    "unité de données d’une couche (segment, paquet, trame)"
+   ],
+   [
+    "MAC",
+    "adresse physique de la carte réseau (48 bits)"
+   ],
+   [
+    "Passerelle",
+    "routeur qui permet de sortir du réseau local"
+   ]
+  ],
+  "videos": [
+   "Cookie connecté modèle OSI TCP/IP",
+   "Formip modèle OSI",
+   "Jeremy's IT Lab OSI model TCP/IP suite"
+  ],
+  "families": [
+   "c1-couches",
+   "c1-macip",
+   "c1-normes"
+  ],
+  "comp": "Protocoles et modèles",
+  "calc": [
+   1
+  ]
+ },
+ {
+  "id": "m2",
+  "file": "SR71_module2.pdf",
+  "title": "Module 2 · Configuration de base IOS",
+  "goal": "Savoir se connecter à un commutateur Cisco, naviguer dans ses modes, le configurer, l’enregistrer et lui donner une adresse IP.",
+  "sections": [
+   {
+    "t": "Accéder à l’équipement",
+    "p": "3-5",
+    "pts": [
+     "Console : port physique, câble branché sur place (configuration initiale).",
+     "SSH : connexion à distance chiffrée (méthode recommandée). Telnet : à distance mais en clair.",
+     "On utilise un émulateur de terminal (PuTTY, Tera Term…)."
+    ]
+   },
+   {
+    "t": "Les modes de commande",
+    "p": "6-10",
+    "pts": [
+     "Switch> : mode utilisateur (commandes de base). enable → Switch# : mode privilégié (toutes les commandes).",
+     "configure terminal → Switch(config)# : configuration globale ; puis sous-modes (line, interface).",
+     "exit remonte d’un niveau ; end ou Ctrl+Z revient directement au mode privilégié."
+    ]
+   },
+   {
+    "t": "Structure et aide des commandes",
+    "p": "11-16",
+    "pts": [
+     "Commande + mot-clé + argument. Le « ? » affiche l’aide ; Tab complète une commande.",
+     "Ctrl+Maj+6 interrompt un ping ou un traceroute."
+    ]
+   },
+   {
+    "t": "Configuration de base",
+    "p": "17-22",
+    "pts": [
+     "hostname : donner un nom. line console 0 / line vty 0 15 + password + login : protéger les accès.",
+     "enable secret : protéger le mode privilégié. service password-encryption : chiffrer les mots de passe dans la configuration.",
+     "banner motd #…# : message d’avertissement affiché à la connexion."
+    ]
+   },
+   {
+    "t": "Enregistrer la configuration",
+    "p": "23-27",
+    "pts": [
+     "running-config : configuration en cours, en RAM (perdue au redémarrage).",
+     "startup-config : configuration enregistrée, en NVRAM (chargée au démarrage).",
+     "copy running-config startup-config : enregistrer."
+    ]
+   },
+   {
+    "t": "Adressage IP",
+    "p": "28-33",
+    "pts": [
+     "Un PC a besoin d’une adresse IP, d’un masque, d’une passerelle (et d’un DNS) : en manuel ou par DHCP.",
+     "Un commutateur se gère à distance via une interface virtuelle (SVI) : interface vlan 1 + ip address + no shutdown."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Les modes IOS",
+    "s": "Switch>            utilisateur\n  │ enable\nSwitch#            privilégié\n  │ configure terminal\nSwitch(config)#    configuration globale\n  ├ line vty 0 15  → (config-line)#\n  └ interface …    → (config-if)#"
+   }
+  ],
+  "lexique": [
+   [
+    "IOS",
+    "système d’exploitation des équipements Cisco"
+   ],
+   [
+    "CLI",
+    "interface en ligne de commande"
+   ],
+   [
+    "VTY",
+    "lignes virtuelles pour l’accès à distance"
+   ],
+   [
+    "NVRAM",
+    "mémoire qui garde la startup-config"
+   ],
+   [
+    "SVI",
+    "interface virtuelle (interface vlan) qui porte l’IP du commutateur"
+   ],
+   [
+    "MOTD",
+    "bannière « message du jour »"
+   ]
+  ],
+  "videos": [
+   "Formip configuration de base switch Cisco",
+   "Formip modes IOS Cisco",
+   "Jeremy's IT Lab intro to the CLI"
+  ],
+  "families": [
+   "c1-ios",
+   "c1-acces",
+   "c1-outils",
+   "c2-gestion"
+  ],
+  "comp": "Configuration IOS",
+  "calc": []
+ },
+ {
+  "id": "m3",
+  "file": "SR71_module3.pdf",
+  "title": "Module 3 · Couche physique et liaison de données",
+  "goal": "Comprendre comment les bits circulent sur le support, comment ils sont regroupés en trames et comment un commutateur les transmet.",
+  "sections": [
+   {
+    "t": "La couche physique",
+    "p": "2-7",
+    "pts": [
+     "Elle transmet les bits sous forme de signaux sur le support : électriques (cuivre), lumineux (fibre), ondes (sans fil).",
+     "Le codage transforme les bits en signal ; exemple du cours : Manchester."
+    ]
+   },
+   {
+    "t": "La couche liaison",
+    "p": "8-11",
+    "pts": [
+     "Elle prépare les données pour le support : encapsulation en trames, contrôle d’accès au support, détection des erreurs.",
+     "Deux sous-couches : LLC (dialogue avec la couche 3) et MAC (trame, adresses, accès au support)."
+    ]
+   },
+   {
+    "t": "Topologies, duplex et accès au support",
+    "p": "12-17",
+    "pts": [
+     "Topologie physique (câbles, emplacements) et logique (adressage, chemins).",
+     "Semi-duplex : un seul parle à la fois. Duplex intégral : les deux en même temps, sans collision.",
+     "CSMA/CD : anciens Ethernet partagés (écouter, détecter la collision, réessayer). CSMA/CA : réseaux sans fil."
+    ]
+   },
+   {
+    "t": "La trame",
+    "p": "18-22",
+    "pts": [
+     "En-tête (début de trame, adresses, type) + données + fin de trame avec le FCS (détection d’erreurs)."
+    ]
+   },
+   {
+    "t": "Ethernet",
+    "p": "23-26",
+    "pts": [
+     "Trame Ethernet : 64 octets minimum, 1 518 maximum. Champ Type : protocole de couche 3 transporté (IPv4 ou IPv6).",
+     "Adresse MAC : 48 bits, écrite en hexadécimal ; les 24 premiers bits identifient le fabricant (OUI)."
+    ]
+   },
+   {
+    "t": "La table MAC du commutateur",
+    "p": "27-30",
+    "pts": [
+     "Apprendre : MAC source + port d’entrée enregistrés dans la table.",
+     "Transmettre : MAC destination connue → son port ; inconnue, diffusion ou multicast → tous les ports sauf celui d’entrée."
+    ]
+   },
+   {
+    "t": "MAC et IP ensemble",
+    "p": "31-33",
+    "pts": [
+     "Même réseau : trame vers la MAC du destinataire. Réseau distant : trame vers la MAC de la passerelle."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Une trame Ethernet",
+    "s": "┌──────────┬─────────┬──────┬─────────┬─────┐\n│MAC dest. │MAC src. │ Type │ Données │ FCS │\n└──────────┴─────────┴──────┴─────────┴─────┘\n en-tête                         fin de trame"
+   },
+   {
+    "t": "Le commutateur",
+    "s": "Trame reçue sur le port 1\n1) MAC SOURCE  → j’apprends (port 1)\n2) MAC DEST.   → connue  : son port\n                 inconnue: tous sauf 1"
+   }
+  ],
+  "lexique": [
+   [
+    "Trame",
+    "unité de données de la couche 2"
+   ],
+   [
+    "FCS",
+    "champ de fin de trame qui détecte les erreurs"
+   ],
+   [
+    "LLC / MAC",
+    "les deux sous-couches de la liaison"
+   ],
+   [
+    "CSMA/CD",
+    "accès au support avec détection des collisions (filaire)"
+   ],
+   [
+    "CSMA/CA",
+    "accès au support en évitant les collisions (sans fil)"
+   ],
+   [
+    "OUI",
+    "identifiant du fabricant dans une adresse MAC"
+   ]
+  ],
+  "videos": [
+   "Formip table MAC switch",
+   "Formip trame Ethernet",
+   "Jeremy's IT Lab Ethernet LAN switching"
+  ],
+  "families": [
+   "c1-liaison",
+   "c1-llcmac",
+   "c1-csma",
+   "c1-topologie",
+   "c2-tablemac",
+   "c2-diffusion"
+  ],
+  "comp": "Physique, liaison et Ethernet",
+  "calc": [
+   2,
+   3,
+   4
+  ]
+ },
+ {
+  "id": "m4",
+  "file": "SR71_module4_couche_reseau.pdf",
+  "title": "Module 4 · Couche réseau (IPv4, IPv6, ARP, sous-réseaux)",
+  "goal": "C’est le plus gros module : comment IP achemine les paquets, comment lire et découper une adresse IPv4, comment fonctionnent ARP, IPv6 et la passerelle.",
+  "sections": [
+   {
+    "t": "Le protocole IP",
+    "p": "2-8",
+    "pts": [
+     "IP est sans connexion, au mieux (pas de garantie) et indépendant du support.",
+     "Le routage entre réseaux est son rôle principal."
+    ]
+   },
+   {
+    "t": "Les en-têtes IPv4 et IPv6",
+    "p": "9-16",
+    "pts": [
+     "Champs importants : adresses source et destination, TTL (diminué de 1 par chaque routeur ; à 0 le paquet est détruit).",
+     "En IPv6, le TTL devient Hop Limit ; l’en-tête est simplifié."
+    ]
+   },
+   {
+    "t": "Structure d’une adresse IPv4",
+    "p": "17-22",
+    "pts": [
+     "32 bits = partie réseau + partie hôte. Le masque (ou /n) dit où est la limite.",
+     "ET logique entre l’adresse et le masque → adresse du réseau.",
+     "Adresse réseau (tous les bits hôte à 0), diffusion (tous à 1), hôtes entre les deux."
+    ]
+   },
+   {
+    "t": "Types d’adresses IPv4",
+    "p": "23-31",
+    "pts": [
+     "Monodiffusion (un), diffusion (tous), multidiffusion (un groupe).",
+     "Privées : 10/8, 172.16/12, 192.168/16 (traduites en publiques par NAT). Bouclage : 127.0.0.1. Lien local : 169.254.x.x.",
+     "Ancien système des classes A, B, C, D, E (fiche de calcul 37)."
+    ]
+   },
+   {
+    "t": "ARP et découverte de voisins",
+    "p": "32-38",
+    "pts": [
+     "ARP : trouver la MAC d’une IP locale (requête en diffusion, réponse en monodiffusion), mémorisée dans la table ARP.",
+     "IPv6 n’a pas d’ARP : il utilise ND avec les messages NS / NA."
+    ]
+   },
+   {
+    "t": "Comment un hôte et un routeur acheminent",
+    "p": "39-49",
+    "pts": [
+     "Destination dans mon réseau → envoi direct. Sinon → à la passerelle par défaut.",
+     "Le routeur consulte sa table de routage : réseaux connectés (C, L), routes statiques (S), dynamiques (O, R, D)."
+    ]
+   },
+   {
+    "t": "Configurer et vérifier les interfaces",
+    "p": "50-62",
+    "pts": [
+     "interface … + ip address + no shutdown. Vérifier : show ip interface brief, show ip route, show interfaces.",
+     "Commutateur : ip default-gateway pour être joignable depuis un autre réseau."
+    ]
+   },
+   {
+    "t": "IPv6 : écriture et types",
+    "p": "63-78",
+    "pts": [
+     "128 bits en 8 groupes hexadécimaux. Abréger : retirer les zéros de tête, remplacer une seule suite de groupes nuls par ::.",
+     "GUA (globale, commence par 2 ou 3), lien local FE80::/10, multicast FF00::/8.",
+     "GUA = préfixe de routage global + ID de sous-réseau + ID d’interface (64 bits)."
+    ]
+   },
+   {
+    "t": "IPv6 : obtenir une adresse",
+    "p": "79-100",
+    "pts": [
+     "Configuration statique, SLAAC, SLAAC + DHCPv6 sans état, DHCPv6 avec état (détails au module 7).",
+     "EUI-64 : fabriquer l’ID d’interface à partir de la MAC (FFFE au milieu, 7e bit inversé).",
+     "Multicast bien connus : FF02::1 (tous les nœuds), FF02::2 (tous les routeurs) ; nœud sollicité FF02::1:FFxx:xxxx."
+    ]
+   },
+   {
+    "t": "Découper en sous-réseaux et VLSM",
+    "p": "101-116",
+    "pts": [
+     "Découper réduit les domaines de diffusion et organise le réseau.",
+     "Hôtes = 2^h − 2. On choisit le plus petit bloc suffisant.",
+     "VLSM : des sous-réseaux de tailles différentes, en commençant par le plus gros."
+    ]
+   },
+   {
+    "t": "Sous-réseaux IPv6",
+    "p": "117-121",
+    "pts": [
+     "On utilise l’ID de sous-réseau (souvent 16 bits après un /48) : 2^16 = 65 536 sous-réseaux /64."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Lire 192.168.1.96/26",
+    "s": "Masque /26 = 255.255.255.192\nPas = 256 − 192 = 64\nRéseaux : .0  .64  .128  .192\n.96 est dans le réseau .64\nHôtes : .65 → .126   Diffusion : .127"
+   },
+   {
+    "t": "Hôtes par préfixe",
+    "s": "/30 →   2     /26 →  62\n/29 →   6     /25 → 126\n/28 →  14     /24 → 254\n/27 →  30"
+   }
+  ],
+  "lexique": [
+   [
+    "TTL",
+    "durée de vie du paquet, −1 par routeur"
+   ],
+   [
+    "Masque",
+    "sépare partie réseau et partie hôte"
+   ],
+   [
+    "Diffusion",
+    "adresse qui touche tout le sous-réseau"
+   ],
+   [
+    "ARP",
+    "IP → MAC sur le réseau local (IPv4)"
+   ],
+   [
+    "NS / NA",
+    "équivalent d’ARP en IPv6"
+   ],
+   [
+    "GUA",
+    "adresse IPv6 globale, routable sur Internet"
+   ],
+   [
+    "VLSM",
+    "sous-réseaux de tailles différentes"
+   ],
+   [
+    "NAT",
+    "traduit des adresses privées en publiques"
+   ]
+  ],
+  "videos": [
+   "Formip adressage IP masque",
+   "Formip calcul sous-réseau",
+   "Formip IPv6",
+   "Practical Networking subnetting"
+  ],
+  "families": [
+   "c1-ip",
+   "c1-types-ipv4",
+   "c1-arp",
+   "c1-passerelle",
+   "c1-routage",
+   "c1-masque",
+   "c1-sousreseau",
+   "c1-ipv6",
+   "c1-ndp",
+   "c2-linklocal"
+  ],
+  "comp": "Couche réseau et adressage",
+  "calc": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   37,
+   39,
+   41
+  ]
+ },
+ {
+  "id": "m5",
+  "file": "SR71_module5_Transport.pdf",
+  "title": "Module 5 · Couche transport et application",
+  "goal": "Comprendre comment les applications se parlent : TCP et UDP, les numéros de port, et les services courants (web, mail, DNS, DHCP, FTP).",
+  "sections": [
+   {
+    "t": "Rôle de la couche transport",
+    "p": "2-8",
+    "pts": [
+     "Suivre les conversations, segmenter et réassembler, identifier les applications par des ports.",
+     "TCP pour la fiabilité ; UDP pour la rapidité."
+    ]
+   },
+   {
+    "t": "TCP",
+    "p": "9-13",
+    "pts": [
+     "Orienté connexion, ordonné, fiable (accusés, retransmission), contrôle de flux.",
+     "Utilisé par HTTP, FTP, SMTP, POP3, IMAP, SSH, Telnet."
+    ]
+   },
+   {
+    "t": "UDP",
+    "p": "14-18",
+    "pts": [
+     "Sans connexion, sans accusé, en-tête léger (8 octets).",
+     "Utilisé par DNS, DHCP, TFTP, SNMP, la voix et la vidéo en direct."
+    ]
+   },
+   {
+    "t": "Les numéros de port",
+    "p": "19-24",
+    "pts": [
+     "Port source (choisi par le client) + port destination (le service) = la conversation.",
+     "Socket = adresse IP + port. Ports bien connus : 0 à 1023. netstat affiche les connexions."
+    ]
+   },
+   {
+    "t": "Établir et fermer une connexion TCP",
+    "p": "25-30",
+    "pts": [
+     "Établissement en 3 étapes : SYN, SYN-ACK, ACK. Fermeture avec FIN et ACK."
+    ]
+   },
+   {
+    "t": "Fiabilité et contrôle de flux",
+    "p": "31-37",
+    "pts": [
+     "Les numéros de séquence remettent les segments dans l’ordre ; les accusés signalent ce qui est reçu.",
+     "Fenêtre : quantité que l’on peut envoyer avant d’attendre un accusé. MSS : taille maximale des données d’un segment (1 460 octets en Ethernet)."
+    ]
+   },
+   {
+    "t": "Les services de la couche application",
+    "p": "43-66",
+    "pts": [
+     "HTTP/HTTPS : pages web (HTTPS chiffré). SMTP envoie le courrier, POP3 le télécharge, IMAP le garde sur le serveur.",
+     "DNS : traduit un nom en adresse IP (enregistrements A, AAAA, MX, NS ; outil nslookup).",
+     "DHCP : attribue automatiquement les adresses. FTP : transfert de fichiers (ports 20 et 21)."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Poignée de main TCP",
+    "s": "Client              Serveur\n  │ ── SYN ─────────▶ │\n  │ ◀── SYN-ACK ───── │\n  │ ── ACK ─────────▶ │\n   connexion établie"
+   },
+   {
+    "t": "Ports à connaître",
+    "s": "20-21 FTP    22 SSH    23 Telnet\n25 SMTP      53 DNS    67-68 DHCP\n69 TFTP      80 HTTP   110 POP3\n143 IMAP     443 HTTPS"
+   }
+  ],
+  "lexique": [
+   [
+    "Segment",
+    "unité de données de TCP"
+   ],
+   [
+    "Port",
+    "numéro qui identifie une application"
+   ],
+   [
+    "Socket",
+    "adresse IP + numéro de port"
+   ],
+   [
+    "ACK",
+    "accusé de réception"
+   ],
+   [
+    "Fenêtre",
+    "quantité envoyable avant un accusé"
+   ],
+   [
+    "MSS",
+    "taille maximale des données d’un segment"
+   ]
+  ],
+  "videos": [
+   "Formip TCP UDP",
+   "Formip DNS DHCP introduction",
+   "Jeremy's IT Lab TCP and UDP"
+  ],
+  "families": [
+   "c1-tcpudp",
+   "c1-ports",
+   "c1-services"
+  ],
+  "comp": "Transport et applications",
+  "calc": [
+   18,
+   19,
+   20,
+   21
+  ]
+ },
+ {
+  "id": "m6",
+  "file": "SR71_module6-VLAN.pdf",
+  "title": "Module 6 · VLAN et routage inter-VLAN",
+  "goal": "Savoir découper un commutateur en réseaux séparés (VLAN), les transporter entre commutateurs (trunk) et les faire communiquer (routage inter-VLAN).",
+  "sections": [
+   {
+    "t": "Qu’est-ce qu’un VLAN ?",
+    "p": "2-6",
+    "pts": [
+     "Un VLAN est un réseau logique : les ports d’un même VLAN se voient, les autres non.",
+     "Avantages : domaines de diffusion plus petits, sécurité, organisation.",
+     "Types : par défaut (VLAN 1, impossible à supprimer), données, gestion, natif."
+    ]
+   },
+   {
+    "t": "Les trunks et l’étiquetage",
+    "p": "7-12",
+    "pts": [
+     "Un trunk transporte plusieurs VLAN sur un seul lien entre commutateurs.",
+     "802.1Q ajoute une étiquette de 4 octets dans la trame (VLAN ID sur 12 bits). Le VLAN natif circule sans étiquette."
+    ]
+   },
+   {
+    "t": "Configurer les VLAN",
+    "p": "13-21",
+    "pts": [
+     "vlan 10 + name … : créer. interface fa0/1 + switchport mode access + switchport access vlan 10 : affecter un port.",
+     "Les VLAN sont enregistrés dans vlan.dat (flash). Vérifier : show vlan brief."
+    ]
+   },
+   {
+    "t": "Configurer un trunk",
+    "p": "22-27",
+    "pts": [
+     "switchport mode trunk ; switchport trunk native vlan 99 ; switchport trunk allowed vlan … ; vérifier avec show interfaces trunk."
+    ]
+   },
+   {
+    "t": "DTP",
+    "p": "28-32",
+    "pts": [
+     "Protocole Cisco qui négocie les trunks. dynamic auto attend ; dynamic desirable demande. auto + auto = pas de trunk."
+    ]
+   },
+   {
+    "t": "Routage inter-VLAN",
+    "p": "33-39",
+    "pts": [
+     "Chaque VLAN est un réseau : il faut un routeur ou un commutateur de couche 3 pour passer de l’un à l’autre.",
+     "Trois méthodes : ancienne (une interface physique par VLAN), router-on-a-stick, commutateur de couche 3."
+    ]
+   },
+   {
+    "t": "Router-on-a-stick",
+    "p": "40-47",
+    "pts": [
+     "Un seul lien trunk vers le routeur ; une sous-interface par VLAN : interface g0/0.10 + encapsulation dot1Q 10 + ip address."
+    ]
+   },
+   {
+    "t": "Commutateur de couche 3 et dépannage",
+    "p": "48-61",
+    "pts": [
+     "SVI par VLAN (interface vlan 10 + ip address) + ip routing. Port vers le routeur : no switchport.",
+     "Pannes classiques : VLAN manquant, port dans le mauvais VLAN, VLAN non autorisé sur le trunk, mauvais numéro dans encapsulation dot1Q."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Router-on-a-stick",
+    "s": "        Routeur\n   g0/0.10 │ g0/0.20\n           │ trunk 802.1Q\n      Commutateur\n     ┌─────┴─────┐\n VLAN 10      VLAN 20\n (PC1)         (PC2)"
+   },
+   {
+    "t": "DTP : trunk ou pas ?",
+    "s": "           auto   desirable  trunk\nauto        non     oui       oui\ndesirable   oui     oui       oui\naccess      non     non       non"
+   }
+  ],
+  "lexique": [
+   [
+    "VLAN",
+    "réseau logique sur un commutateur"
+   ],
+   [
+    "Trunk",
+    "lien qui transporte plusieurs VLAN"
+   ],
+   [
+    "802.1Q",
+    "norme d’étiquetage des VLAN"
+   ],
+   [
+    "VLAN natif",
+    "VLAN non étiqueté sur un trunk"
+   ],
+   [
+    "DTP",
+    "négociation automatique des trunks (Cisco)"
+   ],
+   [
+    "SVI",
+    "interface virtuelle d’un VLAN (interface vlan n)"
+   ]
+  ],
+  "videos": [
+   "Formip VLAN",
+   "Formip trunk 802.1Q",
+   "Formip router on a stick",
+   "Jeremy's IT Lab VLANs"
+  ],
+  "families": [
+   "c2-vlan",
+   "c2-trunk",
+   "c2-dtp",
+   "c2-routeronstick",
+   "c2-l3"
+  ],
+  "comp": "VLAN et routage inter-VLAN",
+  "calc": [
+   22,
+   23
+  ]
+ },
+ {
+  "id": "m7",
+  "file": "SR71_module7-DHCP.pdf",
+  "title": "Module 7 · DHCP (IPv4 et IPv6)",
+  "goal": "Comprendre comment un appareil reçoit automatiquement son adresse, en IPv4 (DHCPv4) et en IPv6 (SLAAC et DHCPv6), et comment configurer un routeur pour cela.",
+  "sections": [
+   {
+    "t": "DHCPv4 : le principe",
+    "p": "3-7",
+    "pts": [
+     "Le serveur prête une adresse pour une durée (le bail) avec masque, passerelle et DNS.",
+     "4 étapes : DHCPDISCOVER, DHCPOFFER, DHCPREQUEST, DHCPACK (DORA)."
+    ]
+   },
+   {
+    "t": "Configurer un serveur DHCPv4 sur un routeur",
+    "p": "8-18",
+    "pts": [
+     "1) ip dhcp excluded-address : exclure les adresses déjà prises (passerelle, serveurs).",
+     "2) ip dhcp pool NOM ; 3) network, default-router, dns-server.",
+     "Vérifier : show ip dhcp binding (baux attribués). Le service est actif par défaut."
+    ]
+   },
+   {
+    "t": "Le relais DHCPv4",
+    "p": "19-20",
+    "pts": [
+     "Le routeur ne transmet pas les diffusions : ip helper-address <IP du serveur> sur l’interface côté clients."
+    ]
+   },
+   {
+    "t": "Routeur client DHCPv4",
+    "p": "21-23",
+    "pts": [
+     "Une interface de routeur peut aussi recevoir son adresse : ip address dhcp."
+    ]
+   },
+   {
+    "t": "IPv6 : les trois indicateurs du RA",
+    "p": "24-29",
+    "pts": [
+     "Indicateur A : utiliser SLAAC. Indicateur O : autres informations (DNS) par DHCPv6. Indicateur M : adresse par DHCPv6 avec état."
+    ]
+   },
+   {
+    "t": "SLAAC",
+    "p": "30-37",
+    "pts": [
+     "L’hôte crée son adresse : préfixe reçu dans le RA + ID d’interface (EUI-64 ou aléatoire).",
+     "RS : l’hôte demande ; RA : le routeur annonce. Avant d’utiliser l’adresse, l’hôte vérifie qu’elle est unique (DAD, avec un NS)."
+    ]
+   },
+   {
+    "t": "DHCPv6 sans état et avec état",
+    "p": "38-55",
+    "pts": [
+     "Sans état : adresse par SLAAC, DNS par DHCPv6 (ipv6 nd other-config-flag). Le serveur ne garde aucune trace des clients.",
+     "Avec état : le serveur attribue l’adresse (ipv6 nd managed-config-flag, address prefix dans le pool).",
+     "ipv6 dhcp server NOM sur l’interface. Relais DHCPv6 : une commande sur l’interface côté clients, avec l’adresse du serveur DHCPv6, comme en IPv4."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "DORA",
+    "s": "Client                     Serveur\n  │ ── DISCOVER (diffusion) ─▶│\n  │ ◀──────── OFFER ───────── │\n  │ ── REQUEST (diffusion) ──▶│\n  │ ◀────────  ACK  ───────── │"
+   },
+   {
+    "t": "Quel mode IPv6 ?",
+    "s": "Indicateur   Adresse       DNS\nA seul       SLAAC         —\nO = 1        SLAAC         DHCPv6\nM = 1        DHCPv6        DHCPv6\n             (avec état)"
+   }
+  ],
+  "lexique": [
+   [
+    "Bail",
+    "durée de prêt d’une adresse"
+   ],
+   [
+    "Pool",
+    "plage d’adresses distribuées"
+   ],
+   [
+    "Relais",
+    "routeur qui transmet les demandes DHCP vers un serveur distant"
+   ],
+   [
+    "RA / RS",
+    "annonce / sollicitation de routeur (IPv6)"
+   ],
+   [
+    "SLAAC",
+    "l’hôte fabrique son adresse IPv6"
+   ],
+   [
+    "DAD",
+    "vérification qu’une adresse IPv6 est unique"
+   ]
+  ],
+  "videos": [
+   "Formip DHCP",
+   "Formip SLAAC DHCPv6",
+   "Jeremy's IT Lab DHCP"
+  ],
+  "families": [
+   "c2-dora",
+   "c2-relais",
+   "c2-dhcpv6",
+   "c2-divers"
+  ],
+  "comp": "DHCP et autoconfiguration",
+  "calc": [
+   24,
+   38
+  ]
+ },
+ {
+  "id": "m8s",
+  "file": "SR71_module8_STP.pdf",
+  "title": "Module 8 · STP (Spanning Tree)",
+  "goal": "Comprendre pourquoi des liens en double entre commutateurs créent des boucles et comment STP en bloque certains.",
+  "sections": [
+   {
+    "t": "Le problème des boucles",
+    "p": "2-7",
+    "pts": [
+     "La redondance est utile (secours), mais en couche 2 elle crée des boucles : tempêtes de diffusion, table MAC instable.",
+     "STP bloque des liens pour garder un seul chemin, et les réactive en cas de panne."
+    ]
+   },
+   {
+    "t": "Les 4 étapes de STP",
+    "p": "8-15",
+    "pts": [
+     "1) Élire le pont racine : le plus petit BID (priorité, puis adresse MAC). Priorité par défaut 32768.",
+     "2) Chaque autre commutateur choisit son port racine : le coût le plus faible vers la racine (1 Gbit/s = 4, 100 Mbit/s = 19).",
+     "3) Un port désigné par segment. 4) Les autres ports sont alternatifs (bloqués)."
+    ]
+   },
+   {
+    "t": "États des ports et minuteurs",
+    "p": "16-17",
+    "pts": [
+     "États : blocage, écoute, apprentissage, acheminement, désactivé.",
+     "Les BPDU sont envoyées toutes les 2 secondes ; Max Age 20 s ; Forward Delay 15 s."
+    ]
+   },
+   {
+    "t": "STP par VLAN",
+    "p": "18",
+    "pts": [
+     "Avec PVST, chaque VLAN a sa propre instance STP et peut avoir son propre pont racine."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Élection en triangle",
+    "s": "        S1 (racine, plus petit BID)\n       D/       \\D\n      R/         \\R\n     S2 ───────── S3\n       D       bloqué\nD = désigné   R = racine"
+   }
+  ],
+  "lexique": [
+   [
+    "BPDU",
+    "message échangé par STP"
+   ],
+   [
+    "BID",
+    "identifiant de pont : priorité + ID système étendu + MAC"
+   ],
+   [
+    "Pont racine",
+    "commutateur de référence de l’arbre"
+   ],
+   [
+    "Port racine",
+    "meilleur chemin vers la racine"
+   ],
+   [
+    "Port désigné",
+    "port qui transmet sur un segment"
+   ],
+   [
+    "Port alternatif",
+    "port bloqué, de secours"
+   ]
+  ],
+  "videos": [
+   "Formip Spanning Tree",
+   "Jeremy's IT Lab Spanning Tree Protocol"
+  ],
+  "families": [
+   "c2-stp"
+  ],
+  "comp": "Spanning Tree",
+  "calc": [
+   25,
+   26,
+   27
+  ]
+ },
+ {
+  "id": "m8r",
+  "file": "SR71_module8-routage_static.pdf",
+  "title": "Module 8 · Routage statique",
+  "goal": "Comprendre comment un routeur choisit un chemin et savoir écrire des routes statiques, par défaut, flottantes et d’hôte.",
+  "sections": [
+   {
+    "t": "Choisir un chemin",
+    "p": "2-8",
+    "pts": [
+     "Un routeur détermine le chemin et transmet le paquet. Il choisit la correspondance la plus longue (le préfixe le plus précis)."
+    ]
+   },
+   {
+    "t": "Transmettre un paquet",
+    "p": "9-18",
+    "pts": [
+     "Le routeur désencapsule la trame, consulte sa table, réencapsule pour l’interface de sortie.",
+     "Mécanismes : commutation de processus, rapide, et CEF (le plus récent et le plus rapide)."
+    ]
+   },
+   {
+    "t": "La table de routage",
+    "p": "19-32",
+    "pts": [
+     "Sources : C (connecté), L (local), S (statique), O (OSPF), R (RIP), D (EIGRP) ; S* = route par défaut.",
+     "Distance administrative : connecté 0, statique 1, EIGRP 90, OSPF 110, RIP 120. Plus petite = préférée."
+    ]
+   },
+   {
+    "t": "Statique ou dynamique ?",
+    "p": "33-42",
+    "pts": [
+     "Statique : simple, sûre, peu gourmande, mais pas d’adaptation automatique.",
+     "Dynamique : s’adapte seule, mieux pour les grands réseaux. Métriques : sauts (RIP), coût (OSPF)."
+    ]
+   },
+   {
+    "t": "Écrire une route statique",
+    "p": "43-55",
+    "pts": [
+     "ip route <réseau> <masque> <prochain saut ou interface> ; en IPv6 : ipv6 route <préfixe/longueur> <…>.",
+     "Avec une adresse link-local comme prochain saut, préciser aussi l’interface.",
+     "Vérifier : show ip route, show ip route static, ping, traceroute."
+    ]
+   },
+   {
+    "t": "Route par défaut",
+    "p": "56-61",
+    "pts": [
+     "ip route 0.0.0.0 0.0.0.0 <…> ; ipv6 route ::/0 <…>. Elle sert pour tout ce qui n’est pas dans la table."
+    ]
+   },
+   {
+    "t": "Route flottante et route d’hôte",
+    "p": "62-71",
+    "pts": [
+     "Route flottante : route de secours avec une distance administrative plus grande que la route principale.",
+     "Route d’hôte : vers une seule adresse, masque /32 (ou /128 en IPv6)."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "Écrire une route statique",
+    "s": "PC A ── R1 ═══════ R2 ── LAN 172.16.2.0/24\n     .3.1     .3.2\nSur R1 :\nip route 172.16.2.0 255.255.255.0 172.16.3.2\n          réseau     masque       voisin"
+   },
+   {
+    "t": "Distances administratives",
+    "s": "Connecté 0 · Statique 1\nEIGRP 90 · OSPF 110 · RIP 120\nSecours d’OSPF → DA > 110"
+   }
+  ],
+  "lexique": [
+   [
+    "Table de routage",
+    "liste des réseaux connus par le routeur"
+   ],
+   [
+    "Prochain saut",
+    "IP du routeur voisin vers lequel envoyer"
+   ],
+   [
+    "Distance administrative",
+    "fiabilité d’une source de route"
+   ],
+   [
+    "Métrique",
+    "coût d’un chemin dans un même protocole"
+   ],
+   [
+    "Route flottante",
+    "route statique de secours"
+   ],
+   [
+    "CEF",
+    "mécanisme de transmission rapide de Cisco"
+   ]
+  ],
+  "videos": [
+   "Formip routage statique",
+   "Formip route par défaut",
+   "Jeremy's IT Lab static routing"
+  ],
+  "families": [
+   "c2-defaut",
+   "c2-flottante",
+   "c2-statique",
+   "c2-depannage",
+   "c2-table"
+  ],
+  "comp": "Routage statique",
+  "calc": [
+   28,
+   29,
+   31,
+   32
+  ]
+ },
+ {
+  "id": "m10",
+  "file": "SR71_module10-routage_dynamique.pdf",
+  "title": "Module 10 · Routage dynamique (RIP et OSPF)",
+  "goal": "Comprendre comment les routeurs apprennent seuls les routes, avec RIPv2 et OSPF, et savoir lire leur configuration. Ce module n’a aucune question Cisco retenue : révise-le avec les Compléments et les fiches de calcul.",
+  "sections": [
+   {
+    "t": "Pourquoi le routage dynamique ?",
+    "p": "2-8",
+    "pts": [
+     "Rôles : découvrir les réseaux distants, tenir les informations à jour, choisir le meilleur chemin, trouver un autre chemin en cas de panne.",
+     "Composants : structures de données (tables), messages, algorithme."
+    ]
+   },
+   {
+    "t": "RIPv2",
+    "p": "9-15",
+    "pts": [
+     "Protocole à vecteur de distance ; métrique = nombre de sauts (15 au maximum).",
+     "router rip ; version 2 ; network <réseau> ; no auto-summary ; passive-interface <int> (pas de mises à jour vers un LAN).",
+     "Vérifier : show ip protocols, show ip route."
+    ]
+   },
+   {
+    "t": "OSPF : principe",
+    "p": "16-20",
+    "pts": [
+     "Protocole à état de liens ; métrique = coût. Paquets : Hello, DBD, LSR, LSU, LSAck.",
+     "Étapes : voisins → échange des LSA → base de données → algorithme SPF → meilleures routes."
+    ]
+   },
+   {
+    "t": "OSPF : router ID",
+    "p": "21-29",
+    "pts": [
+     "Ordre de choix : router-id configuré, sinon plus haute IP de bouclage, sinon plus haute IP d’interface active.",
+     "Après un changement : clear ip ospf process."
+    ]
+   },
+   {
+    "t": "OSPF : activer et réseaux point à point",
+    "p": "30-39",
+    "pts": [
+     "router ospf 10 ; network 10.10.1.0 0.0.0.255 area 0 (masque générique) ; ou ip ospf 10 area 0 sur l’interface.",
+     "passive-interface : pas de paquets OSPF vers un LAN. ip ospf network point-to-point : pas d’élection DR/BDR."
+    ]
+   },
+   {
+    "t": "Réseaux à accès multiple : DR et BDR",
+    "p": "40-43",
+    "pts": [
+     "Sur Ethernet, un DR et un BDR centralisent les échanges ; dans l’exemple du cours (priorités égales), le plus haut router ID devient DR, le deuxième BDR.",
+     "224.0.0.5 = tous les routeurs OSPF ; 224.0.0.6 = DR et BDR."
+    ]
+   },
+   {
+    "t": "Le coût OSPF",
+    "p": "44-53",
+    "pts": [
+     "Coût = bande passante de référence / bande passante de l’interface (référence par défaut 10^8 : Fast Ethernet et plus rapides = coût 1).",
+     "auto-cost reference-bandwidth pour distinguer les liens rapides ; ip ospf cost pour fixer un coût. Le coût d’une route = somme des coûts."
+    ]
+   },
+   {
+    "t": "Propager une route par défaut",
+    "p": "54-56",
+    "pts": [
+     "default-information originate sur le routeur de bordure ; la route apparaît en O*E2 chez les autres."
+    ]
+   }
+  ],
+  "schemas": [
+   {
+    "t": "OSPF en 5 étapes",
+    "s": "1 Hello     → découvrir les voisins\n2 LSA       → échanger les états de liens\n3 LSDB      → base de données commune\n4 SPF       → calcul des plus courts chemins\n5 Table     → meilleures routes"
+   },
+   {
+    "t": "Coût OSPF (référence 10 000)",
+    "s": "10 Gbit/s →    1\n 1 Gbit/s →   10\n100 Mbit/s →  100\n 10 Mbit/s → 1000"
+   }
+  ],
+  "lexique": [
+   [
+    "RIP",
+    "routage par nombre de sauts"
+   ],
+   [
+    "OSPF",
+    "routage à état de liens, par coût"
+   ],
+   [
+    "Router ID",
+    "identifiant d’un routeur OSPF"
+   ],
+   [
+    "DR / BDR",
+    "routeur désigné et son secours"
+   ],
+   [
+    "LSA",
+    "annonce d’état de lien"
+   ],
+   [
+    "Masque générique",
+    "inverse du masque (0.0.0.255 pour un /24)"
+   ]
+  ],
+  "videos": [
+   "Formip OSPF",
+   "Formip RIP",
+   "Jeremy's IT Lab OSPF"
+  ],
+  "families": [],
+  "comp": "Routage dynamique",
+  "calc": [
+   30,
+   33,
+   34,
+   35,
+   36,
+   40
+  ]
+ }
+]
