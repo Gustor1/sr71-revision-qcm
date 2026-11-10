@@ -2,7 +2,7 @@
 
 Application en français : 369 cartes. CCNA 1 : 113 numéros / 122 cartes. CCNA 2 : 87 numéros / 94 cartes. Les variantes distinctes sont conservées. Compléments SR71 : 153 questions originales (dont 4 sur RIP/OSPF ajoutées le 8 novembre 2026, absentes du PDF 04) sur les notions absentes ou insuffisamment évaluées dans la sélection des deux banques.
 
-Cours express : une leçon par module du cours SR71 (10 leçons), pour partir de zéro : essentiel avec numéros de diapo, schémas, lexique, recherches vidéo YouTube, liens vers les fiches réflexes, les compléments et les fiches de calcul (tmp/lessons.py → lessons.json).
+Cours express : une leçon par module du cours SR71 (10 leçons), pour partir de zéro : essentiel avec numéros de diapo, schémas, lexique, vidéos conseillées par Lutz (35 vidéos, marquées « (Lutz) », tmp/lutz_videos.py), recherches vidéo YouTube, liens vers les fiches réflexes, les compléments et les fiches de calcul (tmp/lessons.py → lessons.json).
 
 Méthode rapide : « Fiches réflexes CCNA 1 / CCNA 2 » regroupe les 200 questions Cisco en 41 familles. Chaque fiche contient les bases (sans prérequis), les indices pour reconnaître la question, une méthode pas à pas, la règle, un moyen mnémotechnique, le piège et des exemples résolus tirés des vraies questions. Le parcours essentiel propose 46 questions types qui couvrent 145 questions Cisco. Familles définies dans tmp/reflexes.py et tmp/reflexes_guide.py → reflexes.json, intégrées par build.py.
 

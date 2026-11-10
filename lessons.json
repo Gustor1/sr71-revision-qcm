@@ -107,6 +107,30 @@
   "comp": "Protocoles et modèles",
   "calc": [
    1
+  ],
+  "lutz": [
+   {
+    "order": "A1",
+    "part": "Théorie (partiel écrit)",
+    "module": "m1",
+    "title": "Modèles OSI et TCP/IP",
+    "url": "https://www.youtube.com/watch?v=26jazyc7VNk",
+    "minutes": 11,
+    "channel": "Cookie connecté",
+    "note": "",
+    "rank": 0
+   },
+   {
+    "order": "A2",
+    "part": "Théorie (partiel écrit)",
+    "module": "m1",
+    "title": "Modèle OSI et encapsulation",
+    "url": "https://www.youtube.com/watch?v=8rA-hXNCSVo",
+    "minutes": 10,
+    "channel": "Yannick Teach",
+    "note": "",
+    "rank": 1
+   }
   ]
  },
  {
@@ -212,7 +236,31 @@
    "c2-gestion"
   ],
   "comp": "Configuration IOS",
-  "calc": []
+  "calc": [],
+  "lutz": [
+   {
+    "order": "B1",
+    "part": "Pratique (TP final)",
+    "module": "m2",
+    "title": "Le mode CLI d’un switch Cisco",
+    "url": "https://www.youtube.com/watch?v=Rv7lVGXrd6Q",
+    "minutes": 3,
+    "channel": "Clemanet",
+    "note": "",
+    "rank": 24
+   },
+   {
+    "order": "B2",
+    "part": "Pratique (TP final)",
+    "module": "m2",
+    "title": "SSH sur un routeur Cisco",
+    "url": "https://www.youtube.com/watch?v=LrqZqrK3Vgw",
+    "minutes": 8,
+    "channel": "Moïse YANSUNNU",
+    "note": "",
+    "rank": 25
+   }
+  ]
  },
  {
   "id": "m3",
@@ -330,6 +378,41 @@
    2,
    3,
    4
+  ],
+  "lutz": [
+   {
+    "order": "A3",
+    "part": "Théorie (partiel écrit)",
+    "module": "m3",
+    "title": "Le protocole CSMA/CD",
+    "url": "https://www.youtube.com/watch?v=qGjl2nWdtT0",
+    "minutes": 14,
+    "channel": "Wandida, EPFL",
+    "note": "",
+    "rank": 2
+   },
+   {
+    "order": "A4",
+    "part": "Théorie (partiel écrit)",
+    "module": "m3",
+    "title": "Domaine de diffusion et de collision",
+    "url": "https://www.youtube.com/watch?v=9PX8ejbATW8",
+    "minutes": 9,
+    "channel": "MOG ACADEMY",
+    "note": "Le domaine de collision n’apparaît pas dans ton cours : utile pour comprendre, pas à apprendre.",
+    "rank": 3
+   },
+   {
+    "order": "A5",
+    "part": "Théorie (partiel écrit)",
+    "module": "m3",
+    "title": "La trame Ethernet",
+    "url": "https://www.youtube.com/watch?v=Vs672DYoakk",
+    "minutes": 6,
+    "channel": "Formip",
+    "note": "",
+    "rank": 4
+   }
   ]
  },
  {
@@ -511,6 +594,107 @@
    37,
    39,
    41
+  ],
+  "lutz": [
+   {
+    "order": "A6",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "Le protocole ARP",
+    "url": "https://www.youtube.com/watch?v=XJyBFEm6Nzc",
+    "minutes": 3,
+    "channel": "Formip",
+    "note": "",
+    "rank": 5
+   },
+   {
+    "order": "A7",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "Ping, traceroute",
+    "url": "https://www.youtube.com/watch?v=bF6a48JasCE",
+    "minutes": 4,
+    "channel": "Formip",
+    "note": "",
+    "rank": 6
+   },
+   {
+    "order": "A8",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "Fragmentation dans les réseaux IP",
+    "url": "https://www.youtube.com/watch?v=a6Nj4wPvId4",
+    "minutes": 10,
+    "channel": "Wandida, EPFL",
+    "note": "",
+    "rank": 7
+   },
+   {
+    "order": "A9",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "Adresse IP et masques en 5 min",
+    "url": "https://www.youtube.com/watch?v=dCWDq2Ty00g",
+    "minutes": 6,
+    "channel": "Dataseito",
+    "note": "",
+    "rank": 8
+   },
+   {
+    "order": "A10",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "Calcul des masques de sous-réseaux",
+    "url": "https://www.youtube.com/watch?v=qJIXgl0EjtI",
+    "minutes": 35,
+    "channel": "IT-Connect",
+    "note": "",
+    "rank": 9
+   },
+   {
+    "order": "A11",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "Subnetting en 10 min",
+    "url": "https://www.youtube.com/watch?v=S_EfcLo2Wv0",
+    "minutes": 10,
+    "channel": "WayToLearnX",
+    "note": "",
+    "rank": 10
+   },
+   {
+    "order": "A12",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "VLSM : exercice et comparaison",
+    "url": "https://www.youtube.com/watch?v=q_zwv22XMbg",
+    "minutes": 30,
+    "channel": "Maria SABA",
+    "note": "",
+    "rank": 11
+   },
+   {
+    "order": "A13",
+    "part": "Théorie (partiel écrit)",
+    "module": "m4",
+    "title": "IPv6 : les fondamentaux",
+    "url": "https://www.youtube.com/watch?v=88qySp_fbZs",
+    "minutes": 13,
+    "channel": "Yannick Teach",
+    "note": "",
+    "rank": 12
+   },
+   {
+    "order": "B10",
+    "part": "Pratique (TP final)",
+    "module": "m4",
+    "title": "Exercice VLSM 01",
+    "url": "https://www.youtube.com/watch?v=h97LDdzPJUc",
+    "minutes": 23,
+    "channel": "Networks and systems",
+    "note": "",
+    "rank": 33
+   }
   ]
  },
  {
@@ -628,6 +812,19 @@
    19,
    20,
    21
+  ],
+  "lutz": [
+   {
+    "order": "A14",
+    "part": "Théorie (partiel écrit)",
+    "module": "m5",
+    "title": "Les protocoles TCP et UDP",
+    "url": "https://www.youtube.com/watch?v=kiw1g6GrGJ0",
+    "minutes": 26,
+    "channel": "IT-Connect",
+    "note": "",
+    "rank": 13
+   }
   ]
  },
  {
@@ -752,6 +949,52 @@
   "calc": [
    22,
    23
+  ],
+  "lutz": [
+   {
+    "order": "A15",
+    "part": "Théorie (partiel écrit)",
+    "module": "m6",
+    "title": "VLAN en 5 minutes",
+    "url": "https://www.youtube.com/watch?v=Eh9INNkMM4I",
+    "minutes": 6,
+    "channel": "Cookie connecté",
+    "note": "",
+    "rank": 14
+   },
+   {
+    "order": "A16",
+    "part": "Théorie (partiel écrit)",
+    "module": "m6",
+    "title": "VLAN, trunk, 802.1Q",
+    "url": "https://www.youtube.com/watch?v=F1j3ZKiw7UA",
+    "minutes": 31,
+    "channel": "IT-Connect",
+    "note": "",
+    "rank": 15
+   },
+   {
+    "order": "B3",
+    "part": "Pratique (TP final)",
+    "module": "m6",
+    "title": "Le routage inter-VLAN expliqué",
+    "url": "https://www.youtube.com/watch?v=UjAPnPaEOkE",
+    "minutes": 6,
+    "channel": "Finger In The Net",
+    "note": "",
+    "rank": 26
+   },
+   {
+    "order": "B4",
+    "part": "Pratique (TP final)",
+    "module": "m6",
+    "title": "Router-on-a-stick, labo Packet Tracer",
+    "url": "https://www.youtube.com/watch?v=rzIgmf2W18g",
+    "minutes": 13,
+    "channel": "Le Gars du Réseau",
+    "note": "",
+    "rank": 27
+   }
   ]
  },
  {
@@ -867,6 +1110,63 @@
   "calc": [
    24,
    38
+  ],
+  "lutz": [
+   {
+    "order": "A17",
+    "part": "Théorie (partiel écrit)",
+    "module": "m7",
+    "title": "DHCP de A à Z (processus DORA, bail)",
+    "url": "https://www.youtube.com/watch?v=Ksiv2k-vKhs",
+    "minutes": 14,
+    "channel": "Yassine Studio 360",
+    "note": "Lutz la signale comme peu vue et non vérifiée.",
+    "rank": 16
+   },
+   {
+    "order": "A17 bis",
+    "part": "Théorie (partiel écrit)",
+    "module": "m7",
+    "title": "DHCP explained : DORA Process",
+    "url": "https://www.youtube.com/watch?v=kS42C3vqFco",
+    "minutes": 6,
+    "channel": "NETWORKING WITH H",
+    "note": "Titre en anglais : la langue de la voix est à vérifier.",
+    "rank": 17
+   },
+   {
+    "order": "B5",
+    "part": "Pratique (TP final)",
+    "module": "m7",
+    "title": "Serveur DHCP sur un routeur Cisco",
+    "url": "https://www.youtube.com/watch?v=DsL_JEdMPXg",
+    "minutes": 10,
+    "channel": "Network for you",
+    "note": "Titre en anglais.",
+    "rank": 28
+   },
+   {
+    "order": "B6",
+    "part": "Pratique (TP final)",
+    "module": "m7",
+    "title": "IP helper / relais DHCP",
+    "url": "https://www.youtube.com/watch?v=8t_iXVo3Svw",
+    "minutes": 12,
+    "channel": "Saleh Al-Moghrabi",
+    "note": "Titre en anglais.",
+    "rank": 29
+   },
+   {
+    "order": "B11",
+    "part": "Pratique (TP final)",
+    "module": "m7",
+    "title": "Optionnel : SLAAC, DHCPv6 sans état et avec état sur Packet Tracer",
+    "url": "https://www.youtube.com/watch?v=cNaucNwN0ak",
+    "minutes": 41,
+    "channel": "CERTIFIÉ DU NET",
+    "note": "",
+    "rank": 34
+   }
   ]
  },
  {
@@ -952,6 +1252,19 @@
    25,
    26,
    27
+  ],
+  "lutz": [
+   {
+    "order": "A18",
+    "part": "Théorie (partiel écrit)",
+    "module": "m8s",
+    "title": "Spanning Tree expliqué",
+    "url": "https://www.youtube.com/watch?v=CiO9k4Rxskk",
+    "minutes": 7,
+    "channel": "Finger In The Net",
+    "note": "",
+    "rank": 18
+   }
   ]
  },
  {
@@ -1070,6 +1383,41 @@
    29,
    31,
    32
+  ],
+  "lutz": [
+   {
+    "order": "A19",
+    "part": "Théorie (partiel écrit)",
+    "module": "m8r",
+    "title": "La table de routage",
+    "url": "https://www.youtube.com/watch?v=dLqAjN8sBvU",
+    "minutes": 7,
+    "channel": "Finger In The Net",
+    "note": "",
+    "rank": 19
+   },
+   {
+    "order": "B7",
+    "part": "Pratique (TP final)",
+    "module": "m8r",
+    "title": "Routage statique sur Cisco",
+    "url": "https://www.youtube.com/watch?v=5dCtWJxz2mQ",
+    "minutes": 9,
+    "channel": "Prince ATTOBLA",
+    "note": "",
+    "rank": 30
+   },
+   {
+    "order": "B8",
+    "part": "Pratique (TP final)",
+    "module": "m8r",
+    "title": "La route par défaut",
+    "url": "https://www.youtube.com/watch?v=Z534axcjQPM",
+    "minutes": 7,
+    "channel": "Clemanet",
+    "note": "",
+    "rank": 31
+   }
   ]
  },
  {
@@ -1193,6 +1541,63 @@
    35,
    36,
    40
+  ],
+  "lutz": [
+   {
+    "order": "A20",
+    "part": "Théorie (partiel écrit)",
+    "module": "m10",
+    "title": "Vecteur de distance vs état de lien",
+    "url": "https://www.youtube.com/watch?v=Q5MC9cx71_I",
+    "minutes": 2,
+    "channel": "Formip",
+    "note": "",
+    "rank": 20
+   },
+   {
+    "order": "A21",
+    "part": "Théorie (partiel écrit)",
+    "module": "m10",
+    "title": "OSPF expliqué simplement",
+    "url": "https://www.youtube.com/watch?v=XBPK-6zrLZ8",
+    "minutes": 7,
+    "channel": "Formip",
+    "note": "",
+    "rank": 21
+   },
+   {
+    "order": "A+",
+    "part": "Théorie (partiel écrit)",
+    "module": "m10",
+    "title": "Approfondir : le routage à vecteur de distance",
+    "url": "https://www.youtube.com/watch?v=kzablGaqUXM",
+    "minutes": null,
+    "channel": "MOOC de l’IMT",
+    "note": "",
+    "rank": 22
+   },
+   {
+    "order": "A++",
+    "part": "Théorie (partiel écrit)",
+    "module": "m10",
+    "title": "Approfondir : le routage à état de liens",
+    "url": "https://www.youtube.com/watch?v=-utHPKREZV8",
+    "minutes": null,
+    "channel": "MOOC de l’IMT",
+    "note": "",
+    "rank": 23
+   },
+   {
+    "order": "B9",
+    "part": "Pratique (TP final)",
+    "module": "m10",
+    "title": "RIPv2 sur Packet Tracer",
+    "url": "https://www.youtube.com/watch?v=3D-ZsbxMxkg",
+    "minutes": 9,
+    "channel": "Numelion IT",
+    "note": "",
+    "rank": 32
+   }
   ]
  }
 ]
