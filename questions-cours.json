@@ -23,7 +23,10 @@
      "2 Liaison de données, 1 Physique → Accès réseau."
     ],
     "explain": "Moyen mnémotechnique de haut en bas : « Après Plusieurs Semaines, Tout Respire La Paix ». TCP/IP regroupe les 3 couches hautes d’OSI en une seule, et les 2 couches basses en une seule.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A1"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -37,7 +40,10 @@
      "Physique : bits transmis sur le support."
     ],
     "explain": "Chaque couche ajoute ses propres informations devant les données reçues de la couche du dessus. Le client fait l’inverse (désencapsulation) en remontant les couches.",
-    "schema": "Données\n[TCP|Données]                 segment\n[IP|TCP|Données]              paquet\n[ETH|IP|TCP|Données|FCS]      trame\n0101101…                      bits"
+    "schema": "Données\n[TCP|Données]                 segment\n[IP|TCP|Données]              paquet\n[ETH|IP|TCP|Données|FCS]      trame\n0101101…                      bits",
+    "videos": [
+     "A2"
+    ]
    },
    {
     "kind": "Définition",
@@ -49,7 +55,10 @@
      "Supports : le chemin du signal (câble cuivre, fibre optique, sans fil)."
     ],
     "explain": "Le cours précise aussi les signaux : impulsions électriques sur le cuivre, impulsions lumineuses dans la fibre, ondes pour le sans-fil.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A1"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -61,7 +70,8 @@
      "Internet : ensemble mondial de réseaux interconnectés, qui n’appartient à personne."
     ],
     "explain": "Repère : LAN = « chez moi », WAN = « entre mes sites, via un opérateur ».",
-    "schema": ""
+    "schema": "",
+    "videos": []
    },
    {
     "kind": "Définition",
@@ -75,7 +85,8 @@
      "Les options de remise : monodiffusion (un), multidiffusion (un groupe), diffusion (tous)."
     ],
     "explain": "Ce sont les cinq « règles » des diapos 12 à 18 ; elles reviennent souvent sous forme de question à choix multiples.",
-    "schema": ""
+    "schema": "",
+    "videos": []
    },
    {
     "kind": "Fonctionnement",
@@ -86,7 +97,11 @@
      "Trame qui arrive à B : IP source = A, IP destination = B (inchangées) ; MAC source = R (interface côté B), MAC destination = B."
     ],
     "explain": "L’IP désigne l’émetteur et le destinataire final ; la MAC ne sert que sur un lien. Le routeur retire l’en-tête Ethernet et en construit un nouveau.",
-    "schema": "A ──── R ──── B\nIP  : A→B        A→B\nMAC : A→R(g)     R(d)→B"
+    "schema": "A ──── R ──── B\nIP  : A→B        A→B\nMAC : A→R(g)     R(d)→B",
+    "videos": [
+     "A2",
+     "A6"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -97,7 +112,8 @@
      "Avantage : interopérabilité entre fabricants, concurrence et choix pour l’acheteur."
     ],
     "explain": "À l’inverse, un protocole propriétaire est contrôlé par une entreprise (dans le cours : DTP est un protocole propriétaire Cisco).",
-    "schema": ""
+    "schema": "",
+    "videos": []
    }
   ]
  },
@@ -124,7 +140,10 @@
      "Retour : exit remonte d’un niveau ; end (ou Ctrl+Z) revient directement à Switch#."
     ],
     "explain": "L’invite indique toujours le mode : > utilisateur, # privilégié, (config) global, (config-if) interface, (config-line) ligne.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B1"
+    ]
    },
    {
     "kind": "Méthode",
@@ -139,7 +158,11 @@
      "banner motd #Accès réservé# (message d’avertissement)"
     ],
     "explain": "Ne pas oublier login sur les lignes : sans lui, le mot de passe n’est pas demandé.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B1",
+     "B2"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -151,7 +174,10 @@
      "copy running-config startup-config enregistre les changements."
     ],
     "explain": "Si l’on redémarre sans enregistrer, les modifications sont perdues : c’est une question classique.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B1"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -163,7 +189,10 @@
      "SSH : accès à distance par le réseau, chiffré : méthode recommandée."
     ],
     "explain": "Mot-clé de l’énoncé « sécurisé », « chiffré » ou « confidentialité » → SSH.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B2"
+    ]
    },
    {
     "kind": "Méthode",
@@ -174,7 +203,8 @@
      "Soit manuellement (configuration statique), soit automatiquement par DHCP."
     ],
     "explain": "Sans passerelle, le PC ne communique qu’avec son propre réseau.",
-    "schema": ""
+    "schema": "",
+    "videos": []
    },
    {
     "kind": "Méthode",
@@ -186,7 +216,10 @@
      "Configurer les lignes VTY (et de préférence SSH)."
     ],
     "explain": "Un commutateur de couche 2 n’a pas besoin d’IP pour commuter les trames : l’IP sert uniquement à le gérer à distance.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B1"
+    ]
    }
   ]
  },
@@ -214,7 +247,10 @@
      "Si elle est inconnue, ou si c’est une diffusion ou une multidiffusion, il envoie la trame sur tous les ports sauf celui d’arrivée (inondation)."
     ],
     "explain": "Phrase à retenir : « il apprend avec la source, il transmet avec la destination ». Les entrées sont effacées après un délai d’inactivité (5 minutes par défaut selon le cours).",
-    "schema": "Trame reçue sur le port 1\n1) MAC source  → table : MAC = port 1\n2) MAC dest.   → connue  : port associé\n                 inconnue : tous sauf 1"
+    "schema": "Trame reçue sur le port 1\n1) MAC source  → table : MAC = port 1\n2) MAC dest.   → connue  : port associé\n                 inconnue : tous sauf 1",
+    "videos": [
+     "A4"
+    ]
    },
    {
     "kind": "Méthode",
@@ -228,7 +264,10 @@
      "5. Si la destination se trouve sur le port d’arrivée, la trame n’est pas renvoyée (filtrage)."
     ],
     "explain": "La « place » de l’adresse source est la table MAC ; la « place » de la trame est le ou les ports de sortie. Écrire les deux temps séparément (apprendre puis transmettre) rapporte les points.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A4"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -243,7 +282,10 @@
      "FCS (4 octets) : séquence de contrôle pour détecter les erreurs."
     ],
     "explain": "Taille d’une trame : 64 octets minimum, 1 518 maximum. Une trame de moins de 64 octets est un « fragment de collision » et est rejetée.",
-    "schema": "┌──────────┬─────────┬──────┬──────────┬─────┐\n│MAC dest. │MAC src. │ Type │ Données  │ FCS │\n│ 6 octets │6 octets │  2   │ 46-1500  │  4  │\n└──────────┴─────────┴──────┴──────────┴─────┘"
+    "schema": "┌──────────┬─────────┬──────┬──────────┬─────┐\n│MAC dest. │MAC src. │ Type │ Données  │ FCS │\n│ 6 octets │6 octets │  2   │ 46-1500  │  4  │\n└──────────┴─────────┴──────┴──────────┴─────┘",
+    "videos": [
+     "A5"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -254,7 +296,10 @@
      "MAC (contrôle d’accès au support, en bas) : encapsulation (délimitation, adresses MAC, FCS) et accès au support (par exemple CSMA/CD)."
     ],
     "explain": "LLC = côté logiciel ; MAC = côté matériel.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A5"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -267,7 +312,10 @@
      "CSMA/CA : utilisé par le Wi-Fi (802.11) ; on cherche à éviter les collisions plutôt qu’à les détecter."
     ],
     "explain": "CD = détection (Detection), CA = évitement (Avoidance).",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A3"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -278,7 +326,10 @@
      "Duplex intégral : les deux équipements émettent et reçoivent en même temps ; pas de collision."
     ],
     "explain": "Exemple : un commutateur moderne fonctionne en duplex intégral avec chaque PC.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A3"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -290,7 +341,10 @@
      "Réseau distant : MAC de destination = MAC de la passerelle par défaut (obtenue par ARP) ; l’IP de destination reste celle du destinataire final."
     ],
     "explain": "C’est la base des questions sur les trajets de paquets.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A6"
+    ]
    },
    {
     "kind": "Définition",
@@ -302,7 +356,10 @@
      "Le codage (exemple du cours : Manchester) transforme les bits en signal."
     ],
     "explain": "Les normes de la couche physique couvrent les composants physiques, le codage et la signalisation.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A3"
+    ]
    }
   ]
  },
@@ -332,7 +389,12 @@
      "Nombre d’hôtes = 2^5 − 2 = 30."
     ],
     "explain": "Méthode générale : pas = 256 − octet du masque ; réseau = multiple du pas juste en dessous ; diffusion = réseau suivant − 1.",
-    "schema": "192.168.10.37 /27\nmasque  255.255.255.224   pas 32\nréseau  .32   1er hôte .33\ndiff.   .63   dernier  .62\nhôtes   2^5 − 2 = 30"
+    "schema": "192.168.10.37 /27\nmasque  255.255.255.224   pas 32\nréseau  .32   1er hôte .33\ndiff.   .63   dernier  .62\nhôtes   2^5 − 2 = 30",
+    "videos": [
+     "A9",
+     "A10",
+     "A11"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -344,7 +406,11 @@
      "Les octets à 255 se recopient, l’octet à 0 donne 0 → réseau 172.16.32.0/20."
     ],
     "explain": "ET logique : 1 ET 1 = 1, sinon 0. On ne calcule en binaire que l’octet où le masque n’est ni 255 ni 0.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A9",
+     "A10"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -357,7 +423,10 @@
      "ID d’interface = les 64 derniers bits : ::1."
     ],
     "explain": "Le « :: » ne peut apparaître qu’une seule fois, sinon l’adresse serait ambiguë.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A13"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -370,7 +439,10 @@
      "Le PC enregistre la correspondance dans sa table ARP et peut envoyer la trame."
     ],
     "explain": "Pour une destination distante, le PC fait la même chose mais pour l’IP de sa passerelle. En IPv6, ARP est remplacé par les messages NS et NA.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A6"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -383,7 +455,11 @@
      "À chaque routeur, le TTL diminue de 1."
     ],
     "explain": "Codes de la table : C connecté, L local, S statique, O OSPF, R RIP, D EIGRP.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A19",
+     "A7"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -396,7 +472,11 @@
      "IPv6 a un en-tête de taille fixe plus simple."
     ],
     "explain": "IPv6 a été créé à cause de l’épuisement des adresses IPv4 et des problèmes liés à NAT.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A8",
+     "A13"
+    ]
    },
    {
     "kind": "Méthode",
@@ -410,7 +490,11 @@
      "Lien : 192.168.20.112/30 (.113 et .114, diffusion .115)."
     ],
     "explain": "On place toujours le plus gros bloc en premier, puis chaque bloc commence juste après la diffusion du précédent : pas de chevauchement.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A12",
+     "B10"
+    ]
    },
    {
     "kind": "Définition",
@@ -423,7 +507,10 @@
      "Multidiffusion : 224.0.0.0 à 239.255.255.255 ; anciennes classes A à E."
     ],
     "explain": "Un PC en 169.254.x.x n’a pas reçu de réponse DHCP : question de dépannage classique.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A9"
+    ]
    },
    {
     "kind": "Méthode",
@@ -436,7 +523,10 @@
      "ID d’interface : 021A:2BFF:FE3C:4D5E."
     ],
     "explain": "Le résultat sert d’ID d’interface (64 bits) pour une adresse SLAAC ou de lien local.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A13"
+    ]
    }
   ]
  },
@@ -463,7 +553,10 @@
      "UDP : DNS, DHCP, TFTP, SNMP, voix sur IP, vidéo en direct."
     ],
     "explain": "Point commun : les deux utilisent des numéros de port et une somme de contrôle.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A14"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -474,7 +567,10 @@
      "Fermeture : chaque côté envoie un FIN, acquitté par un ACK de l’autre côté (4 échanges)."
     ],
     "explain": "Les indicateurs SYN, ACK et FIN sont des bits de contrôle de l’en-tête TCP.",
-    "schema": "Client           Serveur\n ── SYN ───────────▶\n ◀── SYN-ACK ──────\n ── ACK ───────────▶"
+    "schema": "Client           Serveur\n ── SYN ───────────▶\n ◀── SYN-ACK ──────\n ── ACK ───────────▶",
+    "videos": [
+     "A14"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -486,7 +582,10 @@
      "Le couple (IP + port) des deux côtés, appelé socket, identifie chaque conversation de façon unique."
     ],
     "explain": "La commande netstat affiche les connexions TCP ouvertes avec leurs ports.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A14"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -499,7 +598,10 @@
      "MSS : taille maximale des données dans un segment (1 500 − 20 IPv4 − 20 TCP = 1 460 octets sur Ethernet)."
     ],
     "explain": "Attention : la diapo sur la MSS contient une soustraction erronée ; le bon résultat est 1 460 octets (voir fiche de calcul 18).",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A14"
+    ]
    },
    {
     "kind": "Définition",
@@ -511,7 +613,10 @@
      "HTTP 80 TCP ; POP3 110 TCP ; IMAP 143 TCP ; HTTPS 443 TCP."
     ],
     "explain": "Moyen mnémotechnique : la vingtaine (20 à 25) = accès et envoi ; 53 DNS ; 67-68 DHCP ; 69 TFTP ; 80 web ; 110 POP ; 143 IMAP ; 443 web sécurisé.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A14"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -523,7 +628,8 @@
      "IMAP : consulter le courrier en le laissant sur le serveur (synchronisé entre plusieurs appareils)."
     ],
     "explain": "« SMTP Sort, POP Prend, IMAP Immobilise sur le serveur ».",
-    "schema": ""
+    "schema": "",
+    "videos": []
    },
    {
     "kind": "Fonctionnement",
@@ -536,7 +642,8 @@
      "Outil de test : nslookup."
     ],
     "explain": "Si un ping vers l’IP fonctionne mais pas vers le nom, le problème vient du DNS.",
-    "schema": ""
+    "schema": "",
+    "videos": []
    }
   ]
  },
@@ -563,7 +670,10 @@
      "Types : par défaut (VLAN 1, tous les ports au départ), données (trafic utilisateur), gestion (accès au commutateur), natif (trafic non étiqueté sur un trunk)."
     ],
     "explain": "Un VLAN = un réseau IP = un domaine de diffusion.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A15"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -577,7 +687,10 @@
      "Le FCS doit être recalculé après l’ajout de l’étiquette."
     ],
     "explain": "Les trames du VLAN natif traversent le trunk sans étiquette.",
-    "schema": "┌────────┬────────┬──────────────┬──────┬────────┬─────┐\n│MAC dst │MAC src │ 802.1Q (4 o) │ Type │ Données│ FCS │\n└────────┴────────┴──────────────┴──────┴────────┴─────┘"
+    "schema": "┌────────┬────────┬──────────────┬──────┬────────┬─────┐\n│MAC dst │MAC src │ 802.1Q (4 o) │ Type │ Données│ FCS │\n└────────┴────────┴──────────────┴──────┴────────┴─────┘",
+    "videos": [
+     "A16"
+    ]
    },
    {
     "kind": "Méthode",
@@ -589,7 +702,10 @@
      "Vérifier : show vlan brief."
     ],
     "explain": "Pour supprimer tous les VLAN : delete vlan.dat puis redémarrer (erase startup-config ne suffit pas).",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A16"
+    ]
    },
    {
     "kind": "Méthode",
@@ -603,7 +719,10 @@
      "Vérifier : show interfaces trunk."
     ],
     "explain": "Un VLAN absent de la liste autorisée ne traverse pas le trunk : ses hôtes ne communiquent plus d’un commutateur à l’autre.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A16"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -616,7 +735,10 @@
      "Pas de trunk : auto + auto, ou si un côté est en access."
     ],
     "explain": "On peut désactiver DTP avec switchport nonegotiate.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A16"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -628,7 +750,10 @@
      "Commutateur de couche 3 : routage interne avec des SVI ; le plus rapide et le plus adapté aux grands réseaux."
     ],
     "explain": "Quelle que soit la méthode, chaque VLAN est un sous-réseau différent avec sa propre passerelle.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B3"
+    ]
    },
    {
     "kind": "Méthode",
@@ -641,7 +766,10 @@
      "interface g0/0 → no shutdown (active l’interface physique)."
     ],
     "explain": "Les PC du VLAN 10 ont pour passerelle 192.168.10.1, ceux du VLAN 20 192.168.20.1.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B4"
+    ]
    },
    {
     "kind": "Méthode",
@@ -654,7 +782,11 @@
      "Mauvais numéro dans encapsulation dot1Q ou mauvaise IP de sous-interface → show running-config, show ip interface brief."
     ],
     "explain": "Le cours insiste aussi sur la configuration IP des PC (ipconfig) : mauvais sous-réseau ou mauvaise passerelle.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B3",
+     "B4"
+    ]
    }
   ]
  },
@@ -682,7 +814,11 @@
      "4. DHCPACK : le serveur confirme le bail."
     ],
     "explain": "Moyen mnémotechnique : DORA. Le renouvellement du bail se fait avec REQUEST et ACK.",
-    "schema": "Client                    Serveur\n ── DISCOVER (diffusion) ─▶\n ◀────── OFFER ───────────\n ── REQUEST (diffusion) ──▶\n ◀────── ACK ─────────────"
+    "schema": "Client                    Serveur\n ── DISCOVER (diffusion) ─▶\n ◀────── OFFER ───────────\n ── REQUEST (diffusion) ──▶\n ◀────── ACK ─────────────",
+    "videos": [
+     "A17",
+     "A17 bis"
+    ]
    },
    {
     "kind": "Méthode",
@@ -697,7 +833,10 @@
      "Vérifier : show ip dhcp binding, show ip dhcp pool."
     ],
     "explain": "Les adresses exclues doivent couvrir la passerelle et les équipements à adresse fixe. Ici, 254 − 9 = 245 adresses distribuables (fiche de calcul 38 pour l’exemple exact du cours).",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B5"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -709,7 +848,10 @@
      "Le routeur reçoit la diffusion et la relaie en monodiffusion vers le serveur."
     ],
     "explain": "Erreur classique : placer ip helper-address sur la mauvaise interface.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B6"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -721,7 +863,10 @@
      "Indicateur M (configuration gérée) : l’hôte obtient son adresse par un serveur DHCPv6 avec état."
     ],
     "explain": "Commandes : ipv6 nd other-config-flag (O = 1) ; ipv6 nd managed-config-flag (M = 1).",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B11"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -734,7 +879,10 @@
      "Avant de l’utiliser, il vérifie qu’elle est unique : détection des adresses dupliquées (DAD) avec un message NS."
     ],
     "explain": "SLAAC est « sans état » : aucun serveur ne garde la liste des adresses attribuées.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B11"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -746,7 +894,10 @@
      "Commandes d’interface : ipv6 nd other-config-flag (sans état) ; ipv6 nd managed-config-flag (avec état)."
     ],
     "explain": "Un serveur sans état affiche « 0 client actif » : c’est normal.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B11"
+    ]
    }
   ]
  },
@@ -773,7 +924,10 @@
      "STP bloque volontairement certains ports pour ne garder qu’un chemin, et les réactive si un lien tombe."
     ],
     "explain": "Redondance = utile pour la tolérance aux pannes, mais seulement si STP empêche les boucles.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A18"
+    ]
    },
    {
     "kind": "Méthode",
@@ -786,7 +940,10 @@
      "4. Les ports qui ne sont ni racine ni désignés deviennent alternatifs (bloqués)."
     ],
     "explain": "En cas d’égalité de coût, on départage par le BID de l’émetteur, puis l’ID de port.",
-    "schema": "        S1 racine\n       D/      \\D\n      R/        \\R\n     S2 ───────── S3\n       D       bloqué"
+    "schema": "        S1 racine\n       D/      \\D\n      R/        \\R\n     S2 ───────── S3\n       D       bloqué",
+    "videos": [
+     "A18"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -799,7 +956,10 @@
      "Le plus petit BID devient pont racine : d’abord la plus petite priorité, puis, à égalité, la plus petite MAC."
     ],
     "explain": "Pour forcer un commutateur à devenir racine, on baisse sa priorité.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A18"
+    ]
    },
    {
     "kind": "Calcul",
@@ -811,7 +971,10 @@
      "8 < 19 : le port racine de S3 est celui relié à S2."
     ],
     "explain": "Le coût du chemin racine est la somme des coûts des liens jusqu’à la racine.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A18"
+    ]
    },
    {
     "kind": "Définition",
@@ -825,7 +988,10 @@
      "Désactivé : port arrêté administrativement."
     ],
     "explain": "Passage blocage → acheminement : écoute (15 s) puis apprentissage (15 s), après Max Age (20 s) si besoin.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A18"
+    ]
    }
   ]
  },
@@ -851,7 +1017,10 @@
      "La plus précise est 172.16.0.0/26 : c’est elle qui est utilisée."
     ],
     "explain": "Pour 172.16.0.70, /26 ne convient plus (.70 > .63) : on prend /18.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A19"
+    ]
    },
    {
     "kind": "Décomposition",
@@ -866,7 +1035,10 @@
      "Serial0/0/1 : interface de sortie."
     ],
     "explain": "Distances : connecté 0, statique 1, EIGRP 90, OSPF 110, RIP 120 ; plus petite = préférée.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A19"
+    ]
    },
    {
     "kind": "Comparaison",
@@ -878,7 +1050,10 @@
      "Statique pour les petits réseaux et les routes par défaut ; dynamique pour les grands réseaux."
     ],
     "explain": "Métriques : RIP compte les sauts ; OSPF utilise le coût lié à la bande passante.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A20"
+    ]
    },
    {
     "kind": "Méthode",
@@ -890,7 +1065,10 @@
      "Vérifier : show ip route static (code S)."
     ],
     "explain": "Le prochain saut est l’IP du routeur voisin sur le lien partagé, jamais une adresse de son LAN.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B7"
+    ]
    },
    {
     "kind": "Méthode",
@@ -902,7 +1080,10 @@
      "La route flottante n’apparaît dans la table que si la principale disparaît."
     ],
     "explain": "Si la route principale vient d’OSPF (110), le secours doit avoir une distance supérieure à 110.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B8"
+    ]
    },
    {
     "kind": "Définition",
@@ -914,7 +1095,10 @@
      "Configuration manuelle : ip route 192.168.1.10 255.255.255.255 <prochain saut>."
     ],
     "explain": "En IPv6 avec un prochain saut link-local, il faut aussi préciser l’interface de sortie.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B7"
+    ]
    }
   ]
  },
@@ -941,7 +1125,12 @@
      "OSPF converge plus vite et s’adapte mieux aux grands réseaux."
     ],
     "explain": "Vecteur de distance = « on me dit » ; état de liens = « je vois la carte ».",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A20",
+     "A+",
+     "A++"
+    ]
    },
    {
     "kind": "Méthode",
@@ -957,7 +1146,10 @@
      "Vérifier : show ip protocols, show ip route (code R)."
     ],
     "explain": "passive-interface n’empêche pas d’annoncer le réseau du LAN aux autres routeurs.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "B9"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -968,7 +1160,10 @@
      "Étapes : établir les adjacences de voisinage → échanger les LSA → construire la base de données d’état de liens → exécuter SPF → installer les meilleures routes dans la table."
     ],
     "explain": "Moyen mnémotechnique des étapes : voisins, LSA, base, SPF, table.",
-    "schema": "Hello → voisins\nLSA   → échange\nLSDB  → base commune\nSPF   → plus courts chemins\nTable → meilleures routes"
+    "schema": "Hello → voisins\nLSA   → échange\nLSDB  → base commune\nSPF   → plus courts chemins\nTable → meilleures routes",
+    "videos": [
+     "A21"
+    ]
    },
    {
     "kind": "Méthode",
@@ -981,7 +1176,10 @@
      "Après une modification sur un processus actif : clear ip ospf process (ou redémarrer)."
     ],
     "explain": "Le router ID sert aussi à départager l’élection du DR à priorités égales.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A21"
+    ]
    },
    {
     "kind": "Méthode",
@@ -995,7 +1193,10 @@
      "Variante : ip ospf 10 area 0 directement sur chaque interface."
     ],
     "explain": "Le masque générique est l’inverse du masque : 255 − chaque octet (/24 → 0.0.0.255, /30 → 0.0.0.3).",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A21"
+    ]
    },
    {
     "kind": "Fonctionnement",
@@ -1007,7 +1208,10 @@
      "Dans l’exemple du cours (priorités égales), le plus haut router ID devient DR, le deuxième BDR."
     ],
     "explain": "Sur un lien entre deux routeurs seulement, ip ospf network point-to-point supprime l’élection inutile.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A21"
+    ]
    },
    {
     "kind": "Calcul",
@@ -1019,7 +1223,10 @@
      "Le coût d’une route est la somme des coûts des interfaces de sortie jusqu’à la destination."
     ],
     "explain": "Il faut configurer la même référence sur tous les routeurs OSPF.",
-    "schema": ""
+    "schema": "",
+    "videos": [
+     "A21"
+    ]
    }
   ]
  }
