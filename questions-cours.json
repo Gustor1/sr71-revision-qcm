@@ -26,7 +26,20 @@
     "schema": "",
     "videos": [
      "A1"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles correspondances entre le modèle OSI et le modèle TCP/IP sont correctes ? (2 réponses)",
+     "options": [
+      "Application, Présentation et Session d’OSI forment la couche Application de TCP/IP",
+      "La couche Réseau d’OSI correspond à la couche Transport de TCP/IP",
+      "Liaison de données et Physique d’OSI forment la couche Accès réseau de TCP/IP",
+      "La couche Physique d’OSI correspond à la couche Internet de TCP/IP"
+     ],
+     "correct": [
+      0,
+      2
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -43,7 +56,19 @@
     "schema": "Données\n[TCP|Données]                 segment\n[IP|TCP|Données]              paquet\n[ETH|IP|TCP|Données|FCS]      trame\n0101101…                      bits",
     "videos": [
      "A2"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel est l’ordre des unités de données (PDU) lors de l’encapsulation, de la couche Application à la couche Physique ?",
+     "options": [
+      "Données → paquet → segment → trame → bits",
+      "Bits → trame → paquet → segment → données",
+      "Données → trame → paquet → segment → bits",
+      "Données → segment → paquet → trame → bits"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -58,7 +83,20 @@
     "schema": "",
     "videos": [
      "A1"
-    ]
+    ],
+    "qcm": {
+     "question": "Quels éléments sont des équipements intermédiaires ? (2 réponses)",
+     "options": [
+      "Un câble à fibre optique",
+      "Un routeur",
+      "Un commutateur",
+      "Une imprimante"
+     ],
+     "correct": [
+      1,
+      2
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -71,7 +109,19 @@
     ],
     "explain": "Repère : LAN = « chez moi », WAN = « entre mes sites, via un opérateur ».",
     "schema": "",
-    "videos": []
+    "videos": [],
+    "qcm": {
+     "question": "Quelle affirmation décrit un WAN ?",
+     "options": [
+      "C’est l’ensemble mondial des réseaux, qui n’appartient à personne",
+      "Il couvre une zone limitée administrée par une seule organisation",
+      "Il interconnecte des LAN éloignés, généralement par un ou plusieurs opérateurs",
+      "C’est le réseau sans fil d’une maison"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -86,7 +136,20 @@
     ],
     "explain": "Ce sont les cinq « règles » des diapos 12 à 18 ; elles reviennent souvent sous forme de question à choix multiples.",
     "schema": "",
-    "videos": []
+    "videos": [],
+    "qcm": {
+     "question": "Quelles sont des règles qu’un protocole de communication doit définir ? (2 réponses)",
+     "options": [
+      "Le prix de l’abonnement Internet",
+      "Les options de remise (monodiffusion, multidiffusion, diffusion)",
+      "La marque des équipements utilisés",
+      "Le codage du message"
+     ],
+     "correct": [
+      1,
+      3
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -101,7 +164,19 @@
     "videos": [
      "A2",
      "A6"
-    ]
+    ],
+    "qcm": {
+     "question": "Le PC A envoie un paquet au serveur B, dans un autre réseau, à travers le routeur R. Quelles adresses porte la trame qui arrive à B ?",
+     "options": [
+      "IP source A, IP destination R ; MAC source R, MAC destination B",
+      "IP source A, IP destination B ; MAC source R (interface côté B), MAC destination B",
+      "IP source A, IP destination B ; MAC source A, MAC destination B",
+      "IP source R, IP destination B ; MAC source A, MAC destination B"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -113,7 +188,19 @@
     ],
     "explain": "À l’inverse, un protocole propriétaire est contrôlé par une entreprise (dans le cours : DTP est un protocole propriétaire Cisco).",
     "schema": "",
-    "videos": []
+    "videos": [],
+    "qcm": {
+     "question": "Qu’est-ce qu’un protocole à norme ouverte ?",
+     "options": [
+      "Un protocole réservé aux réseaux sans fil",
+      "Un protocole qui fonctionne sans mot de passe",
+      "Un protocole contrôlé par une seule entreprise",
+      "Un protocole dont la définition est publique et que tout fabricant peut utiliser"
+     ],
+     "correct": [
+      3
+     ]
+    }
    }
   ]
  },
@@ -143,7 +230,19 @@
     "schema": "",
     "videos": [
      "B1"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle suite de commandes mène de Switch> à Switch(config-if)# ?",
+     "options": [
+      "login → configure terminal → interface fa0/1",
+      "configure terminal → enable → interface fa0/1",
+      "enable → interface fa0/1 → configure terminal",
+      "enable → configure terminal → interface fa0/1"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -162,7 +261,20 @@
     "videos": [
      "B1",
      "B2"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur la sécurisation de base d’un commutateur sont exactes ? (2 réponses)",
+     "options": [
+      "banner motd chiffre les mots de passe",
+      "Sans la commande login sur une ligne, le mot de passe n’est pas demandé",
+      "enable secret protège l’accès au mode privilégié",
+      "service password-encryption active SSH"
+     ],
+     "correct": [
+      1,
+      2
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -177,7 +289,19 @@
     "schema": "",
     "videos": [
      "B1"
-    ]
+    ],
+    "qcm": {
+     "question": "Un technicien modifie la configuration puis redémarre sans rien enregistrer. Que se passe-t-il ?",
+     "options": [
+      "La startup-config est mise à jour automatiquement au redémarrage",
+      "Les modifications sont conservées, car la running-config est en NVRAM",
+      "Le commutateur démarre sans aucune configuration",
+      "Les modifications sont perdues : la running-config (RAM) n’a pas été copiée dans la startup-config (NVRAM)"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -192,7 +316,19 @@
     "schema": "",
     "videos": [
      "B2"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle méthode d’accès permet d’administrer l’équipement à distance de façon chiffrée ?",
+     "options": [
+      "Le port console",
+      "SSH",
+      "Telnet",
+      "Telnet avec un enable secret"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -204,7 +340,20 @@
     ],
     "explain": "Sans passerelle, le PC ne communique qu’avec son propre réseau.",
     "schema": "",
-    "videos": []
+    "videos": [],
+    "qcm": {
+     "question": "Quels paramètres un PC doit-il avoir pour communiquer hors de son réseau ? (2 réponses)",
+     "options": [
+      "Le nom d’hôte du routeur",
+      "Une adresse IP et un masque de sous-réseau",
+      "Une adresse MAC configurée manuellement",
+      "Une passerelle par défaut"
+     ],
+     "correct": [
+      1,
+      3
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -219,7 +368,19 @@
     "schema": "",
     "videos": [
      "B1"
-    ]
+    ],
+    "qcm": {
+     "question": "Comment rend-on un commutateur de couche 2 administrable à distance ?",
+     "options": [
+      "ip route 0.0.0.0 0.0.0.0 … sans autre configuration",
+      "ip address … directement sur le port fa0/1",
+      "C’est impossible : un commutateur se gère seulement par la console",
+      "interface vlan 1, ip address …, no shutdown, puis ip default-gateway …"
+     ],
+     "correct": [
+      3
+     ]
+    }
    }
   ]
  },
@@ -250,7 +411,19 @@
     "schema": "Trame reçue sur le port 1\n1) MAC source  → table : MAC = port 1\n2) MAC dest.   → connue  : port associé\n                 inconnue : tous sauf 1",
     "videos": [
      "A4"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle phrase résume le fonctionnement d’un commutateur ?",
+     "options": [
+      "Il apprend avec la MAC source et transmet selon la MAC destination",
+      "Il apprend avec la MAC destination et transmet selon la MAC source",
+      "Il apprend avec l’IP source et transmet selon l’IP destination",
+      "Il envoie toujours chaque trame sur tous ses ports"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -267,7 +440,20 @@
     "schema": "",
     "videos": [
      "A4"
-    ]
+    ],
+    "qcm": {
+     "question": "Une trame en monodiffusion arrive sur le port 1 ; sa MAC destination n’est pas dans la table. Que fait le commutateur ? (2 réponses)",
+     "options": [
+      "Il envoie une requête ARP pour trouver la destination",
+      "Il envoie la trame sur tous les ports sauf le port 1",
+      "Il enregistre la MAC source avec le port 1 dans sa table",
+      "Il supprime la trame"
+     ],
+     "correct": [
+      1,
+      2
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -285,7 +471,19 @@
     "schema": "┌──────────┬─────────┬──────┬──────────┬─────┐\n│MAC dest. │MAC src. │ Type │ Données  │ FCS │\n│ 6 octets │6 octets │  2   │ 46-1500  │  4  │\n└──────────┴─────────┴──────┴──────────┴─────┘",
     "videos": [
      "A5"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel est l’ordre des champs d’une trame Ethernet (après le préambule) ?",
+     "options": [
+      "Type, MAC source, MAC destination, FCS, données",
+      "IP destination, IP source, type, données, FCS",
+      "MAC source, MAC destination, type, données, FCS",
+      "MAC destination, MAC source, type, données, FCS"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -299,7 +497,19 @@
     "schema": "",
     "videos": [
      "A5"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel est le rôle de la sous-couche LLC ?",
+     "options": [
+      "Calculer le FCS de la trame",
+      "Transformer les bits en signaux",
+      "Dialoguer avec la couche 3 et identifier le protocole réseau transporté",
+      "Contrôler l’accès au support (CSMA/CD)"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -315,7 +525,20 @@
     "schema": "",
     "videos": [
      "A3"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur CSMA/CD et CSMA/CA sont exactes ? (2 réponses)",
+     "options": [
+      "CSMA/CA est utilisé par le Wi-Fi (802.11)",
+      "CSMA/CD est nécessaire en duplex intégral",
+      "CSMA/CA détecte les collisions après coup",
+      "CSMA/CD est utilisé sur les anciens Ethernet partagés en semi-duplex"
+     ],
+     "correct": [
+      0,
+      3
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -329,7 +552,19 @@
     "schema": "",
     "videos": [
      "A3"
-    ]
+    ],
+    "qcm": {
+     "question": "Qu’est-ce que le duplex intégral ?",
+     "options": [
+      "Les deux équipements émettent et reçoivent en même temps",
+      "Le support est partagé grâce à CSMA/CD",
+      "Un seul équipement émet à la fois",
+      "Les données ne circulent que dans un sens"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -344,7 +579,19 @@
     "schema": "",
     "videos": [
      "A6"
-    ]
+    ],
+    "qcm": {
+     "question": "Un PC envoie un paquet à un serveur situé dans un autre réseau. Quelle MAC de destination met-il dans la trame ?",
+     "options": [
+      "Celle du serveur",
+      "Celle de sa passerelle par défaut",
+      "FF-FF-FF-FF-FF-FF",
+      "Sa propre adresse MAC"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -359,7 +606,20 @@
     "schema": "",
     "videos": [
      "A3"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles associations support / signal sont correctes ? (2 réponses)",
+     "options": [
+      "Fibre optique : impulsions lumineuses",
+      "Cuivre : ondes radio",
+      "Cuivre : impulsions électriques",
+      "Sans fil : impulsions lumineuses"
+     ],
+     "correct": [
+      0,
+      2
+     ]
+    }
    }
   ]
  },
@@ -394,7 +654,20 @@
      "A9",
      "A10",
      "A11"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur 192.168.10.37/27 sont exactes ? (2 réponses)",
+     "options": [
+      "Le réseau compte 32 hôtes utilisables",
+      "Le masque est 255.255.255.240",
+      "L’adresse du réseau est 192.168.10.32",
+      "L’adresse de diffusion est 192.168.10.63"
+     ],
+     "correct": [
+      2,
+      3
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -410,7 +683,19 @@
     "videos": [
      "A9",
      "A10"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle est l’adresse réseau de 172.16.37.149 avec le masque 255.255.240.0 ?",
+     "options": [
+      "172.16.32.0",
+      "172.16.37.0",
+      "172.16.0.0",
+      "172.16.48.0"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -426,7 +711,19 @@
     "schema": "",
     "videos": [
      "A13"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle est la forme abrégée correcte de 2001:0db8:0000:00a1:0000:0000:0000:0001 ?",
+     "options": [
+      "2001:db8:0:a1::1",
+      "2001:db8::a1::1",
+      "2001:db8:0:a1:0:1",
+      "2001:db8:a1::1"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -442,7 +739,20 @@
     "schema": "",
     "videos": [
      "A6"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur ARP sont exactes ? (2 réponses)",
+     "options": [
+      "La requête ARP est envoyée au serveur DNS",
+      "La réponse ARP est envoyée en monodiffusion par l’équipement qui possède l’IP",
+      "ARP est utilisé en IPv6 à la place des messages NS et NA",
+      "La requête ARP est envoyée en diffusion (FF-FF-FF-FF-FF-FF)"
+     ],
+     "correct": [
+      1,
+      3
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -459,7 +769,20 @@
     "videos": [
      "A19",
      "A7"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur l’acheminement d’un paquet sont exactes ? (2 réponses)",
+     "options": [
+      "Sans route correspondante ni route par défaut, le routeur envoie le paquet sur toutes ses interfaces",
+      "Un hôte envoie tous ses paquets à la passerelle, même pour son propre réseau",
+      "Le TTL diminue de 1 à chaque routeur traversé",
+      "Si la destination est dans le même réseau que l’hôte, il envoie le paquet directement"
+     ],
+     "correct": [
+      2,
+      3
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -476,7 +799,20 @@
     "videos": [
      "A8",
      "A13"
-    ]
+    ],
+    "qcm": {
+     "question": "Quels changements apporte l’en-tête IPv6 par rapport à IPv4 ? (2 réponses)",
+     "options": [
+      "La somme de contrôle de l’en-tête est supprimée",
+      "Le TTL devient Hop Limit",
+      "Le champ version disparaît",
+      "Les adresses passent à 64 bits"
+     ],
+     "correct": [
+      0,
+      1
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -494,7 +830,19 @@
     "videos": [
      "A12",
      "B10"
-    ]
+    ],
+    "qcm": {
+     "question": "Plan VLSM dans 192.168.20.0/24 : quel est le plus petit bloc suffisant pour un LAN de 50 hôtes ?",
+     "options": [
+      "/24 (254 hôtes)",
+      "/26 (62 hôtes)",
+      "/27 (30 hôtes)",
+      "/28 (14 hôtes)"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -510,7 +858,19 @@
     "schema": "",
     "videos": [
      "A9"
-    ]
+    ],
+    "qcm": {
+     "question": "Un PC a l’adresse 169.254.12.7. Que peut-on en conclure ?",
+     "options": [
+      "C’est une adresse de bouclage",
+      "C’est une adresse de multidiffusion",
+      "Il n’a pas reçu de réponse d’un serveur DHCP (adresse de lien local automatique)",
+      "C’est une adresse publique fournie par le FAI"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -526,7 +886,19 @@
     "schema": "",
     "videos": [
      "A13"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel ID d’interface EUI-64 obtient-on à partir de la MAC 00-1A-2B-3C-4D-5E ?",
+     "options": [
+      "001A:2B3C:4D5E:FFFE",
+      "021A:2BFF:FE3C:4D5E",
+      "001A:2BFF:FE3C:4D5E",
+      "021A:2BFE:FF3C:4D5E"
+     ],
+     "correct": [
+      1
+     ]
+    }
    }
   ]
  },
@@ -556,7 +928,20 @@
     "schema": "",
     "videos": [
      "A14"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur TCP et UDP sont exactes ? (2 réponses)",
+     "options": [
+      "UDP a un en-tête de 8 octets et n’utilise pas d’accusés",
+      "TCP est un protocole sans connexion",
+      "UDP remet les segments dans l’ordre",
+      "TCP retransmet les données qui ne sont pas acquittées"
+     ],
+     "correct": [
+      0,
+      3
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -570,7 +955,19 @@
     "schema": "Client           Serveur\n ── SYN ───────────▶\n ◀── SYN-ACK ──────\n ── ACK ───────────▶",
     "videos": [
      "A14"
-    ]
+    ],
+    "qcm": {
+     "question": "Dans quel ordre se déroule l’établissement d’une connexion TCP ?",
+     "options": [
+      "SYN-ACK, SYN, ACK",
+      "ACK, SYN, SYN-ACK",
+      "SYN, SYN-ACK, ACK",
+      "SYN, ACK, FIN"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -585,7 +982,19 @@
     "schema": "",
     "videos": [
      "A14"
-    ]
+    ],
+    "qcm": {
+     "question": "Un PC ouvre deux onglets vers le même site. Qu’est-ce qui distingue les deux conversations ?",
+     "options": [
+      "Le port de destination",
+      "L’adresse MAC du PC",
+      "L’adresse IP du serveur",
+      "Le port source, choisi différemment par le client pour chaque session"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -601,7 +1010,19 @@
     "schema": "",
     "videos": [
      "A14"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel est le rôle de la taille de fenêtre TCP ?",
+     "options": [
+      "Numéroter les segments pour les remettre dans l’ordre",
+      "Indiquer la quantité de données que l’émetteur peut envoyer avant d’attendre un accusé",
+      "Détecter les erreurs de transmission",
+      "Choisir le port source"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -616,7 +1037,20 @@
     "schema": "",
     "videos": [
      "A14"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles associations protocole / port sont correctes ? (2 réponses)",
+     "options": [
+      "Serveur DHCP : 69",
+      "SSH : 23",
+      "DNS : 53",
+      "HTTPS : 443"
+     ],
+     "correct": [
+      2,
+      3
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -629,7 +1063,19 @@
     ],
     "explain": "« SMTP Sort, POP Prend, IMAP Immobilise sur le serveur ».",
     "schema": "",
-    "videos": []
+    "videos": [],
+    "qcm": {
+     "question": "Quelle est la différence entre POP3 et IMAP ?",
+     "options": [
+      "POP3 envoie le courrier ; IMAP le reçoit",
+      "IMAP télécharge et supprime le courrier du serveur ; POP3 le laisse",
+      "POP3 et IMAP servent à transférer le courrier entre serveurs",
+      "POP3 télécharge le courrier sur le client ; IMAP le laisse sur le serveur"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -643,7 +1089,19 @@
     ],
     "explain": "Si un ping vers l’IP fonctionne mais pas vers le nom, le problème vient du DNS.",
     "schema": "",
-    "videos": []
+    "videos": [],
+    "qcm": {
+     "question": "Quel enregistrement DNS désigne le serveur de messagerie d’un domaine ?",
+     "options": [
+      "A",
+      "AAAA",
+      "NS",
+      "MX"
+     ],
+     "correct": [
+      3
+     ]
+    }
    }
   ]
  },
@@ -673,7 +1131,20 @@
     "schema": "",
     "videos": [
      "A15"
-    ]
+    ],
+    "qcm": {
+     "question": "Quels sont des avantages des VLAN ? (2 réponses)",
+     "options": [
+      "Ils augmentent le nombre de ports du commutateur",
+      "Une meilleure sécurité par séparation des groupes",
+      "Des domaines de diffusion plus petits",
+      "Les VLAN communiquent entre eux sans routage"
+     ],
+     "correct": [
+      1,
+      2
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -690,7 +1161,20 @@
     "schema": "┌────────┬────────┬──────────────┬──────┬────────┬─────┐\n│MAC dst │MAC src │ 802.1Q (4 o) │ Type │ Données│ FCS │\n└────────┴────────┴──────────────┴──────┴────────┴─────┘",
     "videos": [
      "A16"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur l’étiquette 802.1Q sont exactes ? (2 réponses)",
+     "options": [
+      "Les trames du VLAN natif traversent le trunk sans étiquette",
+      "Elle fait 4 octets et contient le numéro de VLAN (VID) sur 12 bits",
+      "Le FCS n’a pas besoin d’être recalculé",
+      "Elle est insérée avant l’adresse MAC de destination"
+     ],
+     "correct": [
+      0,
+      1
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -705,7 +1189,19 @@
     "schema": "",
     "videos": [
      "A16"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle suite de commandes place le port Fa0/5 dans le VLAN 10 ?",
+     "options": [
+      "interface vlan 10 → switchport access fa0/5",
+      "interface fa0/5 → switchport mode access → switchport access vlan 10",
+      "vlan 10 → ip address 10.0.0.5 255.0.0.0",
+      "interface fa0/5 → switchport mode trunk → switchport trunk native vlan 10"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -722,7 +1218,19 @@
     "schema": "",
     "videos": [
      "A16"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle commande limite un trunk aux VLAN 10, 20 et 99 ?",
+     "options": [
+      "switchport trunk native vlan 10,20,99",
+      "switchport access vlan 10,20,99",
+      "switchport trunk allowed vlan 10,20,99",
+      "switchport mode trunk 10,20,99"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -738,7 +1246,19 @@
     "schema": "",
     "videos": [
      "A16"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle combinaison de modes DTP NE forme PAS de trunk ?",
+     "options": [
+      "dynamic auto + dynamic auto",
+      "trunk + dynamic auto",
+      "dynamic desirable + dynamic desirable",
+      "dynamic desirable + dynamic auto"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -753,7 +1273,19 @@
     "schema": "",
     "videos": [
      "B3"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle méthode de routage inter-VLAN utilise un seul lien trunk vers le routeur, découpé en sous-interfaces ?",
+     "options": [
+      "L’ancienne méthode (une interface physique par VLAN)",
+      "DTP",
+      "Router-on-a-stick",
+      "Le commutateur de couche 3 avec des SVI"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -769,7 +1301,19 @@
     "schema": "",
     "videos": [
      "B4"
-    ]
+    ],
+    "qcm": {
+     "question": "En router-on-a-stick, quelle commande associe la sous-interface g0/0.10 au VLAN 10 ?",
+     "options": [
+      "switchport access vlan 10",
+      "encapsulation dot1Q 10",
+      "ip helper-address 10",
+      "vlan 10"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -786,7 +1330,19 @@
     "videos": [
      "B3",
      "B4"
-    ]
+    ],
+    "qcm": {
+     "question": "Les hôtes du VLAN 20 ne communiquent plus d’un commutateur à l’autre. Quelle commande vérifie si le VLAN 20 est autorisé sur le trunk ?",
+     "options": [
+      "show interfaces trunk",
+      "show ip ospf neighbor",
+      "show ip route",
+      "show ip dhcp binding"
+     ],
+     "correct": [
+      0
+     ]
+    }
    }
   ]
  },
@@ -818,7 +1374,19 @@
     "videos": [
      "A17",
      "A17 bis"
-    ]
+    ],
+    "qcm": {
+     "question": "Dans quel ordre se déroulent les messages DHCPv4 ?",
+     "options": [
+      "DISCOVER, REQUEST, OFFER, ACK",
+      "REQUEST, OFFER, DISCOVER, ACK",
+      "DISCOVER, OFFER, REQUEST, ACK",
+      "OFFER, DISCOVER, ACK, REQUEST"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -836,7 +1404,19 @@
     "schema": "",
     "videos": [
      "B5"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle commande empêche le serveur DHCP de distribuer les adresses 192.168.10.1 à 192.168.10.9 ?",
+     "options": [
+      "network 192.168.10.0 255.255.255.0",
+      "default-router 192.168.10.1",
+      "ip dhcp excluded-address 192.168.10.1 192.168.10.9",
+      "ip helper-address 192.168.10.9"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -851,7 +1431,19 @@
     "schema": "",
     "videos": [
      "B6"
-    ]
+    ],
+    "qcm": {
+     "question": "Le serveur DHCP est dans un autre réseau. Où configure-t-on ip helper-address ?",
+     "options": [
+      "Sur chaque PC client",
+      "Sur l’interface du routeur côté clients",
+      "Sur l’interface du routeur côté serveur",
+      "Dans le pool DHCP du serveur"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -866,7 +1458,19 @@
     "schema": "",
     "videos": [
      "B11"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel indicateur du message RA demande à l’hôte d’obtenir son adresse auprès d’un serveur DHCPv6 avec état ?",
+     "options": [
+      "M (configuration gérée)",
+      "O (autre configuration)",
+      "A (configuration automatique)",
+      "Les indicateurs A et O ensemble"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -882,7 +1486,20 @@
     "schema": "",
     "videos": [
      "B11"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur SLAAC sont exactes ? (2 réponses)",
+     "options": [
+      "Un serveur garde la liste des adresses attribuées",
+      "Avant d’utiliser l’adresse, l’hôte vérifie qu’elle est unique (DAD) avec un message NS",
+      "L’hôte envoie un DHCPDISCOVER pour obtenir le préfixe",
+      "L’hôte combine le préfixe reçu dans le RA avec son ID d’interface"
+     ],
+     "correct": [
+      1,
+      3
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -897,7 +1514,19 @@
     "schema": "",
     "videos": [
      "B11"
-    ]
+    ],
+    "qcm": {
+     "question": "Avec DHCPv6 sans état, que fournit le serveur DHCPv6 ?",
+     "options": [
+      "L’adresse globale, en gardant la liste des clients",
+      "Uniquement l’adresse de lien local",
+      "Seulement les autres paramètres (DNS, nom de domaine) : l’adresse vient de SLAAC",
+      "Le préfixe et la passerelle, à la place du RA"
+     ],
+     "correct": [
+      2
+     ]
+    }
    }
   ]
  },
@@ -927,7 +1556,19 @@
     "schema": "",
     "videos": [
      "A18"
-    ]
+    ],
+    "qcm": {
+     "question": "Pourquoi une boucle de couche 2 provoque-t-elle une tempête de diffusion ?",
+     "options": [
+      "Le commutateur supprime les trames après 15 passages",
+      "Ethernet n’a pas de TTL : une trame qui tourne en boucle n’est jamais éliminée",
+      "STP crée volontairement des boucles",
+      "Les routeurs renvoient les diffusions vers les commutateurs"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -943,7 +1584,19 @@
     "schema": "        S1 racine\n       D/      \\D\n      R/        \\R\n     S2 ───────── S3\n       D       bloqué",
     "videos": [
      "A18"
-    ]
+    ],
+    "qcm": {
+     "question": "Dans quel ordre STP construit-il une topologie sans boucle ?",
+     "options": [
+      "Ports racine, pont racine, ports alternatifs, ports désignés",
+      "Pont racine, ports racine, ports désignés, ports alternatifs",
+      "Ports désignés, pont racine, ports racine, ports alternatifs",
+      "Ports alternatifs, ports racine, pont racine, ports désignés"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -959,7 +1612,19 @@
     "schema": "",
     "videos": [
      "A18"
-    ]
+    ],
+    "qcm": {
+     "question": "Deux commutateurs ont la même priorité (32 768) dans le même VLAN. Lequel devient pont racine ?",
+     "options": [
+      "Celui qui a le plus de ports",
+      "Celui qui a la plus grande adresse MAC",
+      "Celui qui a été allumé en premier",
+      "Celui qui a la plus petite adresse MAC"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Calcul",
@@ -974,7 +1639,19 @@
     "schema": "",
     "videos": [
      "A18"
-    ]
+    ],
+    "qcm": {
+     "question": "S1 est racine ; S2–S1 en 1 Gbit/s ; S3–S1 en 100 Mbit/s ; S3–S2 en 1 Gbit/s. Quel est le port racine de S3 ?",
+     "options": [
+      "Le port relié à S1 (coût 4)",
+      "Le port relié à S1 (coût 19)",
+      "Le port relié à S2 (coût 4 + 4 = 8)",
+      "Aucun : S3 est pont racine"
+     ],
+     "correct": [
+      2
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -991,7 +1668,19 @@
     "schema": "",
     "videos": [
      "A18"
-    ]
+    ],
+    "qcm": {
+     "question": "Dans quel état un port STP met-il à jour sa table MAC sans encore transmettre les données ?",
+     "options": [
+      "Blocage",
+      "Apprentissage",
+      "Écoute",
+      "Acheminement"
+     ],
+     "correct": [
+      1
+     ]
+    }
    }
   ]
  },
@@ -1020,7 +1709,19 @@
     "schema": "",
     "videos": [
      "A19"
-    ]
+    ],
+    "qcm": {
+     "question": "Routes connues : 172.16.0.0/12, 172.16.0.0/18 et 172.16.0.0/26. Laquelle est utilisée pour 172.16.0.10 ?",
+     "options": [
+      "172.16.0.0/18",
+      "172.16.0.0/12",
+      "Aucune : le paquet est rejeté",
+      "172.16.0.0/26"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Décomposition",
@@ -1038,7 +1739,19 @@
     "schema": "",
     "videos": [
      "A19"
-    ]
+    ],
+    "qcm": {
+     "question": "Dans « O 10.0.4.0/24 [110/50] via 10.0.3.2 », que représentent 110 et 50 ?",
+     "options": [
+      "110 = nombre de sauts, 50 = délai",
+      "110 = distance administrative, 50 = métrique (coût)",
+      "110 = numéro du processus OSPF, 50 = bande passante",
+      "110 = métrique, 50 = distance administrative"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Comparaison",
@@ -1053,7 +1766,20 @@
     "schema": "",
     "videos": [
      "A20"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur le routage statique et dynamique sont exactes ? (2 réponses)",
+     "options": [
+      "Le routage dynamique consomme du CPU, de la mémoire et de la bande passante",
+      "Le routage dynamique est déconseillé pour les grands réseaux",
+      "Le routage statique ne s’adapte pas automatiquement aux pannes",
+      "Le routage statique échange des mises à jour entre routeurs"
+     ],
+     "correct": [
+      0,
+      2
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -1068,7 +1794,19 @@
     "schema": "",
     "videos": [
      "B7"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle commande crée sur R1 une route vers 192.168.2.0/24 par le voisin R2 (10.0.0.2) ?",
+     "options": [
+      "ip route 10.0.0.2 255.255.255.0 192.168.2.0",
+      "ip route 192.168.2.0 0.0.0.255 10.0.0.2",
+      "ip route 192.168.2.0 255.255.255.0 192.168.2.1",
+      "ip route 192.168.2.0 255.255.255.0 10.0.0.2"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -1083,7 +1821,19 @@
     "schema": "",
     "videos": [
      "B8"
-    ]
+    ],
+    "qcm": {
+     "question": "Comment fait-on d’une route par défaut une route flottante (de secours) ?",
+     "options": [
+      "On la configure sur l’interface du LAN",
+      "On lui donne une distance administrative plus grande que celle de la route principale",
+      "On lui donne une distance administrative plus petite que celle de la route principale",
+      "On utilise le masque 255.255.255.255"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Définition",
@@ -1098,7 +1848,19 @@
     "schema": "",
     "videos": [
      "B7"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel masque définit une route d’hôte en IPv4 ?",
+     "options": [
+      "0.0.0.0 (/0)",
+      "255.255.255.255 (/32)",
+      "255.255.255.252 (/30)",
+      "255.255.255.0 (/24)"
+     ],
+     "correct": [
+      1
+     ]
+    }
    }
   ]
  },
@@ -1130,7 +1892,20 @@
      "A20",
      "A+",
      "A++"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelles affirmations sur RIP et OSPF sont exactes ? (2 réponses)",
+     "options": [
+      "RIP utilise un coût lié à la bande passante",
+      "OSPF connaît toute la topologie et calcule ses chemins avec SPF",
+      "OSPF ne connaît que ce que lui annoncent ses voisins",
+      "RIP utilise le nombre de sauts comme métrique (15 au maximum)"
+     ],
+     "correct": [
+      1,
+      3
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -1149,7 +1924,19 @@
     "schema": "",
     "videos": [
      "B9"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle commande RIPv2 désactive le résumé automatique aux frontières de classe ?",
+     "options": [
+      "no auto-summary",
+      "network 10.1.1.0",
+      "passive-interface g0/0",
+      "version 2"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -1163,7 +1950,19 @@
     "schema": "Hello → voisins\nLSA   → échange\nLSDB  → base commune\nSPF   → plus courts chemins\nTable → meilleures routes",
     "videos": [
      "A21"
-    ]
+    ],
+    "qcm": {
+     "question": "Quel paquet OSPF sert à découvrir et garder les voisins ?",
+     "options": [
+      "Hello",
+      "DBD",
+      "LSU",
+      "LSAck"
+     ],
+     "correct": [
+      0
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -1179,7 +1978,19 @@
     "schema": "",
     "videos": [
      "A21"
-    ]
+    ],
+    "qcm": {
+     "question": "Sans commande router-id, quelle adresse un routeur OSPF prend-il comme router ID ?",
+     "options": [
+      "La plus haute adresse IPv4 d’une interface physique, même s’il existe une interface de bouclage",
+      "La plus basse adresse IPv4 d’une interface physique",
+      "L’adresse MAC du routeur",
+      "La plus haute adresse IPv4 d’une interface de bouclage"
+     ],
+     "correct": [
+      3
+     ]
+    }
    },
    {
     "kind": "Méthode",
@@ -1196,7 +2007,19 @@
     "schema": "",
     "videos": [
      "A21"
-    ]
+    ],
+    "qcm": {
+     "question": "Quelle commande active OSPF sur le réseau 10.1.1.4/30 dans la zone 0 ?",
+     "options": [
+      "network 10.1.1.4 0.0.0.255 area 0",
+      "network 10.1.1.4 0.0.0.3 area 0",
+      "network 10.1.1.4 0.0.0.4 area 0",
+      "network 10.1.1.4 255.255.255.252 area 0"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Fonctionnement",
@@ -1211,7 +2034,19 @@
     "schema": "",
     "videos": [
      "A21"
-    ]
+    ],
+    "qcm": {
+     "question": "Vers quelle adresse les routeurs DROTHER envoient-ils leurs mises à jour au DR et au BDR ?",
+     "options": [
+      "FF02::2",
+      "224.0.0.6",
+      "255.255.255.255",
+      "224.0.0.5"
+     ],
+     "correct": [
+      1
+     ]
+    }
    },
    {
     "kind": "Calcul",
@@ -1226,7 +2061,19 @@
     "schema": "",
     "videos": [
      "A21"
-    ]
+    ],
+    "qcm": {
+     "question": "Avec auto-cost reference-bandwidth 10000, quel est le coût OSPF d’une interface Gigabit Ethernet ?",
+     "options": [
+      "10",
+      "1",
+      "100",
+      "0,1"
+     ],
+     "correct": [
+      0
+     ]
+    }
    }
   ]
  }
